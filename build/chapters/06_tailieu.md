@@ -57,4 +57,4 @@
 | [Giá 5 mã HOSE: VNM, FPT, VCB, HPG, VIC]{custom-style="Moi"} | [yfinance](https://pypi.org/project/yfinance/) | [bản chụp ngày 15/10/2026, dùng ở Chương 5]{custom-style="Moi"} |
 | [Tin tức về vàng và cổ phiếu]{custom-style="Moi"} | [Google News RSS](https://news.google.com/rss) | [chỉ trả về tin gần đây; kho tin dày từ tháng 1/2026]{custom-style="Moi"} |
 
-Mã nguồn của các bài thực hành nền tảng: <https://github.com/lyhaiquan/assignment_03.git> (Chương 2), <https://github.com/lyhaiquan/CNN_FROM_SCRATCH.git> (Chương 3).
+Mã nguồn của các bài thực hành nền tảng: <https://github.com/lyhaiquan/assignment_03.git> (Chương 2), <https://github.com/lyhaiquan/CNN_FROM_SCRATCH.git> (Chương 3). [Toàn bộ mã nguồn của tiểu luận này, gồm cả Chương 5 và năm trang demo: <https://github.com/lyhaiquan/TieuLuan02>]{custom-style="Moi"}
