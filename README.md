@@ -2,7 +2,7 @@
 
 Lý Hải Quân. Nhóm lớp 05, nhóm tiểu luận 02.
 
-Bản nộp: `tieuluan02_05_02_quanlh.docx` và `.pdf` (65 trang). **Phần in màu đỏ trong báo cáo
+Bản nộp: `tieuluan02_05_02_quanlh.docx` và `.pdf` (69 trang). **Phần in màu đỏ trong báo cáo
 là nội dung mới bổ sung so với Tiểu luận 01.**
 
 Repo: <https://github.com/lyhaiquan/TieuLuan02>
