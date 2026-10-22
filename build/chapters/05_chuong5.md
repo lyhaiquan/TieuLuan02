@@ -1,7 +1,4 @@
-<!-- MOI -->
 # Chương 5. Knowledge Graph và RAG cho miền tài chính
-
-[Toàn bộ chương này là nội dung mới của Tiểu luận 02, kể cả các bảng, hình và đoạn code trích dẫn; phần chữ in màu đỏ chỉ đánh dấu văn xuôi, còn bảng, hình và code giữ định dạng gốc để đọc được.]{custom-style="Moi"}
 
 ## 5.1. Đặt vấn đề
 
@@ -35,7 +32,7 @@ Về cách xây, có hai nguồn cạnh khác nhau về bản chất. Cạnh **t
 
 ### 5.2.2. RAG
 
-Mô hình ngôn ngữ lưu tri thức trong trọng số, nên không cập nhật được sau khi huấn luyện và không chỉ ra được nguồn của câu trả lời. **RAG** (Retrieval-Augmented Generation) tách tri thức ra khỏi trọng số: giữ một kho tài liệu bên ngoài, với mỗi câu hỏi thì truy hồi vài tài liệu liên quan rồi mới sinh câu trả lời dựa trên chúng. Quy trình gồm ba khâu.
+Mô hình ngôn ngữ lưu tri thức trong trọng số, nên không cập nhật được sau khi huấn luyện và không chỉ ra được nguồn của câu trả lời. **RAG** (Retrieval-Augmented Generation) [21] tách tri thức ra khỏi trọng số: giữ một kho tài liệu bên ngoài, với mỗi câu hỏi thì truy hồi vài tài liệu liên quan rồi mới sinh câu trả lời dựa trên chúng. Quy trình gồm ba khâu.
 
 **Lập chỉ mục.** Kho tài liệu được cắt thành đoạn, mỗi đoạn $d$ được một bộ mã hoá chuyển thành vectơ $\mathbf{v}_d \in \mathbb{R}^n$.
 
@@ -51,7 +48,7 @@ Với vectơ thưa thì dùng trọng số từ khoá TF-IDF, tức tần suất
 
 ### 5.2.3. Ghép đồ thị tri thức vào RAG
 
-Hạn chế của RAG thuần là nó chỉ biết độ tương đồng văn bản. Câu hỏi cần nối hai dữ kiện ở hai tài liệu khác nhau thì không tài liệu nào "giống câu hỏi" đủ để được chọn. **GraphRAG** khắc phục bằng cách dùng đồ thị làm cầu, theo hai hướng chính.
+Hạn chế của RAG thuần là nó chỉ biết độ tương đồng văn bản. Câu hỏi cần nối hai dữ kiện ở hai tài liệu khác nhau thì không tài liệu nào "giống câu hỏi" đủ để được chọn. **GraphRAG** [22] khắc phục bằng cách dùng đồ thị làm cầu, theo hai hướng chính.
 
 Hướng thứ nhất là **mở rộng truy hồi**: nhận ra thực thể trong câu hỏi, lấy các nút lân cận trong đồ thị, rồi cộng điểm cho những tài liệu nhắc tới các nút đó. Công thức điểm trở thành
 

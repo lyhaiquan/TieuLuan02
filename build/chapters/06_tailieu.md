@@ -40,6 +40,10 @@
 
 [20] C. R. Harris và cộng sự, "Array programming with NumPy", *Nature*, 585, 357 - 362, 2020.
 
+[[21] P. Lewis và cộng sự, "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", *NeurIPS*, 2020; arXiv:2005.11401.]{custom-style="Moi"}
+
+[[22] D. Edge và cộng sự, "From Local to Global: A Graph RAG Approach to Query-Focused Summarization", Microsoft Research, 2024; arXiv:2404.16130.]{custom-style="Moi"}
+
 ## Nguồn dữ liệu
 
 | Bộ dữ liệu | Nguồn | Trạng thái liên kết |

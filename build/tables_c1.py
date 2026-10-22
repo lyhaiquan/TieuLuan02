@@ -29,7 +29,10 @@ def t_timeline():
             ["2012", "AlexNet thắng ImageNet", "Học sâu bùng nổ"],
             ["2015", "ResNet", "Mạng rất sâu"],
             ["2017", "Transformer", "Tự chú ý"],
-            ["2018 - 2022", "BERT, GPT-3, ChatGPT", "Mô hình ngôn ngữ lớn"]]
+            ["2018 - 2022", "BERT, GPT-3, ChatGPT", "Mô hình ngôn ngữ lớn"],
+            ['[2020 - 2024]{custom-style="Moi"}',
+             '[RAG (Lewis và cộng sự); GraphRAG (Edge và cộng sự)]{custom-style="Moi"}',
+             '[Tri thức ra ngoài trọng số]{custom-style="Moi"}']]
     return ("Các cột mốc chính của lịch sử AI", ["Năm", "Sự kiện", "Giai đoạn"], rows)
 
 

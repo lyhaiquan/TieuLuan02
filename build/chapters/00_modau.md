@@ -1,6 +1,6 @@
 ---
 title: "TIỂU LUẬN MÔN HỌC: PHÁT TRIỂN CÁC HỆ THỐNG THÔNG MINH"
-subtitle: "Từ lịch sử trí tuệ nhân tạo đến học máy, mạng tích chập và mạng hồi quy: so sánh ba cách cài đặt NumPy, PyTorch và Keras"
+subtitle: "Từ lịch sử trí tuệ nhân tạo đến học máy, mạng tích chập, mạng hồi quy và đồ thị tri thức kết hợp truy hồi: so sánh ba cách cài đặt NumPy, PyTorch và Keras"
 author: "AUTHOR_LINE"
 date: "Học viện Công nghệ Bưu chính Viễn thông - Giảng viên: PGS.TS Trần Đình Quế"
 lang: vi
@@ -13,7 +13,7 @@ toc-title: "Mục lục"
 
 Trí tuệ nhân tạo (AI) hiện diện trong gần như mọi hệ thống phần mềm: từ chẩn đoán y khoa, định giá bất động sản đến phân tích cảm xúc của người dùng mạng xã hội. Tuy vậy, người học thường tiếp cận từng kỹ thuật như một "hộp đen" qua một thư viện có sẵn, nên khó trả lời ba câu hỏi nền tảng: kỹ thuật này sinh ra để giải quyết vấn đề gì, bên trong nó tính toán những gì, và khi đổi từ thư viện này sang thư viện khác thì kết quả có thay đổi không.
 
-Tiểu luận này trả lời ba câu hỏi đó cho bốn mảng kiến thức đầu tiên của môn học: lịch sử phát triển của AI (Chương 1), các kỹ thuật học máy cơ bản và mạng nơ-ron nhiều tầng (Chương 2), mạng tích chập CNN (Chương 3), mạng hồi quy RNN (Chương 4) [và Knowledge Graph kết hợp RAG cho miền tài chính (Chương 5)]{custom-style="Moi"}. Ba chương kỹ thuật cùng theo một khuôn: trình bày cơ sở lý thuyết ngắn gọn, mô tả dữ liệu, cài đặt cùng một mô hình theo ba cách rồi đánh giá và so sánh.
+Tiểu luận này trả lời ba câu hỏi đó cho [năm]{custom-style="Moi"} mảng kiến thức đầu tiên của môn học: lịch sử phát triển của AI (Chương 1), các kỹ thuật học máy cơ bản và mạng nơ-ron nhiều tầng (Chương 2), mạng tích chập CNN (Chương 3), mạng hồi quy RNN (Chương 4) [và Knowledge Graph kết hợp RAG cho miền tài chính (Chương 5)]{custom-style="Moi"}. [Ba chương kỹ thuật 2, 3 và 4]{custom-style="Moi"} cùng theo một khuôn: trình bày cơ sở lý thuyết ngắn gọn, mô tả dữ liệu, cài đặt cùng một mô hình theo ba cách rồi đánh giá và so sánh.
 
 ## Mục tiêu
 
@@ -43,7 +43,7 @@ Tiểu luận này trả lời ba câu hỏi đó cho bốn mảng kiến thức
 
 ## Phạm vi và cách làm
 
-Tiểu luận gồm [năm]{custom-style="Moi"} chương và phần mở đầu này; [hai]{custom-style="Moi"} chương còn lại của đề cương ([Deep Graph, hệ đa tác tử]{custom-style="Moi"}) thuộc đợt sau. [Phần in màu đỏ trong tiểu luận là nội dung mới bổ sung so với Tiểu luận 01.]{custom-style="Moi"} Toàn bộ thực nghiệm chạy trên một máy tính xách tay chỉ có CPU (Intel Core i5-12500H, 16 GB RAM), Python 3.14 cho NumPy và PyTorch 2.10, Python 3.13 với TensorFlow 2.21 và Keras 3 cho phần Keras. Mọi con số trong văn bản đều được sinh ra từ các tệp kết quả JSON của lần chạy cuối, không nhập tay.
+Tiểu luận gồm [năm]{custom-style="Moi"} chương và phần mở đầu này; [hai]{custom-style="Moi"} chương còn lại của đề cương ([Deep Graph, hệ đa tác tử]{custom-style="Moi"}) thuộc đợt sau. [Phần in màu đỏ đánh dấu những chỗ đã sửa hoặc bổ sung trong bốn chương cũ và phần mở đầu so với Tiểu luận 01. Chương 5 là chương hoàn toàn mới nên in màu đen như các chương khác.]{custom-style="Moi"} Toàn bộ thực nghiệm chạy trên một máy tính xách tay chỉ có CPU (Intel Core i5-12500H, 16 GB RAM), Python 3.14 cho NumPy và PyTorch 2.10, Python 3.13 với TensorFlow 2.21 và Keras 3 cho phần Keras. Mọi con số trong văn bản đều được sinh ra từ các tệp kết quả JSON của lần chạy cuối, không nhập tay.
 
 Bảng dưới đây tóm tắt dữ liệu và mô hình của từng chương. Một chi tiết cần nói trước: các chương dùng chung ba tên dữ liệu (Diabetes, House Price, Comments) ở Chương 2 và 3, nhưng mỗi chương có quy trình làm sạch và cỡ mẫu riêng vì được thực hiện ở các bài tập khác nhau. Vì vậy số liệu giữa Chương 2 và Chương 3 không so sánh trực tiếp với nhau, chỉ so sánh trong nội bộ từng chương.
 
