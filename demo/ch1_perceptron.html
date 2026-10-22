@@ -1,0 +1,29 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo Chương 1: Perceptron và XOR</title><link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<nav><a href="index.html">Trang chủ</a></nav>
+<h1>Chương 1: Perceptron 1958 và mạng hai tầng</h1>
+<p class="sub">Chọn một bài toán logic, rồi huấn luyện perceptron (một tầng) và MLP 2-4-1 (có tầng ẩn). Perceptron không giải được XOR; MLP giải được. Mọi tính toán chạy ngay trong trình duyệt.</p>
+<div class="card"><div class="row"><div class="col">
+<label>Bài toán</label><select id="task"><option>AND</option><option>OR</option><option selected>XOR</option></select>
+<p><button class="p" id="tp">Huấn luyện perceptron</button> <button class="p" id="tm">Huấn luyện MLP 2-4-1</button> <button id="rs">Đặt lại</button></p>
+<div id="out" class="mut"></div></div>
+<div class="col"><canvas id="cv" width="420" height="420"></canvas></div></div></div>
+<script>
+const X=[[0,0],[0,1],[1,0],[1,1]],Y={AND:[0,0,0,1],OR:[0,1,1,1],XOR:[0,1,1,0]};
+const sg=z=>1/(1+Math.exp(-z));let rng=(s=>()=>(s=(s*16807)%2147483647)/2147483647)(7);
+const gauss=()=>Math.sqrt(-2*Math.log(rng()))*Math.cos(2*Math.PI*rng());
+let P,M,mode=null,ep=0;
+function reset(){P={w:[gauss()*.1,gauss()*.1],b:0};M={W1:Array.from({length:2},()=>Array.from({length:4},gauss)),b1:[0,0,0,0],W2:Array.from({length:4},gauss),b2:0};mode=null;ep=0;draw();out('')}
+function pp(x){return P.w[0]*x[0]+P.w[1]*x[1]+P.b>0?1:0}
+function mf(x){const h=[0,1,2,3].map(j=>Math.tanh(x[0]*M.W1[0][j]+x[1]*M.W1[1][j]+M.b1[j]));return{h,p:sg(h.reduce((s,v,j)=>s+v*M.W2[j],0)+M.b2)}}
+function out(t){document.getElementById('out').innerHTML=t}
+function acc(f,y){return X.filter((x,i)=>f(x)==y[i]).length}
+function trainP(){const y=Y[task.value];let e=0;for(ep=1;ep<=200;ep++){e=0;X.forEach((x,i)=>{const d=y[i]-pp(x);P.w[0]+=.1*d*x[0];P.w[1]+=.1*d*x[1];P.b+=.1*d;e+=d!=0});if(!e)break}
+mode='p';draw();out(`Perceptron: ${e?'<b style="color:var(--r)">không hội tụ</b> sau 200 epoch':'<b style="color:var(--g)">hội tụ</b> sau '+ep+' epoch'}; đúng ${acc(pp,y)}/4 điểm.`)}
+function trainM(){const y=Y[task.value];for(let it=0;it<5000;it++){X.forEach((x,i)=>{const {h,p}=mf(x),d=(p-y[i])/4;const dh=h.map((v,j)=>d*M.W2[j]*(1-v*v));h.forEach((v,j)=>{M.W2[j]-=v*d;M.W1[0][j]-=x[0]*dh[j];M.W1[1][j]-=x[1]*dh[j];M.b1[j]-=dh[j]});M.b2-=d})}
+mode='m';draw();out(`MLP 2-4-1 sau 5000 bước lan truyền ngược: đúng ${acc(x=>mf(x).p>.5?1:0,y)}/4 điểm. Đầu ra: ${X.map(x=>mf(x).p.toFixed(2)).join(', ')}`)}
+function draw(){const c=cv.getContext('2d'),W=420,m=40,s=(W-2*m)/1.4,tx=v=>m+(v+.2)*s,ty=v=>W-m-(v+.2)*s;c.clearRect(0,0,W,W);
+if(mode){const f=mode=='p'?pp:x=>mf(x).p>.5?1:0;for(let i=0;i<84;i++)for(let j=0;j<84;j++){const x=-.2+i/60,y=-.2+j/60;c.fillStyle=f([x,y])?'rgba(196,69,60,.16)':'rgba(43,108,176,.16)';c.fillRect(tx(x),ty(y)-s/60,s/60+2,s/60+2)}}
+c.strokeStyle='#999';c.strokeRect(tx(-.2),ty(1.2),1.4*s,1.4*s);const y=Y[task.value];X.forEach((x,i)=>{c.beginPath();c.arc(tx(x[0]),ty(x[1]),11,0,7);c.fillStyle=y[i]?'#C4453C':'#2B6CB0';c.fill()});
+c.fillStyle='#888';c.font='12px sans-serif';c.fillText('x₁',W-30,H(W));function H(w){return w-14}c.fillText('x₂',8,18)}
+task.onchange=reset;tp.onclick=trainP;tm.onclick=trainM;rs.onclick=reset;reset();if(location.hash=='#perceptron')trainP();if(location.hash=='#mlp')trainM();
+</script></div></body></html>

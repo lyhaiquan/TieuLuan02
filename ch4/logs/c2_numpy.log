@@ -1,0 +1,10 @@
+numpy diabetes 42 {'accuracy': 0.962, 'precision': 0.8977, 'recall': 0.6472, 'f1': 0.7521, 'roc_auc': 0.9645, 'fn': 598} 275.2s
+numpy diabetes 43 {'accuracy': 0.963, 'precision': 0.9098, 'recall': 0.649, 'f1': 0.7576, 'roc_auc': 0.9626, 'fn': 595} 257.4s
+numpy diabetes 44 {'accuracy': 0.9624, 'precision': 0.9083, 'recall': 0.6431, 'f1': 0.753, 'roc_auc': 0.964, 'fn': 605} 248.4s
+numpy housing 42 {'r2_log': 0.6503, 'r2_price': 0.5634, 'mae': 1.6405, 'rmse': 4.0381, 'mape': 0.2912} 63.9s
+numpy housing 43 {'r2_log': 0.6462, 'r2_price': 0.5925, 'mae': 1.6438, 'rmse': 3.901, 'mape': 0.3092} 65.8s
+numpy housing 44 {'r2_log': 0.6492, 'r2_price': 0.5649, 'mae': 1.6352, 'rmse': 4.0311, 'mape': 0.2879} 62.3s
+numpy comments 42 {'accuracy': 0.7184, 'macro_f1': 0.601, 'f1_neg': 0.4073, 'f1_neu': 0.5626, 'f1_pos': 0.8333} 69.9s
+numpy comments 43 {'accuracy': 0.719, 'macro_f1': 0.6038, 'f1_neg': 0.405, 'f1_neu': 0.5726, 'f1_pos': 0.8339} 70.0s
+numpy comments 44 {'accuracy': 0.7193, 'macro_f1': 0.6029, 'f1_neg': 0.4036, 'f1_neu': 0.5724, 'f1_pos': 0.8327} 74.4s
+DONE numpy

@@ -1,0 +1,24 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo Chương 3: phân loại cảm xúc bằng CNN</title><link rel="stylesheet" href="style.css"><script src="data/ch3_model.js"></script></head><body><div class="wrap">
+<nav><a href="index.html">Trang chủ</a></nav>
+<h1>Chương 3: Phân loại cảm xúc bình luận bằng Conv1D</h1>
+<p class="sub">Mạng Embedding → Conv1D → MaxPool → Conv1D → GlobalMaxPool → Dense (498.755 tham số) huấn luyện bằng PyTorch, suy luận hoàn toàn bằng JavaScript. Mô hình chỉ học tiếng Anh nên bình luận ngoại ngữ thường bị xếp vào neutral (xem nhận xét ở Chương 2).</p>
+<div class="card"><label>Nhập bình luận (tiếng Anh)</label><textarea id="t">I love this song, it is amazing and beautiful</textarea>
+<p><button class="p" id="go">Phân loại</button> <button data-s="this is the worst video ever, I hate it">Ví dụ tiêu cực</button> <button data-s="the weather in the video was cloudy today">Ví dụ trung tính</button> <button data-s="thank you so much, great work">Ví dụ tích cực</button></p></div>
+<div class="row"><div class="col"><div class="card" id="res"></div></div><div class="col"><div class="card"><b>Token sau khi tách</b><div id="tok" style="margin-top:6px"></div><p class="mut">Gạch ngang: từ ngoài từ điển 15.000 từ, bị thay bằng &lt;unk&gt;. Chuỗi được cắt hoặc đệm về 60 token.</p></div></div></div>
+<div class="card mut" id="st"></div>
+<script>
+const M=MODEL,W={};M.vocab.forEach((w,i)=>{if(w!==null)W[w]=i});const E=M.emb[0].length,C=M.c1b.length;
+function tokenize(s){return (s.toLowerCase().match(/[a-z]+/g)||[]).slice(0,60)}
+function conv(x,w,b,L){ // x:[len][cin]; w:[cout][cin][3]
+ const out=[];for(let i=0;i<=x.length-3;i++){const o=new Array(w.length);for(let c=0;c<w.length;c++){let s=b[c];for(let k=0;k<3;k++){const xv=x[i+k],wc=w[c];for(let j=0;j<xv.length;j++)s+=xv[j]*wc[j][k]}o[c]=Math.max(0,s)}out.push(o)}return out}
+function predict(text){const tk=tokenize(text),ids=tk.map(w=>W[w]??1);while(ids.length<60)ids.push(0);
+ let h=ids.map(i=>M.emb[i]);h=conv(h,M.c1w,M.c1b);const p=[];for(let i=0;i+1<h.length;i+=2)p.push(h[i].map((v,c)=>Math.max(v,h[i+1][c])));
+ h=conv(p,M.c2w,M.c2b);const g=new Array(C).fill(-1e9);h.forEach(r=>r.forEach((v,c)=>{if(v>g[c])g[c]=v}));
+ const z=M.fb.map((b,k)=>g.reduce((s,v,c)=>s+v*M.fw[k][c],b)),mx=Math.max(...z),e=z.map(v=>Math.exp(v-mx)),s=e.reduce((a,b)=>a+b,0);return{p:e.map(v=>v/s),tk}}
+const NAMES={negative:['Tiêu cực','var(--r)'],neutral:['Trung tính','var(--o)'],positive:['Tích cực','var(--g)']};
+function run(){const{p,tk}=predict(t.value);res.innerHTML=M.classes.map((c,k)=>`<div>${NAMES[c][0]} <b style="float:right">${(100*p[k]).toFixed(1)}%</b></div><div class="bar"><i style="width:${100*p[k]}%;background:${NAMES[c][1]}"></i></div>`).join('');
+ const best=p.indexOf(Math.max(...p));res.innerHTML+=`<div class="big" style="color:${NAMES[M.classes[best]][1]}">${NAMES[M.classes[best]][0]}</div>`;
+ tok.innerHTML=tk.length?tk.map(w=>`<span class="tag" style="${W[w]===undefined?'text-decoration:line-through':''}">${w}</span>`).join(''):'<span class="mut">(không có token)</span>'}
+if(location.hash.startsWith('#t='))t.value=decodeURIComponent(location.hash.slice(3));go.onclick=run;document.querySelectorAll('button[data-s]').forEach(b=>b.onclick=()=>{t.value=b.dataset.s;run()});t.oninput=run;
+st.textContent=`Độ chính xác của mô hình này trên 3.672 bình luận kiểm tra: ${(100*M.test_acc).toFixed(1)}% (3 lớp, lớp positive chiếm đa số).`;run();
+</script></div></body></html>

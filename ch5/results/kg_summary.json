@@ -1,0 +1,83 @@
+{
+  "canh_correlates_with": 756,
+  "so_lat_thoi_gian": 27,
+  "canh_claims_cause": 43,
+  "so_nut": 12,
+  "nut_co_chuoi_gia": 8,
+  "theo_cap": {
+    "GOLD-USD": {
+      "so_lat": 27,
+      "corr_min": -0.731,
+      "corr_max": 0.197,
+      "corr_trung_binh": -0.405,
+      "bien_do": 0.928,
+      "so_lan_doi_dau": 3
+    },
+    "GOLD-US10Y": {
+      "so_lat": 27,
+      "corr_min": -0.633,
+      "corr_max": 0.006,
+      "corr_trung_binh": -0.285,
+      "bien_do": 0.639,
+      "so_lan_doi_dau": 1
+    },
+    "GOLD-SP500": {
+      "so_lat": 27,
+      "corr_min": -0.371,
+      "corr_max": 0.579,
+      "corr_trung_binh": 0.126,
+      "bien_do": 0.95,
+      "so_lan_doi_dau": 5
+    },
+    "GOLD-OIL": {
+      "so_lat": 27,
+      "corr_min": -0.486,
+      "corr_max": 0.472,
+      "corr_trung_binh": 0.081,
+      "bien_do": 0.958,
+      "so_lan_doi_dau": 5
+    },
+    "GOLD-SILVER": {
+      "so_lat": 27,
+      "corr_min": 0.519,
+      "corr_max": 0.897,
+      "corr_trung_binh": 0.766,
+      "bien_do": 0.378,
+      "so_lan_doi_dau": 0
+    },
+    "GOLD-VIX": {
+      "so_lat": 27,
+      "corr_min": -0.514,
+      "corr_max": 0.294,
+      "corr_trung_binh": -0.082,
+      "bien_do": 0.808,
+      "so_lan_doi_dau": 6
+    }
+  },
+  "mot_canh_tinh_cho_ca_giai_doan": {
+    "GOLD-USD": {
+      "corr_toan_giai_doan": -0.375,
+      "n_days": 1706
+    },
+    "GOLD-US10Y": {
+      "corr_toan_giai_doan": -0.242,
+      "n_days": 1704
+    },
+    "GOLD-SP500": {
+      "corr_toan_giai_doan": 0.122,
+      "n_days": 1704
+    },
+    "GOLD-OIL": {
+      "corr_toan_giai_doan": 0.075,
+      "n_days": 1706
+    },
+    "GOLD-SILVER": {
+      "corr_toan_giai_doan": 0.771,
+      "n_days": 1707
+    },
+    "GOLD-VIX": {
+      "corr_toan_giai_doan": -0.064,
+      "n_days": 1705
+    }
+  }
+}

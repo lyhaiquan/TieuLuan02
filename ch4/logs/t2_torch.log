@@ -1,0 +1,4 @@
+torch diabetes 42 {'accuracy': 0.9611, 'precision': 0.8853, 'recall': 0.6466, 'f1': 0.7474, 'roc_auc': 0.9623, 'fn': 599} 36.3s
+torch housing 42 {'r2_log': 0.649, 'r2_price': 0.5867, 'mae': 1.637, 'rmse': 3.9288, 'mape': 0.2987} 17.6s
+torch comments 42 {'accuracy': 0.717, 'macro_f1': 0.5966, 'f1_neg': 0.397, 'f1_neu': 0.5617, 'f1_pos': 0.831} 21.2s
+DONE torch

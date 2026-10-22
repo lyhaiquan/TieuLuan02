@@ -1,0 +1,121 @@
+﻿q,thang,dir,loc_thoi_gian,mo_rong_truy_van,so_tai_lieu,tu_tuong_lai,ngoai_cua_so,do_lien_quan
+vì sao giá vàng giảm tháng 1/2026,2026-01,-1,True,True,5,0,0,0.0
+vì sao giá vàng giảm tháng 1/2026,2026-01,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 1/2026,2026-01,-1,False,True,5,5,5,0.4
+vì sao giá vàng giảm tháng 1/2026,2026-01,-1,False,False,5,5,5,0.0
+vì sao giá vàng tăng tháng 1/2026,2026-01,1,True,True,5,0,0,1.0
+vì sao giá vàng tăng tháng 1/2026,2026-01,1,True,False,5,0,0,1.0
+vì sao giá vàng tăng tháng 1/2026,2026-01,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 1/2026,2026-01,1,False,False,5,5,5,0.0
+tin tức về vàng tháng 1/2026,2026-01,0,True,True,5,0,0,
+tin tức về vàng tháng 1/2026,2026-01,0,True,False,5,0,0,
+tin tức về vàng tháng 1/2026,2026-01,0,False,True,5,3,4,
+tin tức về vàng tháng 1/2026,2026-01,0,False,False,5,5,5,
+vì sao giá vàng giảm tháng 2/2026,2026-02,-1,True,True,5,0,0,0.0
+vì sao giá vàng giảm tháng 2/2026,2026-02,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 2/2026,2026-02,-1,False,True,5,5,5,0.6
+vì sao giá vàng giảm tháng 2/2026,2026-02,-1,False,False,5,5,5,0.0
+vì sao giá vàng tăng tháng 2/2026,2026-02,1,True,True,5,0,0,0.4
+vì sao giá vàng tăng tháng 2/2026,2026-02,1,True,False,5,0,0,0.4
+vì sao giá vàng tăng tháng 2/2026,2026-02,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 2/2026,2026-02,1,False,False,5,5,5,0.0
+tin tức về vàng tháng 2/2026,2026-02,0,True,True,5,0,0,
+tin tức về vàng tháng 2/2026,2026-02,0,True,False,5,0,0,
+tin tức về vàng tháng 2/2026,2026-02,0,False,True,5,3,5,
+tin tức về vàng tháng 2/2026,2026-02,0,False,False,5,5,5,
+vì sao giá vàng giảm tháng 3/2026,2026-03,-1,True,True,5,0,0,0.0
+vì sao giá vàng giảm tháng 3/2026,2026-03,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 3/2026,2026-03,-1,False,True,5,5,5,0.4
+vì sao giá vàng giảm tháng 3/2026,2026-03,-1,False,False,5,4,4,0.0
+vì sao giá vàng tăng tháng 3/2026,2026-03,1,True,True,5,0,0,0.0
+vì sao giá vàng tăng tháng 3/2026,2026-03,1,True,False,5,0,0,0.2
+vì sao giá vàng tăng tháng 3/2026,2026-03,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 3/2026,2026-03,1,False,False,5,5,5,0.0
+tin tức về vàng tháng 3/2026,2026-03,0,True,True,5,0,0,
+tin tức về vàng tháng 3/2026,2026-03,0,True,False,5,0,0,
+tin tức về vàng tháng 3/2026,2026-03,0,False,True,5,2,5,
+tin tức về vàng tháng 3/2026,2026-03,0,False,False,5,5,5,
+vì sao giá vàng giảm tháng 4/2026,2026-04,-1,True,True,5,0,0,0.6
+vì sao giá vàng giảm tháng 4/2026,2026-04,-1,True,False,5,0,0,0.2
+vì sao giá vàng giảm tháng 4/2026,2026-04,-1,False,True,5,5,5,0.4
+vì sao giá vàng giảm tháng 4/2026,2026-04,-1,False,False,5,4,5,0.0
+vì sao giá vàng tăng tháng 4/2026,2026-04,1,True,True,5,0,0,0.4
+vì sao giá vàng tăng tháng 4/2026,2026-04,1,True,False,5,0,0,0.0
+vì sao giá vàng tăng tháng 4/2026,2026-04,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 4/2026,2026-04,1,False,False,5,5,5,0.0
+tin tức về vàng tháng 4/2026,2026-04,0,True,True,5,0,0,
+tin tức về vàng tháng 4/2026,2026-04,0,True,False,5,0,0,
+tin tức về vàng tháng 4/2026,2026-04,0,False,True,5,2,4,
+tin tức về vàng tháng 4/2026,2026-04,0,False,False,5,5,5,
+vì sao giá vàng giảm tháng 5/2026,2026-05,-1,True,True,5,0,0,0.0
+vì sao giá vàng giảm tháng 5/2026,2026-05,-1,True,False,5,0,0,0.2
+vì sao giá vàng giảm tháng 5/2026,2026-05,-1,False,True,5,5,5,0.6
+vì sao giá vàng giảm tháng 5/2026,2026-05,-1,False,False,5,4,5,0.0
+vì sao giá vàng tăng tháng 5/2026,2026-05,1,True,True,5,0,0,0.6
+vì sao giá vàng tăng tháng 5/2026,2026-05,1,True,False,5,0,0,0.6
+vì sao giá vàng tăng tháng 5/2026,2026-05,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 5/2026,2026-05,1,False,False,5,4,5,0.0
+tin tức về vàng tháng 5/2026,2026-05,0,True,True,5,0,0,
+tin tức về vàng tháng 5/2026,2026-05,0,True,False,5,0,0,
+tin tức về vàng tháng 5/2026,2026-05,0,False,True,5,1,5,
+tin tức về vàng tháng 5/2026,2026-05,0,False,False,5,4,5,
+vì sao giá vàng giảm tháng 6/2026,2026-06,-1,True,True,5,0,0,0.6
+vì sao giá vàng giảm tháng 6/2026,2026-06,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 6/2026,2026-06,-1,False,True,5,5,5,0.4
+vì sao giá vàng giảm tháng 6/2026,2026-06,-1,False,False,5,4,4,0.0
+vì sao giá vàng tăng tháng 6/2026,2026-06,1,True,True,5,0,0,0.6
+vì sao giá vàng tăng tháng 6/2026,2026-06,1,True,False,5,0,0,0.4
+vì sao giá vàng tăng tháng 6/2026,2026-06,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 6/2026,2026-06,1,False,False,5,4,4,0.0
+tin tức về vàng tháng 6/2026,2026-06,0,True,True,5,0,0,
+tin tức về vàng tháng 6/2026,2026-06,0,True,False,5,0,0,
+tin tức về vàng tháng 6/2026,2026-06,0,False,True,5,3,5,
+tin tức về vàng tháng 6/2026,2026-06,0,False,False,5,4,4,
+vì sao giá vàng giảm tháng 7/2026,2026-07,-1,True,True,5,0,0,0.4
+vì sao giá vàng giảm tháng 7/2026,2026-07,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 7/2026,2026-07,-1,False,True,5,5,5,0.4
+vì sao giá vàng giảm tháng 7/2026,2026-07,-1,False,False,5,3,5,0.0
+vì sao giá vàng tăng tháng 7/2026,2026-07,1,True,True,5,0,0,0.6
+vì sao giá vàng tăng tháng 7/2026,2026-07,1,True,False,5,0,0,0.4
+vì sao giá vàng tăng tháng 7/2026,2026-07,1,False,True,5,5,5,0.4
+vì sao giá vàng tăng tháng 7/2026,2026-07,1,False,False,5,3,5,0.0
+tin tức về vàng tháng 7/2026,2026-07,0,True,True,5,0,0,
+tin tức về vàng tháng 7/2026,2026-07,0,True,False,5,0,0,
+tin tức về vàng tháng 7/2026,2026-07,0,False,True,5,2,5,
+tin tức về vàng tháng 7/2026,2026-07,0,False,False,5,4,5,
+vì sao giá vàng giảm tháng 8/2026,2026-08,-1,True,True,5,0,0,0.2
+vì sao giá vàng giảm tháng 8/2026,2026-08,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 8/2026,2026-08,-1,False,True,5,5,5,0.6
+vì sao giá vàng giảm tháng 8/2026,2026-08,-1,False,False,5,2,4,0.0
+vì sao giá vàng tăng tháng 8/2026,2026-08,1,True,True,5,0,0,0.6
+vì sao giá vàng tăng tháng 8/2026,2026-08,1,True,False,5,0,0,0.2
+vì sao giá vàng tăng tháng 8/2026,2026-08,1,False,True,5,2,2,0.4
+vì sao giá vàng tăng tháng 8/2026,2026-08,1,False,False,5,2,3,0.0
+tin tức về vàng tháng 8/2026,2026-08,0,True,True,5,0,0,
+tin tức về vàng tháng 8/2026,2026-08,0,True,False,5,0,0,
+tin tức về vàng tháng 8/2026,2026-08,0,False,True,5,2,5,
+tin tức về vàng tháng 8/2026,2026-08,0,False,False,5,2,3,
+vì sao giá vàng giảm tháng 9/2026,2026-09,-1,True,True,5,0,0,0.2
+vì sao giá vàng giảm tháng 9/2026,2026-09,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 9/2026,2026-09,-1,False,True,5,2,2,0.4
+vì sao giá vàng giảm tháng 9/2026,2026-09,-1,False,False,5,2,5,0.0
+vì sao giá vàng tăng tháng 9/2026,2026-09,1,True,True,5,0,0,0.6
+vì sao giá vàng tăng tháng 9/2026,2026-09,1,True,False,5,0,0,0.2
+vì sao giá vàng tăng tháng 9/2026,2026-09,1,False,True,5,2,5,0.4
+vì sao giá vàng tăng tháng 9/2026,2026-09,1,False,False,5,2,5,0.0
+tin tức về vàng tháng 9/2026,2026-09,0,True,True,5,0,0,
+tin tức về vàng tháng 9/2026,2026-09,0,True,False,5,0,0,
+tin tức về vàng tháng 9/2026,2026-09,0,False,True,5,1,4,
+tin tức về vàng tháng 9/2026,2026-09,0,False,False,5,1,4,
+vì sao giá vàng giảm tháng 10/2026,2026-10,-1,True,True,5,0,0,0.6
+vì sao giá vàng giảm tháng 10/2026,2026-10,-1,True,False,5,0,0,0.0
+vì sao giá vàng giảm tháng 10/2026,2026-10,-1,False,True,5,0,3,0.4
+vì sao giá vàng giảm tháng 10/2026,2026-10,-1,False,False,5,0,4,0.0
+vì sao giá vàng tăng tháng 10/2026,2026-10,1,True,True,5,0,0,0.2
+vì sao giá vàng tăng tháng 10/2026,2026-10,1,True,False,5,0,0,0.0
+vì sao giá vàng tăng tháng 10/2026,2026-10,1,False,True,5,0,3,0.4
+vì sao giá vàng tăng tháng 10/2026,2026-10,1,False,False,5,0,5,0.0
+tin tức về vàng tháng 10/2026,2026-10,0,True,True,5,0,0,
+tin tức về vàng tháng 10/2026,2026-10,0,True,False,5,0,0,
+tin tức về vàng tháng 10/2026,2026-10,0,False,True,5,0,4,
+tin tức về vàng tháng 10/2026,2026-10,0,False,False,5,0,4,

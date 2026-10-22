@@ -1,0 +1,16 @@
+﻿src,dst,rel,chi_tiet,period
+VNM,Packaged Foods,belongs_to,thuộc ngành,tĩnh
+VNM,Consumer Defensive,belongs_to,thuộc nhóm,tĩnh
+VNM,Vietnam,belongs_to,ở nước,tĩnh
+FPT,Information Technology Services,belongs_to,thuộc ngành,tĩnh
+FPT,Technology,belongs_to,thuộc nhóm,tĩnh
+FPT,Vietnam,belongs_to,ở nước,tĩnh
+VCB,Banks - Regional,belongs_to,thuộc ngành,tĩnh
+VCB,Financial Services,belongs_to,thuộc nhóm,tĩnh
+VCB,Vietnam,belongs_to,ở nước,tĩnh
+HPG,Steel,belongs_to,thuộc ngành,tĩnh
+HPG,Basic Materials,belongs_to,thuộc nhóm,tĩnh
+HPG,Vietnam,belongs_to,ở nước,tĩnh
+VIC,Real Estate Services,belongs_to,thuộc ngành,tĩnh
+VIC,Real Estate,belongs_to,thuộc nhóm,tĩnh
+VIC,Vietnam,belongs_to,ở nước,tĩnh

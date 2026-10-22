@@ -1,0 +1,462 @@
+{
+ "order": [
+  {
+   "thu_tu": "gốc",
+   "loai": "gốc, đảo ngược",
+   "do_trai": 10,
+   "auc_tb": 0.8428999999999999,
+   "auc_std": 0.003611094017053588,
+   "auc_tung_lan": [
+    0.8445,
+    0.8379,
+    0.8463
+   ],
+   "so_epoch": [
+    29,
+    32,
+    28
+   ],
+   "thu_tu_day_du": "Geo_Germany > Geo_Spain > Gender_Male > Age > CreditScore > EstimatedSalary > Balance > Tenure > NumOfProducts > HasCrCard > IsActiveMember"
+  },
+  {
+   "thu_tu": "đảo ngược",
+   "loai": "gốc, đảo ngược",
+   "do_trai": 10,
+   "auc_tb": 0.8456333333333333,
+   "auc_std": 0.0013274871834493165,
+   "auc_tung_lan": [
+    0.8469,
+    0.8438,
+    0.8462
+   ],
+   "so_epoch": [
+    37,
+    33,
+    42
+   ],
+   "thu_tu_day_du": "IsActiveMember > HasCrCard > NumOfProducts > Tenure > Balance > EstimatedSalary > CreditScore > Age > Gender_Male > Geo_Spain > Geo_Germany"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 1",
+   "loai": "ngẫu nhiên",
+   "do_trai": 8,
+   "auc_tb": 0.8444666666666666,
+   "auc_std": 0.003286673427984947,
+   "auc_tung_lan": [
+    0.846,
+    0.8475,
+    0.8399
+   ],
+   "so_epoch": [
+    28,
+    28,
+    18
+   ],
+   "thu_tu_day_du": "CreditScore > Balance > Tenure > Gender_Male > Geo_Germany > Age > EstimatedSalary > IsActiveMember > HasCrCard > NumOfProducts > Geo_Spain"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 2",
+   "loai": "ngẫu nhiên",
+   "do_trai": 4,
+   "auc_tb": 0.8700666666666667,
+   "auc_std": 0.0026787227470486093,
+   "auc_tung_lan": [
+    0.8723,
+    0.8716,
+    0.8663
+   ],
+   "so_epoch": [
+    37,
+    30,
+    46
+   ],
+   "thu_tu_day_du": "Gender_Male > IsActiveMember > Age > Balance > Geo_Germany > NumOfProducts > CreditScore > HasCrCard > Tenure > EstimatedSalary > Geo_Spain"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 3",
+   "loai": "ngẫu nhiên",
+   "do_trai": 8,
+   "auc_tb": 0.8523,
+   "auc_std": 0.003980787191833637,
+   "auc_tung_lan": [
+    0.8556,
+    0.8546,
+    0.8467
+   ],
+   "so_epoch": [
+    36,
+    36,
+    50
+   ],
+   "thu_tu_day_du": "EstimatedSalary > CreditScore > IsActiveMember > Geo_Germany > NumOfProducts > Gender_Male > Geo_Spain > Balance > Tenure > HasCrCard > Age"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 4",
+   "loai": "ngẫu nhiên",
+   "do_trai": 10,
+   "auc_tb": 0.8424666666666667,
+   "auc_std": 0.0036307330144507125,
+   "auc_tung_lan": [
+    0.8476,
+    0.84,
+    0.8398
+   ],
+   "so_epoch": [
+    18,
+    29,
+    16
+   ],
+   "thu_tu_day_du": "Balance > EstimatedSalary > CreditScore > HasCrCard > Tenure > Gender_Male > Age > Geo_Spain > IsActiveMember > Geo_Germany > NumOfProducts"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 5",
+   "loai": "ngẫu nhiên",
+   "do_trai": 7,
+   "auc_tb": 0.8573999999999998,
+   "auc_std": 0.0037345236197762616,
+   "auc_tung_lan": [
+    0.8592,
+    0.8522,
+    0.8608
+   ],
+   "so_epoch": [
+    31,
+    35,
+    31
+   ],
+   "thu_tu_day_du": "Geo_Spain > Gender_Male > EstimatedSalary > NumOfProducts > Geo_Germany > CreditScore > Tenure > HasCrCard > Age > Balance > IsActiveMember"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 6",
+   "loai": "ngẫu nhiên",
+   "do_trai": 6,
+   "auc_tb": 0.8475,
+   "auc_std": 0.0048586692279539625,
+   "auc_tung_lan": [
+    0.8474,
+    0.8416,
+    0.8535
+   ],
+   "so_epoch": [
+    31,
+    40,
+    41
+   ],
+   "thu_tu_day_du": "CreditScore > Balance > Gender_Male > Age > NumOfProducts > Tenure > IsActiveMember > Geo_Germany > Geo_Spain > HasCrCard > EstimatedSalary"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 7",
+   "loai": "ngẫu nhiên",
+   "do_trai": 8,
+   "auc_tb": 0.8531,
+   "auc_std": 0.0027276363393971886,
+   "auc_tung_lan": [
+    0.8501,
+    0.8525,
+    0.8567
+   ],
+   "so_epoch": [
+    31,
+    40,
+    43
+   ],
+   "thu_tu_day_du": "NumOfProducts > Tenure > Geo_Germany > EstimatedSalary > Balance > CreditScore > IsActiveMember > HasCrCard > Age > Geo_Spain > Gender_Male"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 8",
+   "loai": "ngẫu nhiên",
+   "do_trai": 8,
+   "auc_tb": 0.8534999999999999,
+   "auc_std": 0.00297097066068764,
+   "auc_tung_lan": [
+    0.8513,
+    0.8515,
+    0.8577
+   ],
+   "so_epoch": [
+    31,
+    42,
+    36
+   ],
+   "thu_tu_day_du": "Balance > Age > EstimatedSalary > HasCrCard > Gender_Male > CreditScore > NumOfProducts > Geo_Germany > IsActiveMember > Tenure > Geo_Spain"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 9",
+   "loai": "ngẫu nhiên",
+   "do_trai": 7,
+   "auc_tb": 0.8577333333333333,
+   "auc_std": 0.002982541794435661,
+   "auc_tung_lan": [
+    0.854,
+    0.8579,
+    0.8613
+   ],
+   "so_epoch": [
+    34,
+    29,
+    31
+   ],
+   "thu_tu_day_du": "EstimatedSalary > Gender_Male > Tenure > Geo_Germany > CreditScore > Geo_Spain > HasCrCard > IsActiveMember > Age > NumOfProducts > Balance"
+  },
+  {
+   "thu_tu": "ngẫu nhiên 10",
+   "loai": "ngẫu nhiên",
+   "do_trai": 8,
+   "auc_tb": 0.8527,
+   "auc_std": 0.005741080037762932,
+   "auc_tung_lan": [
+    0.8499,
+    0.8475,
+    0.8607
+   ],
+   "so_epoch": [
+    31,
+    40,
+    28
+   ],
+   "thu_tu_day_du": "CreditScore > Balance > NumOfProducts > Geo_Spain > EstimatedSalary > Tenure > Age > Gender_Male > Geo_Germany > IsActiveMember > HasCrCard"
+  },
+  {
+   "thu_tu": "liền nhau, ở đầu",
+   "loai": "thiết kế",
+   "do_trai": 4,
+   "auc_tb": 0.6728999999999999,
+   "auc_std": 0.13237129598217282,
+   "auc_tung_lan": [
+    0.8601,
+    0.5787,
+    0.5799
+   ],
+   "so_epoch": [
+    60,
+    19,
+    24
+   ],
+   "thu_tu_day_du": "NumOfProducts > Age > Geo_Germany > IsActiveMember > Balance > Geo_Spain > Gender_Male > CreditScore > EstimatedSalary > Tenure > HasCrCard"
+  },
+  {
+   "thu_tu": "liền nhau, ở cuối",
+   "loai": "thiết kế",
+   "do_trai": 4,
+   "auc_tb": 0.8599,
+   "auc_std": 0.0034292856398964663,
+   "auc_tung_lan": [
+    0.8569,
+    0.8647,
+    0.8581
+   ],
+   "so_epoch": [
+    28,
+    29,
+    28
+   ],
+   "thu_tu_day_du": "Geo_Spain > Gender_Male > CreditScore > EstimatedSalary > Tenure > HasCrCard > Balance > IsActiveMember > Geo_Germany > Age > NumOfProducts"
+  },
+  {
+   "thu_tu": "xen kẽ, trải rộng",
+   "loai": "thiết kế",
+   "do_trai": 10,
+   "auc_tb": 0.8511000000000001,
+   "auc_std": 0.003608323710533712,
+   "auc_tung_lan": [
+    0.8487,
+    0.8484,
+    0.8562
+   ],
+   "so_epoch": [
+    31,
+    40,
+    41
+   ],
+   "thu_tu_day_du": "NumOfProducts > Geo_Spain > Gender_Male > Age > CreditScore > Geo_Germany > EstimatedSalary > IsActiveMember > Tenure > HasCrCard > Balance"
+  }
+ ],
+ "importance": [
+  {
+   "feature": "NumOfProducts",
+   "auc_drop": 0.1420764369916913,
+   "std": 0.007751757046680941
+  },
+  {
+   "feature": "Age",
+   "auc_drop": 0.10239376510562959,
+   "std": 0.007851556413120854
+  },
+  {
+   "feature": "Balance",
+   "auc_drop": 0.02700265751113211,
+   "std": 0.0029636659975264073
+  },
+  {
+   "feature": "IsActiveMember",
+   "auc_drop": 0.02424951916477345,
+   "std": 0.004427747467570954
+  },
+  {
+   "feature": "Geo_Germany",
+   "auc_drop": 0.0201705557637762,
+   "std": 0.004184003121922239
+  },
+  {
+   "feature": "Gender_Male",
+   "auc_drop": 0.00694469508028841,
+   "std": 0.0012323031513163066
+  },
+  {
+   "feature": "CreditScore",
+   "auc_drop": 0.003312557549845696,
+   "std": 0.0020145426769617573
+  },
+  {
+   "feature": "Geo_Spain",
+   "auc_drop": 0.0009886620056112072,
+   "std": 0.0035510518826703365
+  },
+  {
+   "feature": "EstimatedSalary",
+   "auc_drop": 0.0006391599611939913,
+   "std": 0.0028331507301606064
+  },
+  {
+   "feature": "Tenure",
+   "auc_drop": 0.00024061041010203787,
+   "std": 0.0027965808033193684
+  },
+  {
+   "feature": "HasCrCard",
+   "auc_drop": -0.0011268587539773334,
+   "std": 0.0014810863849123706
+  }
+ ],
+ "importance_val": [
+  {
+   "feature": "NumOfProducts",
+   "auc_drop": 0.14443374329439204,
+   "std": 0.014900729678661701
+  },
+  {
+   "feature": "Age",
+   "auc_drop": 0.1049125502017704,
+   "std": 0.009355106822771216
+  },
+  {
+   "feature": "Geo_Germany",
+   "auc_drop": 0.040867371016363355,
+   "std": 0.002697398031289238
+  },
+  {
+   "feature": "IsActiveMember",
+   "auc_drop": 0.02255540252910997,
+   "std": 0.005954907872293545
+  },
+  {
+   "feature": "Balance",
+   "auc_drop": 0.020739952422687023,
+   "std": 0.0017217286090553776
+  },
+  {
+   "feature": "Gender_Male",
+   "auc_drop": 0.004185166279820329,
+   "std": 0.002633060692060604
+  },
+  {
+   "feature": "Geo_Spain",
+   "auc_drop": 0.0028267087863935057,
+   "std": 0.0025318482696385907
+  },
+  {
+   "feature": "CreditScore",
+   "auc_drop": 0.0011956930011270072,
+   "std": 0.003938471212205361
+  },
+  {
+   "feature": "Tenure",
+   "auc_drop": -0.00018828673517516935,
+   "std": 0.0029551856074653024
+  },
+  {
+   "feature": "EstimatedSalary",
+   "auc_drop": -0.0006645414182659737,
+   "std": 0.002385895769940428
+  },
+  {
+   "feature": "HasCrCard",
+   "auc_drop": -0.0011557242056801308,
+   "std": 0.0013128376130769424
+  }
+ ],
+ "top5_val": [
+  "NumOfProducts",
+  "Age",
+  "Geo_Germany",
+  "IsActiveMember",
+  "Balance"
+ ],
+ "order_spearman": -0.4832007793839728,
+ "order_long": [
+  {
+   "seed": 42,
+   "auc": 0.8601,
+   "epochs": 89,
+   "best_epoch": 59
+  },
+  {
+   "seed": 43,
+   "auc": 0.8633,
+   "epochs": 109,
+   "best_epoch": 79
+  },
+  {
+   "seed": 44,
+   "auc": 0.8653,
+   "epochs": 136,
+   "best_epoch": 106
+  }
+ ],
+ "price_trap": {
+  "lstm_price_rmse": 7.933372072257284,
+  "naive_price_rmse": 3.0981802996412937,
+  "lstm_mape": 4.390954271425512,
+  "naive_mape": 1.7061559177334948,
+  "train_max": 101.975502,
+  "test_max": 186.570496,
+  "pred_max": 168.47497019336416,
+  "epochs": 40
+ },
+ "lag": [
+  {
+   "lag_k": 0,
+   "rmse": 7.933372072257284
+  },
+  {
+   "lag_k": 1,
+   "rmse": 7.430626153704559
+  },
+  {
+   "lag_k": 2,
+   "rmse": 7.119845820111655
+  },
+  {
+   "lag_k": 3,
+   "rmse": 7.023666860714308
+  },
+  {
+   "lag_k": 4,
+   "rmse": 7.123002106363455
+  },
+  {
+   "lag_k": 5,
+   "rmse": 7.369680643198001
+  }
+ ],
+ "forecast": {
+  "last_date": "2023-12-05",
+  "last_close": 146.880005,
+  "r_hat": 0.0019241093556733896,
+  "sigma_hat": 0.016337326210657442,
+  "price_hat": 147.16289025559055,
+  "price_lo": 142.52521207432392,
+  "price_hi": 151.95147548410847,
+  "coverage_test": 0.9371584699453552
+ }
+}

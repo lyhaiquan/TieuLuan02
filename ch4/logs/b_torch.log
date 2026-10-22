@@ -1,0 +1,6 @@
+torch churn RNN 0.52
+torch churn LSTM 0.791
+torch churn GRU 1.268
+torch vol RNN 1.52
+torch vol LSTM 2.229
+torch vol GRU 4.679

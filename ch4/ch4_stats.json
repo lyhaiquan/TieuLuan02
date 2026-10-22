@@ -1,0 +1,191 @@
+{
+ "churn": {
+  "shape": [
+   10000,
+   14
+  ],
+  "rate": 0.2037,
+  "head": [
+   {
+    "CreditScore": "619",
+    "Geography": "France",
+    "Gender": "Female",
+    "Age": "42",
+    "Tenure": "2",
+    "Balance": "0.0",
+    "NumOfProducts": "1",
+    "IsActiveMember": "1",
+    "Exited": "1"
+   },
+   {
+    "CreditScore": "608",
+    "Geography": "Spain",
+    "Gender": "Female",
+    "Age": "41",
+    "Tenure": "1",
+    "Balance": "83807.86",
+    "NumOfProducts": "1",
+    "IsActiveMember": "1",
+    "Exited": "0"
+   },
+   {
+    "CreditScore": "502",
+    "Geography": "France",
+    "Gender": "Female",
+    "Age": "42",
+    "Tenure": "8",
+    "Balance": "159660.8",
+    "NumOfProducts": "3",
+    "IsActiveMember": "0",
+    "Exited": "1"
+   },
+   {
+    "CreditScore": "699",
+    "Geography": "France",
+    "Gender": "Female",
+    "Age": "39",
+    "Tenure": "1",
+    "Balance": "0.0",
+    "NumOfProducts": "2",
+    "IsActiveMember": "0",
+    "Exited": "0"
+   },
+   {
+    "CreditScore": "850",
+    "Geography": "Spain",
+    "Gender": "Female",
+    "Age": "43",
+    "Tenure": "2",
+    "Balance": "125510.82",
+    "NumOfProducts": "1",
+    "IsActiveMember": "1",
+    "Exited": "0"
+   }
+  ],
+  "geo": {
+   "France": 5014,
+   "Germany": 2509,
+   "Spain": 2477
+  },
+  "age_mean": 38.9218,
+  "bal0": 0.3617,
+  "n_train": 6400,
+  "n_val": 1600,
+  "n_test": 2000,
+  "rate_test": 0.20350000262260437
+ },
+ "amzn": {
+  "shape": [
+   6684,
+   7
+  ],
+  "start": "1997-05-15",
+  "end": "2023-12-05",
+  "head": [
+   {
+    "Date": "1997-05-15",
+    "Open": "0.1219",
+    "High": "0.125",
+    "Low": "0.0964",
+    "Close": "0.0979",
+    "Adj Close": "0.0979",
+    "Volume": "1443120000"
+   },
+   {
+    "Date": "1997-05-16",
+    "Open": "0.0984",
+    "High": "0.099",
+    "Low": "0.0854",
+    "Close": "0.0865",
+    "Adj Close": "0.0865",
+    "Volume": "294000000"
+   },
+   {
+    "Date": "1997-05-19",
+    "Open": "0.088",
+    "High": "0.0885",
+    "Low": "0.0812",
+    "Close": "0.0854",
+    "Adj Close": "0.0854",
+    "Volume": "122136000"
+   },
+   {
+    "Date": "1997-05-20",
+    "Open": "0.0865",
+    "High": "0.0875",
+    "Low": "0.0818",
+    "Close": "0.0818",
+    "Adj Close": "0.0818",
+    "Volume": "109344000"
+   }
+  ],
+  "tail": [
+   {
+    "Date": "2023-12-01",
+    "Open": "146.0",
+    "High": "147.25",
+    "Low": "145.55",
+    "Close": "147.03",
+    "Adj Close": "147.03",
+    "Volume": "39924600"
+   },
+   {
+    "Date": "2023-12-04",
+    "Open": "145.25",
+    "High": "145.35",
+    "Low": "142.81",
+    "Close": "144.84",
+    "Adj Close": "144.84",
+    "Volume": "48294200"
+   },
+   {
+    "Date": "2023-12-05",
+    "Open": "143.55",
+    "High": "148.57",
+    "Low": "143.13",
+    "Close": "146.88",
+    "Adj Close": "146.88",
+    "Volume": "46754800"
+   }
+  ],
+  "cols": [
+   "Date",
+   "Open",
+   "High",
+   "Low",
+   "Close",
+   "Adj Close",
+   "Volume"
+  ],
+  "ret": {
+   "n_train": 5363,
+   "n_val": 505,
+   "n_test": 736,
+   "window": 60,
+   "y_mean": 0.0011590379656974065,
+   "y_sd": 0.03728252291886696,
+   "feats": [
+    "ret",
+    "range",
+    "relvol"
+   ]
+  },
+  "vol": {
+   "n_train": 5359,
+   "n_val": 505,
+   "n_test": 736,
+   "window": 60,
+   "y_mean": 0.029008460854667795,
+   "y_sd": 0.023420944546821896,
+   "feats": [
+    "ret",
+    "range",
+    "relvol"
+   ]
+  },
+  "ret_std": 0.035304419608328766,
+  "up_share": 0.5086774386594853,
+  "close_first": 0.097917,
+  "close_last": 146.880005
+ }
+}

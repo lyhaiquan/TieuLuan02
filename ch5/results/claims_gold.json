@@ -1,0 +1,36 @@
+{
+  "tin_goc": 632,
+  "tin_sau_khu_trung_lap": 627,
+  "khang_dinh": 309,
+  "kiem_chung_duoc": 32,
+  "theo_ket_luan": {
+    "không kiểm chứng được": 277,
+    "nhất quán": 30,
+    "không đủ bằng chứng": 2
+  },
+  "ly_do_khong_kiem_chung_duoc": {
+    "nguyên nhân không có chuỗi giá": 202,
+    "vế nguyên nhân có nhiều thực thể, không gán riêng được hướng": 36,
+    "không xác định được hướng của một vế": 34,
+    "câu nêu nghịch lý, không khẳng định quan hệ": 5
+  },
+  "theo_nguyen_nhan": {
+    "INFLATION": 83,
+    "FED": 77,
+    "USD": 58,
+    "GEOPOLITICS": 38,
+    "OIL": 24,
+    "US10Y": 19,
+    "SILVER": 4,
+    "RECESSION": 4,
+    "SP500": 1,
+    "BTC": 1
+  },
+  "ty_le_nguyen_nhan_khong_co_chuoi_gia": 0.6537,
+  "kiem_dinh_vo_hieu_ngay_ngau_nhien": {
+    "trung_binh": 0.7141,
+    "do_lech_chuan": 0.088,
+    "so_lan_lap": 20
+  },
+  "ty_le_nhat_quan_ngay_that": 0.9375
+}

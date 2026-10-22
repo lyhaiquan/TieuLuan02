@@ -1,0 +1,10 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791423347.696638   25836 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791423353.841315   25836 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+keras diabetes 42 {'accuracy': 0.9611, 'precision': 0.8929, 'recall': 0.6395, 'f1': 0.7453, 'roc_auc': 0.9634, 'fn': 611} 184.0s
+keras housing 42 {'r2_log': 0.6483, 'r2_price': 0.5546, 'mae': 1.6432, 'rmse': 4.0787, 'mape': 0.2828} 52.3s
+WARNING:tensorflow:5 out of the last 10 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001AE47C494E0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+keras comments 42 {'accuracy': 0.715, 'macro_f1': 0.5851, 'f1_neg': 0.3772, 'f1_neu': 0.5498, 'f1_pos': 0.8283} 66.6s
+DONE keras

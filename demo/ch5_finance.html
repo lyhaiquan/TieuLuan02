@@ -1,0 +1,246 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chương 5: Hỏi đáp tài chính có kiểm chứng</title>
+<link rel="stylesheet" href="style.css">
+<style>
+ .row{display:flex;gap:14px;flex-wrap:wrap}
+ .col{flex:1 1 320px}
+ .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;margin:2px 4px 2px 0}
+ .ok{background:#d5f0dd;color:#145a32}.bad{background:#fadbd8;color:#922b21}
+ .warn{background:#fdebd0;color:#7e5109}.neu{background:#e5e8e8;color:#424949}
+ .q{width:100%;padding:8px;font-size:15px;box-sizing:border-box}
+ .ex{font-size:12px;margin:3px 4px 3px 0;padding:3px 8px;cursor:pointer;border:1px solid #ccc;background:#fafafa;border-radius:4px}
+ .big{font-size:26px;font-weight:600}
+ table.k{border-collapse:collapse;width:100%;font-size:13px}
+ table.k td,table.k th{border-bottom:1px solid #e5e5e5;padding:4px 6px;text-align:left;vertical-align:top}
+ .mono{font-family:Consolas,monospace;font-size:12px}
+</style></head><body><div class="wrap">
+<h1>Chương 5: Hỏi đáp tài chính có kiểm chứng</h1>
+<p class="sub">Toàn bộ chạy trong trình duyệt. Bảng giá 2.480 phiên (2020–2026) được nhúng sẵn, nên phép tính số
+thực sự chạy tại chỗ chứ không phải đáp án nấu sẵn. Phần nhân quả cần mô hình nhúng nên được dựng sẵn từ notebook.</p>
+
+<div class="card">
+<b>1. Hỏi một câu</b><br>
+<input class="q" id="q" value="Lợi suất của vàng quý 2/2026 là bao nhiêu?">
+<div id="exs"></div>
+<div id="route" style="margin-top:8px"></div>
+</div>
+
+<div class="card" id="numbox" style="display:none">
+<b>2. Câu hỏi số: hai cách trả lời</b>
+<div class="row" style="margin-top:8px">
+ <div class="col"><span class="mut">Cách A — bảng thành câu rồi truy hồi (như bài tập trước)</span>
+   <div class="big" id="aval">–</div><div class="mono" id="asrc"></div></div>
+ <div class="col"><span class="mut">Cách B — định tuyến sang bộ tính</span>
+   <div class="big" id="bval">–</div><div class="mono" id="bsrc"></div></div>
+</div>
+<p class="mut" id="numnote" style="margin-top:6px"></p>
+</div>
+
+<div class="card" id="causebox" style="display:none">
+<b>3. Câu hỏi nhân quả: câu trả lời hai tầng</b>
+<div id="cause"></div>
+</div>
+
+<div class="card">
+<b>4. Vì sao cạnh đồ thị phải cắt theo thời gian</b><br>
+<span class="mut">Chọn cặp để xem tương quan từng quý so với một hệ số duy nhất cho cả giai đoạn.</span><br>
+<select id="pair" style="margin:8px 0"></select>
+<canvas id="cv" width="860" height="230" style="width:100%;max-width:860px"></canvas>
+<p class="mut" id="pairnote"></p>
+</div>
+
+<div class="card"><b>5. Số liệu của chương</b><div id="summary"></div></div>
+</div>
+<script src="data/ch5_data.js"></script>
+<script>
+const D = window.CH5, $ = s => document.querySelector(s);
+
+/* ---------- bộ định tuyến, bản JavaScript của parse_question ---------- */
+const METRIC_WORDS = [            // tương quan phải xét trước: câu hỏi tương quan
+  ["correlation", ["tương quan","correlation","liên hệ với"]],   // cũng chứa chữ "lợi suất"
+  ["return",      ["lợi suất","tăng bao nhiêu","sinh lời","return"]],
+  ["volatility",  ["biến động","volatility"]],
+  ["drawdown",    ["sụt","giảm sâu","drawdown"]],
+  ["last",        ["giá cuối","giá đóng cửa","last price"]],
+];
+const CAUSAL = ["vì sao","tại sao","nguyên nhân","do đâu","why","lý do"];
+
+function linkEntities(q){
+  const t = q.toLowerCase(), out = [];
+  for (const [node, als] of Object.entries(D.aliases))
+    if (als.some(a => t.includes(a.toLowerCase()))) out.push(node);
+  return out;
+}
+function parsePeriod(q){
+  const t = q.toLowerCase();
+  let m = t.match(/quý\s*([1-4])\s*[\/\- ]\s*(20\d\d)/);
+  if (m){const qt=+m[1],y=+m[2];return [`${y}-${String(3*qt-2).padStart(2,'0')}-01`,
+        endOfMonth(y,3*qt)];}
+  m = t.match(/tháng\s*(1[0-2]|[1-9])\s*[\/\- ]\s*(20\d\d)/);
+  if (m){const mo=+m[1],y=+m[2];return [`${y}-${String(mo).padStart(2,'0')}-01`, endOfMonth(y,mo)];}
+  m = t.match(/\b(20[12]\d)\b/);
+  if (m) return [`${m[1]}-01-01`, `${m[1]}-12-31`];
+  return null;
+}
+function endOfMonth(y,m){const d=new Date(Date.UTC(y,m,0));return d.toISOString().slice(0,10);}
+
+function parseQuestion(q){
+  const t = q.toLowerCase();
+  let metric = null;
+  for (const [k, ws] of METRIC_WORDS) if (ws.some(w => t.includes(w))){metric=k;break;}
+  const ents = linkEntities(q).filter(e => D.series[e] !== undefined);
+  const kind = metric ? "số" : (CAUSAL.some(w=>t.includes(w)) ? "nhân quả" : "diễn giải");
+  return {kind, metric, ents, period: parsePeriod(q)};
+}
+
+/* ---------- bộ tính, bản JavaScript của compute ---------- */
+function sliceIdx(a,b){
+  const s=[]; for(let i=0;i<D.dates.length;i++) if(D.dates[i]>=a && D.dates[i]<=b) s.push(i);
+  return s;
+}
+function vals(col,idx){return idx.map(i=>D.series[col][i]).filter(v=>v!==null);}
+function rets(col,idx){
+  const v=idx.map(i=>D.series[col][i]).filter(x=>x!==null);
+  const out=[];
+  if (D.rate_series.includes(col)){for(let i=1;i<v.length;i++) out.push(v[i]-v[i-1]);}
+  else {const p=v.filter(x=>x>0); for(let i=1;i<p.length;i++) out.push(Math.log(p[i]/p[i-1]));}
+  return out;
+}
+const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
+function corr(x,y){
+  const n=Math.min(x.length,y.length); x=x.slice(-n); y=y.slice(-n);
+  const mx=mean(x),my=mean(y);
+  let sxy=0,sx=0,sy=0;
+  for(let i=0;i<n;i++){sxy+=(x[i]-mx)*(y[i]-my);sx+=(x[i]-mx)**2;sy+=(y[i]-my)**2;}
+  return sxy/Math.sqrt(sx*sy);
+}
+function compute(metric, a, b, idx){
+  const v=vals(a,idx);
+  if(metric==="return")   return v.length<2?null:v[v.length-1]/v[0]-1;
+  if(metric==="last")     return v.length?v[v.length-1]:null;
+  if(metric==="volatility"){const r=rets(a,idx);
+     if(r.length<D.min_days)return null;
+     const m=mean(r);return Math.sqrt(mean(r.map(x=>(x-m)**2)))*Math.sqrt(252);}
+  if(metric==="drawdown"){let peak=-1e18,dd=0;
+     for(const x of v){peak=Math.max(peak,x);dd=Math.min(dd,x/peak-1);}return v.length<2?null:dd;}
+  if(metric==="correlation"){const ra=rets(a,idx),rb=rets(b,idx);
+     return Math.min(ra.length,rb.length)<D.min_days?null:corr(ra,rb);}
+  return null;
+}
+
+/* ---------- cách A: truy hồi câu thống kê rồi rút số ---------- */
+const PAT={return:/price return ([+-]?[\d.]+)%/,volatility:/annualized volatility ([\d.]+)%/,
+           drawdown:/maximum drawdown ([+-]?[\d.]+)%/,last:/last price ([\d.]+)/};
+function baselineA(q, parsed){
+  let probe=q.toLowerCase();
+  parsed.ents.forEach(e=>probe+=" "+e.toLowerCase());
+  const toks=probe.match(/[a-z0-9&]+/g)||[];
+  let best=null,bs=-1;
+  for(const doc of D.stats_docs){
+    const dt=doc.toLowerCase().match(/[a-z0-9&.]+/g)||[];
+    let s=0; for(const t of toks) if(dt.some(x=>x.startsWith(t))) s++;
+    if(s>bs){bs=s;best=doc;}
+  }
+  const pat=PAT[parsed.metric];
+  if(!pat) return [null,best];
+  const m=best.match(pat);
+  return [m?parseFloat(m[1])/100:null, best];
+}
+
+/* ---------- hiển thị ---------- */
+const fmt=(v,metric)=>v===null||v===undefined?"không trả lời được":
+  (metric==="correlation"?v.toFixed(3):(metric==="last"?v.toFixed(2):(100*v).toFixed(2)+"%"))
+   .replace(".",",");
+
+function run(){
+  const q=$("#q").value, p=parseQuestion(q);
+  const per=p.period?`${p.period[0]} → ${p.period[1]}`:"không nêu (dùng toàn giai đoạn)";
+  $("#route").innerHTML=`<span class="pill neu">loại: <b>${p.kind}</b></span>
+    <span class="pill neu">độ đo: <b>${p.metric||"–"}</b></span>
+    <span class="pill neu">thực thể: <b>${p.ents.join(", ")||"–"}</b></span>
+    <span class="pill neu">khoảng: <b>${per}</b></span>`;
+
+  $("#numbox").style.display = p.kind==="số" ? "" : "none";
+  $("#causebox").style.display = p.kind==="nhân quả" ? "" : "none";
+
+  if(p.kind==="số"){
+    const rng=p.period||["2020-01-01","2026-10-15"], idx=sliceIdx(rng[0],rng[1]);
+    const b=p.ents.length?compute(p.metric,p.ents[0],p.ents[1],idx):null;
+    const [av,asrc]=baselineA(q,p);
+    $("#bval").textContent=fmt(b,p.metric);
+    $("#bsrc").textContent=`tính trên ${idx.length} phiên của bảng giá`;
+    $("#aval").textContent=fmt(av,p.metric);
+    $("#asrc").textContent=asrc?("câu tìm được: "+asrc):"";
+    const same = av!==null && b!==null && Math.abs(av-b)<=(p.metric==="correlation"?0.02:0.005);
+    $("#numnote").innerHTML = av===null
+      ? "Cách A không trả lời được: kho của nó chỉ có câu thống kê <b>theo năm</b>, không có tương quan và không có số theo quý."
+      : (same ? "Hai cách trùng nhau: câu hỏi này đúng loại mà cách A có sẵn câu thống kê."
+              : "Hai cách lệch nhau: cách A lấy số của <b>cả năm</b> trong khi câu hỏi hỏi một khoảng hẹp hơn.");
+  }
+
+  if(p.kind==="nhân quả"){
+    const t=q.toLowerCase();
+    const dir=t.includes("tăng")?"up":"down";
+    const key=p.period?p.period[0].slice(0,7)+"|"+dir:null;
+    const c=key&&D.causal[key];
+    if(!c){$("#cause").innerHTML=`<p class="mut">Chưa dựng sẵn câu trả lời cho khoảng này.
+      Kho tin chỉ dày từ tháng 1/2026 đến tháng 10/2026, hỏi ngoài khoảng đó là đo lỗ hổng dữ liệu chứ không đo hệ thống.</p>`;return;}
+    const tang1=c.bao_chi.map(([k,v])=>`<span class="pill neu">${k} (${v})</span>`).join("");
+    const rows=c.doi_chieu.map(d=>{
+      const cls=d.ket_luan==="nhất quán"?"ok":(d.ket_luan==="mâu thuẫn"?"bad":"warn");
+      return `<tr><td>${d.nguyen_nhan}</td><td><span class="pill ${cls}">${d.ket_luan}</span></td>
+              <td class="mono">${d.corr===null||d.corr===undefined?"–":String(d.corr).replace(".",",")}</td>
+              <td class="mut">${d.tieu_de}</td></tr>`;}).join("");
+    $("#cause").innerHTML=`
+      <p><b>Tầng 1 — báo chí quy cho:</b> ${tang1||"không trích được khẳng định nào"}</p>
+      <p><b>Không đo được bằng dữ liệu giá:</b> ${c.khong_do_duoc.join(", ")||"–"}</p>
+      <p><b>Tầng 2 — đối chiếu với dữ liệu cùng kỳ:</b></p>
+      <table class="k"><tr><th>Nguyên nhân</th><th>Kết luận</th><th>corr</th><th>Tiêu đề</th></tr>${rows}</table>
+      <p class="mut" style="margin-top:6px">Đây là chỗ khác RAG thường: RAG thường dừng ở tầng 1 và trình bày lời báo chí như kết luận.</p>`;
+  }
+}
+
+/* ---------- đồ thị tương quan theo quý ---------- */
+function draw(){
+  const key=$("#pair").value, d=D.pairs[key], cv=$("#cv"), g=cv.getContext("2d");
+  g.clearRect(0,0,cv.width,cv.height);
+  const W=cv.width,H=cv.height,pad=34,n=d.corr.length,bw=(W-2*pad)/n;
+  const y=v=>H/2-(v*(H/2-pad));
+  g.strokeStyle="#bbb";g.beginPath();g.moveTo(pad,y(0));g.lineTo(W-pad,y(0));g.stroke();
+  d.corr.forEach((v,i)=>{g.fillStyle=v<0?"#c0392b":"#2471a3";
+    const x=pad+i*bw+1;g.fillRect(x,Math.min(y(0),y(v)),bw-2,Math.abs(y(v)-y(0)));});
+  g.strokeStyle="#000";g.setLineDash([5,4]);g.beginPath();
+  g.moveTo(pad,y(d.whole));g.lineTo(W-pad,y(d.whole));g.stroke();g.setLineDash([]);
+  g.fillStyle="#000";g.font="12px sans-serif";
+  g.fillText("một cạnh cho cả giai đoạn = "+String(d.whole).replace(".",","),pad+4,y(d.whole)-5);
+  g.fillText("+1",4,pad);g.fillText("0",8,y(0)-3);g.fillText("−1",4,H-pad+10);
+  g.fillText(d.periods[0].slice(0,7),pad,H-6);
+  g.fillText(d.periods[n-1].slice(0,7),W-pad-40,H-6);
+  const mn=Math.min(...d.corr),mx=Math.max(...d.corr);
+  let flips=0;for(let i=1;i<n;i++) if(Math.sign(d.corr[i])!==Math.sign(d.corr[i-1])&&Math.abs(d.corr[i]-d.corr[i-1])>0.3) flips++;
+  $("#pairnote").innerHTML=`Theo quý: nhỏ nhất ${String(mn.toFixed(3)).replace(".",",")},
+    lớn nhất ${String(mx.toFixed(3)).replace(".",",")}, đổi dấu đáng kể ${flips} lần.
+    ${Math.abs(d.whole)<0.15?"<b>Hệ số chung gần 0 nên một đồ thị tĩnh sẽ kết luận hai thứ này không liên quan, trong khi thực ra chúng liên hệ mạnh và đổi dấu theo giai đoạn.</b>":""}`;
+}
+
+/* ---------- khởi tạo ---------- */
+const EXAMPLES=["Lợi suất của vàng quý 2/2026 là bao nhiêu?","Biến động của bạc năm 2022 là bao nhiêu?",
+  "Tương quan giữa vàng và đồng đô năm 2024 là bao nhiêu?","Mức sụt sâu nhất của dầu năm 2020 là bao nhiêu?",
+  "vì sao giá vàng giảm tháng 6/2026","vì sao giá vàng tăng tháng 3/2026"];
+$("#exs").innerHTML=EXAMPLES.map(e=>`<button class="ex">${e}</button>`).join("");
+document.querySelectorAll(".ex").forEach(b=>b.onclick=()=>{$("#q").value=b.textContent;run();});
+$("#q").addEventListener("input",run);
+$("#pair").innerHTML=Object.keys(D.pairs).map(k=>`<option>${k}</option>`).join("");
+$("#pair").onchange=draw;
+const K=D.ket_qua;
+$("#summary").innerHTML=`<table class="k">
+ <tr><td>Câu hỏi số sinh tự động</td><td>${K.numeric.so_cau_hoi}</td>
+     <td>cách A ${String(K.numeric.tong.A_truy_hoi_cau_thong_ke).replace(".",",")} ·
+         cách B ${String(K.numeric.tong.B_dinh_tuyen_sang_bo_tinh).replace(".",",")}</td></tr>
+ <tr><td>Khẳng định nhân quả trích được</td><td>${K.claims.khang_dinh}</td>
+     <td>kiểm chứng được ${K.claims.kiem_chung_duoc}</td></tr>
+ <tr><td>Nguyên nhân không có chuỗi giá</td><td>${(100*K.claims.ty_le_nguyen_nhan_khong_co_chuoi_gia).toFixed(1).replace(".",",")}%</td>
+     <td>Fed, lạm phát, địa chính trị</td></tr></table>`;
+run();draw();
+</script></body></html>

@@ -1,0 +1,4 @@
+Framework,Dia_Acc,Dia_F1,Hou_MAE,Hou_R2,Com_Acc,Com_MacroF1,Tong_giay
+NumPy from scratch,0.969,0.7919,1.312,0.4367,0.7467,0.6444,446.4
+PyTorch,0.9667,0.7638,1.306,0.4444,0.7454,0.6359,150.0
+TensorFlow,0.968,0.777,1.321,0.4327,0.7484,0.6421,111.4

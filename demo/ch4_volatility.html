@@ -1,0 +1,24 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo Chương 4: dự báo biến động AMZN bằng GRU</title><link rel="stylesheet" href="style.css"><script src="data/ch4_model.js"></script></head><body><div class="wrap">
+<nav><a href="index.html">Trang chủ</a></nav>
+<h1>Chương 4: Dự báo biến động 5 phiên tới của AMZN bằng GRU</h1>
+<p class="sub">GRU 32 đơn vị ẩn, huấn luyện bằng NumPy thuần với lan truyền ngược theo thời gian tự viết, suy luận bằng JavaScript. Chọn một phiên trong giai đoạn kiểm tra (2021 - 2023); mô hình đọc 60 phiên trước đó và dự báo biến động thực của 5 phiên kế tiếp. Chỉ là minh họa học thuật, không phải khuyến nghị đầu tư.</p>
+<div class="card"><label>Phiên kiểm tra <b id="dl"></b></label><input type="range" id="ix" min="0" value="300">
+<label>Kịch bản giả định: nhân độ lớn lợi suất và biên độ của 5 phiên cuối với hệ số <b id="sv"></b></label><input type="range" id="st" min="0" max="3" step="0.1" value="1"></div>
+<div class="row"><div class="col"><div class="card"><canvas id="cv" width="560" height="260"></canvas></div></div>
+<div class="col"><div class="card"><table><tr><th></th><th>Biến động 5 phiên tới (ngày)</th></tr><tr><td>GRU dự báo</td><td id="a"></td></tr><tr><td>Thực tế</td><td id="b"></td></tr><tr><td>Đường cơ sở: 20 phiên qua</td><td id="c"></td></tr></table>
+<p class="mut" id="nt"></p></div><div class="card mut" id="mt"></div></div></div>
+<script>
+const M=MODEL,N=M.X.length,H=M.H,sg=z=>1/(1+Math.exp(-z));ix.max=N-1;ix.value=Math.floor(N/2);
+function gru(win){let h=new Array(H).fill(0);for(const x of win){const gi=M.bih.map((b,j)=>x.reduce((s,v,k)=>s+v*M.Wih[j][k],b)),gh=M.bhh.map((b,j)=>h.reduce((s,v,k)=>s+v*M.Whh[j][k],b)),hn=new Array(H);
+for(let j=0;j<H;j++){const r=sg(gi[j]+gh[j]),z=sg(gi[H+j]+gh[H+j]),n=Math.tanh(gi[2*H+j]+r*gh[2*H+j]);hn[j]=(1-z)*n+z*h[j]}h=hn}
+return (h.reduce((s,v,k)=>s+v*M.Wo[0][k],M.bo[0]))*M.y_sd+M.y_mu}
+function run(){const i=+ix.value,k=+st.value;let win=M.X[i].map(r=>r.slice());for(let t=win.length-5;t<win.length;t++){win[t][0]*=k;win[t][1]*=k}
+const p=gru(win);dl.textContent=M.dates[i];sv.textContent=k.toFixed(1);a.textContent=(100*p).toFixed(2)+'%';b.textContent=(100*M.y[i]).toFixed(2)+'%';c.textContent=(100*M.base20[i]).toFixed(2)+'%';
+nt.textContent=k==1?'Hệ số 1,0 là dữ liệu thật; kéo thanh trượt để xem dự báo phản ứng ra sao khi các phiên cuối biến động mạnh hơn hoặc yên ắng hơn.':'Đang ở kịch bản giả định, không còn so sánh được với thực tế.';
+const c2=cv.getContext('2d'),W=560,Hh=260;c2.clearRect(0,0,W,Hh);const px=[...Array(60).keys()],v=win.map(r=>Math.abs(r[0])),mx=Math.max(...v,2);
+c2.fillStyle='#2B6CB0';v.forEach((y,t)=>{const bh=(y/mx)*(Hh-60);c2.fillRect(30+t*8.6,Hh-30-bh,6,bh)});c2.fillStyle='#888';c2.font='12px sans-serif';c2.fillText('|lợi suất| chuẩn hóa của 60 phiên đầu vào (cột đỏ: 5 phiên cuối)',30,16);
+c2.fillStyle='#C4453C';v.slice(55).forEach((y,t)=>{const bh=(y/mx)*(Hh-60);c2.fillRect(30+(55+t)*8.6,Hh-30-bh,6,bh)});
+const cl=M.close[i];c2.fillStyle='#888';c2.fillText('Giá đóng cửa phiên cuối: '+cl+' USD',30,Hh-8)}
+ix.oninput=st.oninput=run;
+mt.textContent=`Trên toàn bộ ${N} phiên kiểm tra: R² = ${M.metrics.r2.toFixed(3)}, RMSE = ${M.metrics.rmse.toFixed(5)}, tương quan = ${M.metrics.corr.toFixed(3)} (một hạt giống, ngang hồi quy Ridge ở Chương 4).`;run();
+</script></div></body></html>

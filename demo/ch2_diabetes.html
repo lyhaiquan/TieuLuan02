@@ -1,0 +1,27 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo Chương 2: sàng lọc tiểu đường bằng MLP</title><link rel="stylesheet" href="style.css"><script src="data/ch2_model.js"></script></head><body><div class="wrap">
+<nav><a href="index.html">Trang chủ</a></nav>
+<h1>Chương 2: Sàng lọc nguy cơ tiểu đường bằng MLP viết bằng NumPy</h1>
+<p class="sub">Mạng 8 → 32 → 16 → 8 → 1 được huấn luyện bằng NumPy thuần (<code>dl_scratch.py</code>, SGD 1.500 epoch). Trọng số được xuất sang JSON và tính lại hoàn toàn trong trình duyệt. Đây là công cụ minh họa cho môn học, không phải công cụ chẩn đoán y khoa.</p>
+<div class="row"><div class="col"><div class="card" id="form"></div>
+<div class="card"><b>Mẫu có sẵn từ tập kiểm tra</b><br><button id="ex1">Hồ sơ dương tính</button> <button id="ex0">Hồ sơ âm tính</button></div></div>
+<div class="col"><div class="card"><div class="mut">Xác suất mắc bệnh theo mô hình</div><div class="big" id="pv">-</div><div class="bar"><i id="pb" style="width:0;background:var(--b)"></i></div>
+<label>Ngưỡng quyết định <b id="thv"></b></label><input type="range" id="th" min="0.05" max="0.95" step="0.01" value="0.5">
+<div id="verdict" style="margin-top:8px;font-weight:600"></div>
+<p class="mut" id="note"></p></div>
+<div class="card mut" id="stats"></div></div></div>
+<script>
+const M=MODEL,F=[['gender','Giới tính',['Nữ','Nam']],['age','Tuổi',[1,90,1]],['hypertension','Tăng huyết áp',['Không','Có']],['heart_disease','Bệnh tim',['Không','Có']],['smoking_history','Hút thuốc',['Không rõ','Chưa từng','Từng','Không còn','Đã bỏ','Đang hút']],['bmi','BMI',[12,60,.1]],['HbA1c_level','HbA1c (%)',[3.5,9,.1]],['blood_glucose_level','Đường huyết (mg/dL)',[80,300,5]]];
+const f=document.getElementById('form');let el={};
+F.forEach(([k,t,o],i)=>{const d=document.createElement('div');if(typeof o[0]=='string'){d.innerHTML=`<label>${t}</label><select id="${k}">${o.map((v,j)=>`<option value="${j}">${v}</option>`).join('')}</select>`}else{d.innerHTML=`<label>${t}<b id="v_${k}"></b></label><input type="range" id="${k}" min="${o[0]}" max="${o[1]}" step="${o[2]}">`}f.appendChild(d);el[k]=d.querySelector('#'+k)});
+const dflt={gender:0,age:45,hypertension:0,heart_disease:0,smoking_history:1,bmi:27,HbA1c_level:5.5,blood_glucose_level:120};
+function setX(x){F.forEach(([k],i)=>el[k].value=x[i]);run()}
+function fwd(x){let a=x.map((v,i)=>(v-M.mu[i])/M.sd[i]);M.layers.forEach((L,l)=>{const o=L.b.map((b,j)=>a.reduce((s,v,i)=>s+v*L.W[i][j],b));a=l<M.layers.length-1?o.map(v=>Math.max(0,v)):o.map(v=>1/(1+Math.exp(-v)))});return a[0]}
+function run(){const x=F.map(([k])=>+el[k].value);F.forEach(([k,t,o])=>{const s=document.getElementById('v_'+k);if(s)s.textContent=el[k].value});
+const p=fwd(x),t=+th.value;pv.textContent=(100*p).toFixed(1)+'%';pb.style.width=100*p+'%';pb.style.background=p>=t?'var(--r)':'var(--g)';thv.textContent=t.toFixed(2);
+verdict.innerHTML=p>=t?'<span style="color:var(--r)">Nguy cơ cao: nên xét nghiệm xác nhận</span>':'<span style="color:var(--g)">Nguy cơ thấp theo ngưỡng đã chọn</span>';
+note.textContent=t>=.45?'Ở ngưỡng 0,5 mô hình dè dặt: ít báo nhầm nhưng bỏ sót khoảng một phần ba ca bệnh. Kéo ngưỡng xuống để ưu tiên phát hiện bệnh.':'Ngưỡng thấp phát hiện nhiều ca bệnh hơn nhưng đổi lại báo nhầm nhiều hơn.'}
+document.querySelectorAll('input,select').forEach(e=>e.oninput=run);
+ex1.onclick=()=>setX(M.pos_examples[0]);ex0.onclick=()=>setX(M.neg_examples[0]);
+stats.innerHTML=`Trên 19.031 hồ sơ kiểm tra ở ngưỡng 0,5: accuracy ${M.test.acc.toFixed(4)}, precision ${M.test.precision.toFixed(3)}, recall ${M.test.recall.toFixed(3)}, F1 ${M.test.f1.toFixed(3)}. Ngưỡng cho F1 tốt nhất trên tập kiểm tra: ${M.test.best_thr.toFixed(2)}.`;
+setX(M.pos_examples[0]);
+</script></div></body></html>

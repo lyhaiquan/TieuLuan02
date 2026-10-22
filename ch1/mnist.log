@@ -1,0 +1,15 @@
+C:\Users\default.LAPTOP-8GICU1NM\AppData\Local\Programs\Python\Python314\Lib\site-packages\sklearn\linear_model\_logistic.py:406: ConvergenceWarning: lbfgs failed to converge after 100 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=100).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+{'model': 'Hồi quy logistic (tuyến tính)', 'era': '1950-60', 'err': 7.4399999999999995, 'sec': 257.8}
+{'model': 'k láng giềng gần nhất (k=3)', 'era': '1960-90', 'err': 2.9499999999999997, 'sec': 16.4}
+{'model': 'SVM nhân RBF', 'era': '1990-2000', 'err': 1.59, 'sec': 501.8}
+{'model': 'MLP 784-128-10 (lan truyền ngược)', 'era': '1986', 'err': 2.37, 'sec': 23.9}
+{'model': 'CNN kiểu LeNet-5', 'era': '1998', 'err': 1.15, 'sec': 104.5}
+saved results_ch1_mnist.json

@@ -1,0 +1,196 @@
+{
+ "rows": [
+  {
+   "model": "Luật chuyên gia: HbA1c ≥ 6,5 hoặc đường huyết ≥ 200",
+   "era": "hệ chuyên gia 1970-80",
+   "accuracy": 0.7649098838736798,
+   "precision": 0.246117303124429,
+   "recall": 0.7946902654867256,
+   "f1": 0.37583705357142855,
+   "auc": null
+  },
+  {
+   "model": "Luật chuyên gia chỉ dùng HbA1c ≥ 6,5",
+   "era": "hệ chuyên gia 1970-80",
+   "accuracy": 0.8075245651831223,
+   "precision": 0.2561942517343905,
+   "recall": 0.6100294985250737,
+   "f1": 0.3608445297504798,
+   "auc": null
+  },
+  {
+   "model": "Hồi quy logistic",
+   "era": "thống kê, ML cổ điển",
+   "accuracy": 0.9598024276180968,
+   "precision": 0.8731942215088283,
+   "recall": 0.6418879056047198,
+   "f1": 0.7398843930635837,
+   "auc": 0.9626644233085991
+  },
+  {
+   "model": "Cây quyết định (độ sâu 5)",
+   "era": "ML cổ điển 1980-90",
+   "accuracy": 0.9714150596395354,
+   "precision": 1.0,
+   "recall": 0.6790560471976401,
+   "f1": 0.808854532677442,
+   "auc": 0.9547165650485357
+  },
+  {
+   "model": "MLP 32-16-8",
+   "era": "học sâu 2010+",
+   "accuracy": 0.9709946928695287,
+   "precision": 0.9711459192085737,
+   "recall": 0.6949852507374631,
+   "f1": 0.8101788170563962,
+   "auc": 0.9775722387161675
+  }
+ ],
+ "raw_shape": [
+  100000,
+  9
+ ],
+ "raw_pos": 8500,
+ "head": [
+  {
+   "gender": "Female",
+   "age": 80.0,
+   "hypertension": 0,
+   "heart_disease": 1,
+   "smoking_history": "never",
+   "bmi": 25.19,
+   "HbA1c_level": 6.6,
+   "blood_glucose_level": 140,
+   "diabetes": 0
+  },
+  {
+   "gender": "Female",
+   "age": 54.0,
+   "hypertension": 0,
+   "heart_disease": 0,
+   "smoking_history": "No Info",
+   "bmi": 27.32,
+   "HbA1c_level": 6.6,
+   "blood_glucose_level": 80,
+   "diabetes": 0
+  },
+  {
+   "gender": "Male",
+   "age": 28.0,
+   "hypertension": 0,
+   "heart_disease": 0,
+   "smoking_history": "never",
+   "bmi": 27.32,
+   "HbA1c_level": 5.7,
+   "blood_glucose_level": 158,
+   "diabetes": 0
+  },
+  {
+   "gender": "Female",
+   "age": 36.0,
+   "hypertension": 0,
+   "heart_disease": 0,
+   "smoking_history": "current",
+   "bmi": 23.45,
+   "HbA1c_level": 5.0,
+   "blood_glucose_level": 155,
+   "diabetes": 0
+  },
+  {
+   "gender": "Male",
+   "age": 76.0,
+   "hypertension": 1,
+   "heart_disease": 1,
+   "smoking_history": "current",
+   "bmi": 20.14,
+   "HbA1c_level": 4.8,
+   "blood_glucose_level": 155,
+   "diabetes": 0
+  }
+ ],
+ "describe": {
+  "age": {
+   "count": 100000.0,
+   "mean": 41.89,
+   "std": 22.52,
+   "min": 0.08,
+   "25%": 24.0,
+   "50%": 43.0,
+   "75%": 60.0,
+   "max": 80.0
+  },
+  "hypertension": {
+   "count": 100000.0,
+   "mean": 0.07,
+   "std": 0.26,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 0.0,
+   "max": 1.0
+  },
+  "heart_disease": {
+   "count": 100000.0,
+   "mean": 0.04,
+   "std": 0.19,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 0.0,
+   "max": 1.0
+  },
+  "bmi": {
+   "count": 100000.0,
+   "mean": 27.32,
+   "std": 6.64,
+   "min": 10.01,
+   "25%": 23.63,
+   "50%": 27.32,
+   "75%": 29.58,
+   "max": 95.69
+  },
+  "HbA1c_level": {
+   "count": 100000.0,
+   "mean": 5.53,
+   "std": 1.07,
+   "min": 3.5,
+   "25%": 4.8,
+   "50%": 5.8,
+   "75%": 6.2,
+   "max": 9.0
+  },
+  "blood_glucose_level": {
+   "count": 100000.0,
+   "mean": 138.06,
+   "std": 40.71,
+   "min": 80.0,
+   "25%": 100.0,
+   "50%": 140.0,
+   "75%": 159.0,
+   "max": 300.0
+  },
+  "diabetes": {
+   "count": 100000.0,
+   "mean": 0.08,
+   "std": 0.28,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 0.0,
+   "max": 1.0
+  }
+ },
+ "smoking_counts": {
+  "No Info": 35816,
+  "never": 35095,
+  "former": 9352,
+  "current": 9286,
+  "not current": 6447,
+  "ever": 4004
+ },
+ "gender_counts": {
+  "Female": 58552,
+  "Male": 41430,
+  "Other": 18
+ }
+}

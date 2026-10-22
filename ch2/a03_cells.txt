@@ -1,0 +1,371 @@
+############################## 01_diabetes_ml_vs_dl.ipynb 31
+--- cell 3
+raw = pd.read_csv(BASE + r"\data\diabetes_prediction_dataset.csv")
+audit = [("Dữ liệu thô ban đầu", "Toàn bộ hồ sơ tải về", 0, len(raw))]
+n0 = len(raw)
+df = raw.copy()
+
+n = len(df); df = df.drop_duplicates()
+audit.append(("1. Khử trùng lặp", "Bản ghi trùng lặp hoàn toàn mọi trường", n - len(df), len(df)))
+
+n = len(df); df = df[df["gender"] != "Other"]
+audit.append(("2. Lọc nhãn giới tính", "Nhóm 'Other' quá ít, không đủ thống kê", n - len(df), len(df)))
+
+n = len(df); df = df[df["age"] >= 1.0]
+audit.append(("3. Lọc tuổi sơ sinh", "age < 1: cơ chế đường huyết khác hẳn người lớn", n - len(df), len(df)))
+
+n = len(df); df = df[(df["bmi"] >= 12.0) & (df["bmi"] <= 80.0)]
+audit.append(("4. Lọc ngoại lai BMI", "BMI ngoài [12, 80] là phi lý sinh học", n - len(df), len(df)))
+
+audit_df = pd.DataFrame(audit, columns=["Bước xử lý", "Tiêu chí", "Loại bỏ", "Còn lại"])
+audit_df["Tỷ lệ giữ lại"] = (audit_df["Còn lại"] / n0 * 100).round(2).astype(str) + "%"
+RESULTS["audit"] = audit_df.to_dict("records")
+audit_df
+--- cell 4
+pos_rate = df["diabetes"].mean()
+print(f"Sau làm sạch: {len(df):,} bản ghi")
+print(f"Dương tính (mắc bệnh): {int(df['diabetes'].sum()):,}  ({pos_rate*100:.2f}%)")
+print(f"Âm tính  (khỏe mạnh) : {int((1-df['diabetes']).sum()):,}  ({(1-pos_rate)*100:.2f}%)")
+print(f"\nTỷ lệ mất cân bằng xấp xỉ 1 : {(1-pos_rate)/pos_rate:.1f}")
+print("\n=> Bẫy Accuracy: một mô hình luôn đoán 'không bệnh' đã đạt "
+      f"{(1-pos_rate)*100:.2f}% accuracy mà không phát hiện được ca bệnh nào.")
+RESULTS["n_clean"] = int(len(df)); RESULTS["pos_rate"] = float(pos_rate)
+--- cell 9
+GENDER = {"Female": 0, "Male": 1}
+SMOKE  = {"No Info": 0, "never": 1, "ever": 2, "not current": 3, "former": 4, "current": 5}
+
+FEATS = ["gender", "age", "hypertension", "heart_disease",
+         "smoking_history", "bmi", "HbA1c_level", "blood_glucose_level"]
+FEAT_VN = ["Giới tính", "Tuổi", "Tăng huyết áp", "Bệnh tim",
+           "Tiền sử hút thuốc", "BMI", "HbA1c", "Đường huyết"]
+
+enc = df.copy()
+enc["gender"] = enc["gender"].map(GENDER)
+enc["smoking_history"] = enc["smoking_history"].map(SMOKE)
+
+X_all = enc[FEATS].to_numpy(dtype=float)
+y_all = enc["diabetes"].to_numpy(dtype=float).reshape(-1, 1)
+
+tr, te = dl.stratified_split(y_all, test_size=0.2, seed=SEED)
+X_tr_raw, X_te_raw = X_all[tr], X_all[te]
+y_tr, y_te = y_all[tr], y_all[te]
+
+scaler = dl.StandardScalerScratch().fit(X_tr_raw)   # fit CHỈ trên Train
+X_tr = scaler.transform(X_tr_raw)
+X_te = scaler.transform(X_te_raw)
+
+print(f"Train : {X_tr.shape}  — dương tính {y_tr.mean()*100:.2f}%")
+print(f"Test  : {X_te.shape}  — dương tính {y_te.mean()*100:.2f}%")
+print("\nTỷ lệ nhãn hai tập lệch nhau", abs(y_tr.mean()-y_te.mean())*100, "điểm phần trăm -> phân tầng thành công.")
+RESULTS["n_train"] = int(len(tr)); RESULTS["n_test"] = int(len(te))
+--- cell 11
+probe = dl.MLPScratch([8, 16, 8, 1], task="binary", lr=0.1, epochs=0, seed=SEED)
+sub = np.random.RandomState(0).choice(len(X_tr), 400, replace=False)
+max_err, errs = dl.gradient_check(probe, X_tr[sub], y_tr[sub], n_samples=25)
+print(f"Sai số tương đối lớn nhất trên 25 trọng số ngẫu nhiên: {max_err:.3e}")
+print(f"Sai số trung vị: {np.median(errs):.3e}")
+print("\n=> Backward viết đúng." if max_err < 1e-5 else "\n=> CẢNH BÁO: backward có lỗi!")
+RESULTS["gradcheck_max_err"] = float(max_err)
+--- cell 13
+ARCHS = [
+    ("Nông    (1 tầng ẩn)", [8, 16, 1]),
+    ("Chuẩn   (bài giảng)", [8, 16, 8, 1]),
+    ("Rộng    (2 tầng ẩn)", [8, 32, 16, 1]),
+    ("Sâu     (3 tầng ẩn)", [8, 32, 16, 8, 1]),
+]
+LR, EPOCHS = 0.1, 1500
+
+arch_rows, arch_models, arch_curves = [], {}, {}
+for name, sizes in ARCHS:
+    t0 = time.time()
+    m = dl.MLPScratch(sizes, task="binary", lr=LR, epochs=EPOCHS, seed=SEED).fit(X_tr, y_tr)
+    dt = time.time() - t0
+    prob = m.predict_proba(X_te)
+    mt = dl.binary_metrics(y_te, prob, 0.5)
+    arch_rows.append({
+        "Kiến trúc": name, "Cấu hình": " → ".join(map(str, sizes)),
+        "Tham số": m.n_params, "Thời gian (s)": round(dt, 2),
+        "Loss cuối": round(m.loss_history[-1], 4),
+        "Accuracy": round(mt["accuracy"], 4), "Recall": round(mt["recall"], 4),
+        "F1": round(mt["f1"], 4), "FN": mt["FN"],
+    })
+    arch_models[name] = m
+    arch_curves[name] = [round(v, 6) for v in m.loss_history[::10]]
+    print(f"{name}  loss={m.loss_history[-1]:.4f}  F1={mt['f1']:.4f}  ({dt:.1f}s)", flush=True)
+
+arch_df = pd.DataFrame(arch_rows)
+RESULTS["arch_survey"] = arch_rows
+RESULTS["arch_curves"] = arch_curves
+arch_df
+--- cell 16
+best_sizes = dict(ARCHS)[best_name]
+abl = []
+
+# --- 1. Bỏ ReLU -----------------------------------------------------------
+m_lin = dl.MLPScratch(best_sizes, "binary", lr=LR, epochs=EPOCHS,
+                      use_relu=False, seed=SEED).fit(X_tr, y_tr)
+mt = dl.binary_metrics(y_te, m_lin.predict_proba(X_te))
+abl.append({"Thí nghiệm": "Bỏ ReLU (mạng tuyến tính)", "Số chiều vào": 8,
+            "Loss cuối": round(m_lin.loss_history[-1], 4),
+            "Accuracy": round(mt["accuracy"], 4), "Recall": round(mt["recall"], 4),
+            "F1": round(mt["f1"], 4), "FN": mt["FN"]})
+
+# chứng minh đại số: gộp toàn bộ trọng số thành một ma trận duy nhất
+W_eq = m_lin.params[0][0].copy(); b_eq = m_lin.params[0][1].copy()
+for W, b in m_lin.params[1:]:
+    b_eq = b_eq @ W + b; W_eq = W_eq @ W
+z_direct = m_lin.forward(X_te)[0]
+z_collapsed = dl.sigmoid(X_te @ W_eq + b_eq)
+print(f"Gộp {len(best_sizes)-1} tầng tuyến tính -> một ma trận W_eq có shape {W_eq.shape}")
+print(f"Sai lệch tối đa giữa mạng gốc và ma trận gộp: {np.max(np.abs(z_direct - z_collapsed)):.3e}")
+RESULTS["linear_collapse_shape"] = list(W_eq.shape)
+RESULTS["linear_collapse_maxdev"] = float(np.max(np.abs(z_direct - z_collapsed)))
+############################## 02_housing_ml_vs_dl.ipynb 25
+--- cell 3
+raw = pd.read_csv(BASE + r"\data\hanoi_housing.csv")
+print("Kích thước thô:", raw.shape)
+
+def to_float(s):
+    "Bóc số thực từ chuỗi kiểu Việt Nam: '86,96 triệu/m²' -> 86.96"
+    if pd.isna(s):
+        return np.nan
+    m = re.search(r"[\d.,]+", str(s))
+    if not m:
+        return np.nan
+    t = m.group(0).replace(".", "").replace(",", ".")   # '1.234,5' -> '1234.5'
+    try:
+        return float(t)
+    except ValueError:
+        return np.nan
+
+def to_rooms(s):
+    "'5 phòng' -> 5 ; 'nhiều hơn 10 phòng' -> 10"
+    if pd.isna(s):
+        return np.nan
+    if "nhiều hơn" in str(s).lower():
+        return 10.0
+    return to_float(s)
+
+d = pd.DataFrame({
+    "area":   raw["Diện tích"].map(to_float),
+    "ppm2":   raw["Giá/m2"].map(lambda s: to_float(s) * (1000.0 if "tỷ" in str(s) else 1.0)),
+    "beds":   raw["Số phòng ngủ"].map(to_rooms),
+    "floors": raw["Số tầng"].map(to_rooms),
+    "quan":   raw["Quận"],
+    "phuong": raw["Huyện"],
+    "loai":   raw["Loại hình nhà ở"],
+    "phaply": raw["Giấy tờ pháp lý"],
+    "ngay":   pd.to_datetime(raw["Ngày"], errors="coerce"),
+})
+d["price"] = d["area"] * d["ppm2"] / 1000.0          # tỷ VNĐ
+
+print(d[["area", "ppm2", "beds", "floors", "price"]].describe().T.round(2).to_string())
+--- cell 11
+scaler = dl.StandardScalerScratch().fit(X_all[tr])
+X_tr, X_te = scaler.transform(X_all[tr]), scaler.transform(X_all[te])
+
+# chuẩn hóa cả biến mục tiêu (thống kê Train) để MSE không phụ thuộc đơn vị
+y_mu, y_sd = float(y_log[tr].mean()), float(y_log[tr].std())
+y_tr = ((y_log[tr] - y_mu) / y_sd).reshape(-1, 1)
+y_te = ((y_log[te] - y_mu) / y_sd).reshape(-1, 1)
+
+price_tr = d["price"].to_numpy()[tr]
+price_te = d["price"].to_numpy()[te]
+
+def to_price(z):
+    "Đảo ngược: chuẩn hóa -> ln(giá) -> giá thật (tỷ VNĐ)"
+    return np.exp(np.asarray(z).reshape(-1) * y_sd + y_mu)
+
+print(f"Train: {X_tr.shape}   Test: {X_te.shape}")
+print(f"Giá trung vị Train {np.median(price_tr):.2f} tỷ | Test {np.median(price_te):.2f} tỷ")
+RESULTS["n_train"] = int(len(tr)); RESULTS["n_test"] = int(len(te))
+--- cell 13
+probe = dl.MLPScratch([X_tr.shape[1], 32, 16, 1], task="regression",
+                      lr=0.05, epochs=0, seed=SEED)
+sub = np.random.RandomState(0).choice(len(X_tr), 400, replace=False)
+max_err, _ = dl.gradient_check(probe, X_tr[sub], y_tr[sub], n_samples=25)
+print(f"Sai số tương đối lớn nhất (chế độ regression): {max_err:.3e}")
+print("=> Backward dùng chung cho hồi quy vẫn chính xác." if max_err < 1e-5 else "=> LỖI!")
+RESULTS["gradcheck_max_err"] = float(max_err)
+--- cell 15
+D_IN = X_tr.shape[1]
+ARCHS = [
+    ("Nông  (1 tầng ẩn)", [D_IN, 32, 1]),
+    ("Chuẩn (2 tầng ẩn)", [D_IN, 32, 16, 1]),
+    ("Sâu   (3 tầng ẩn)", [D_IN, 64, 32, 16, 1]),
+    ("Rộng  (2 tầng ẩn)", [D_IN, 128, 64, 1]),
+]
+LR, EPOCHS, BATCH = 0.02, 120, 1024
+
+arch_rows, arch_models, arch_curves = [], {}, {}
+for name, sizes in ARCHS:
+    t0 = time.time()
+    m = dl.MLPScratch(sizes, "regression", lr=LR, epochs=EPOCHS,
+                      seed=SEED).fit(X_tr, y_tr, batch_size=BATCH)
+    dt = time.time() - t0
+    pz = m.predict_proba(X_te)
+    m_log = dl.regression_metrics(y_te, pz)                      # thang chuẩn hóa
+    p_price = to_price(pz)
+    m_raw = dl.regression_metrics(price_te, p_price)             # thang tỷ VNĐ
+    mape = float(np.mean(np.abs(p_price - price_te) / price_te))
+    arch_rows.append({
+        "Kiến trúc": name, "Cấu hình": " → ".join(map(str, sizes)),
+        "Tham số": m.n_params, "Thời gian (s)": round(dt, 2),
+        "MSE Loss": round(m.loss_history[-1], 5),
+        "R² (log)": round(m_log["r2"], 4), "R² (tỷ VNĐ)": round(m_raw["r2"], 4),
+        "MAE (tỷ)": round(m_raw["mae"], 3), "MAPE": round(mape, 4),
+    })
+    arch_models[name] = m
+    arch_curves[name] = [round(v, 6) for v in m.loss_history]
+    print(f"{name}  R²(log)={m_log['r2']:.4f}  MAE={m_raw['mae']:.3f} tỷ  ({dt:.1f}s)", flush=True)
+
+arch_df = pd.DataFrame(arch_rows)
+RESULTS["arch_survey"] = arch_rows; RESULTS["arch_curves"] = arch_curves
+RESULTS["epoch_step"] = 1
+arch_df
+--- cell 16
+fig, ax = plt.subplots(1, 2, figsize=(12, 3.8))
+cols = ["#2B6CB0", "#C4453C", "#2F855A", "#B7791F"]
+for (name, _), c in zip(ARCHS, cols):
+    ax[0].plot(arch_curves[name], lw=1.4, c=c, label=name.strip())
+ax[0].set_xlabel("Epoch"); ax[0].set_ylabel("MSE Loss (thang chuẩn hóa)")
+ax[0].set_title(f"A. Hội tụ — mini-batch {BATCH}, {EPOCHS} epoch"); ax[0].legend(fontsize=8)
+
+x = np.arange(len(ARCHS)); w = 0.35
+ax2 = ax[1]; ax2b = ax2.twinx()
+ax2.bar(x - w/2, arch_df["R² (log)"], w, color="#2B6CB0", label="R² (log)")
+ax2b.bar(x + w/2, arch_df["MAE (tỷ)"], w, color="#C4453C", label="MAE (tỷ VNĐ)")
+ax2.set_xticks(x); ax2.set_xticklabels([n.split("(")[0].strip() for n, _ in ARCHS], fontsize=8)
+ax2.set_ylabel("R² (log)", color="#2B6CB0"); ax2b.set_ylabel("MAE (tỷ VNĐ)", color="#C4453C")
+ax2b.grid(False); ax2.set_title("B. Độ chính xác vs sai số tiền thật")
+for i, (r2, mae) in enumerate(zip(arch_df["R² (log)"], arch_df["MAE (tỷ)"])):
+    ax2.text(i - w/2, r2, f"{r2:.3f}", ha="center", va="bottom", fontsize=7)
+    ax2b.text(i + w/2, mae, f"{mae:.2f}", ha="center", va="bottom", fontsize=7)
+
+plt.tight_layout(); plt.savefig(BASE + r"\figs\s2_arch.png", bbox_inches="tight"); plt.show()
+
+best_name = arch_df.loc[arch_df["R² (log)"].idxmax(), "Kiến trúc"]
+best_dl = arch_models[best_name]
+print("Kiến trúc thắng cuộc:", best_name.strip())
+RESULTS["best_arch"] = best_name.strip()
+############################## 03_comments_ml_vs_dl.ipynb 30
+--- cell 3
+raw = pd.read_csv(BASE + r"\data\youtube_comments.csv")
+print("Kích thước thô:", raw.shape)
+d = raw.copy()
+audit = [("Dữ liệu thô ban đầu", "Toàn bộ bình luận tải về", 0, len(d))]
+n0 = len(d)
+
+n = len(d); d = d.dropna(subset=["Comment", "Sentiment"])
+audit.append(("1. Lọc khuyết thiếu", "Thiếu nội dung bình luận hoặc nhãn cảm xúc", n - len(d), len(d)))
+
+n = len(d); d = d.drop_duplicates(subset=["Comment"])
+audit.append(("2. Khử trùng lặp", "Bình luận trùng nhau từng ký tự (spam / trích lại)", n - len(d), len(d)))
+
+d["n_words"] = d["Comment"].str.split().str.len()
+n = len(d); d = d[d["n_words"] >= 3]
+audit.append(("3. Lọc bình luận quá ngắn", "Dưới 3 từ: không đủ tín hiệu ngữ nghĩa", n - len(d), len(d)))
+
+n = len(d); d = d[d["Sentiment"].isin(CLASSES)]
+audit.append(("4. Lọc nhãn hợp lệ", "Chỉ giữ 3 nhãn negative / neutral / positive", n - len(d), len(d)))
+
+d = d.reset_index(drop=True)
+audit_df = pd.DataFrame(audit, columns=["Bước xử lý", "Tiêu chí", "Loại bỏ", "Còn lại"])
+audit_df["Tỷ lệ giữ lại"] = (audit_df["Còn lại"] / n0 * 100).round(2).astype(str) + "%"
+RESULTS["audit"] = audit_df.to_dict("records")
+RESULTS["n_clean"] = int(len(d))
+audit_df
+--- cell 8
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+label2id = {c: i for i, c in enumerate(CLASSES)}
+y_all = d["Sentiment"].map(label2id).to_numpy()
+texts = d["Comment"].astype(str).to_numpy()
+
+tr, te = dl.stratified_split(y_all, test_size=0.2, seed=SEED)
+print(f"Train {len(tr):,} | Test {len(te):,}")
+for i, vn in enumerate(CLASS_VN):
+    print(f"  {vn:11s}: Train {np.mean(y_all[tr]==i)*100:5.2f}%  |  Test {np.mean(y_all[te]==i)*100:5.2f}%")
+
+vec = TfidfVectorizer(max_features=1000, ngram_range=(1, 2),
+                      stop_words="english", min_df=3, sublinear_tf=True)
+X_tr = vec.fit_transform(texts[tr]).toarray()      # fit CHỈ trên Train
+X_te = vec.transform(texts[te]).toarray()
+y_tr, y_te = y_all[tr], y_all[te]
+Y_tr, Y_te = dl.one_hot(y_tr, 3), dl.one_hot(y_te, 3)
+
+sparsity = float(np.mean(X_tr == 0))
+print(f"\nMa trận đặc trưng: {X_tr.shape} — {sparsity*100:.2f}% phần tử bằng 0")
+RESULTS["n_train"] = int(len(tr)); RESULTS["n_test"] = int(len(te))
+RESULTS["n_features"] = int(X_tr.shape[1]); RESULTS["sparsity"] = round(sparsity, 4)
+--- cell 11
+probe = dl.MLPScratch([X_tr.shape[1], 64, 32, 3], task="multiclass",
+                      lr=0.1, epochs=0, seed=SEED)
+sub = np.random.RandomState(0).choice(len(X_tr), 300, replace=False)
+max_err, _ = dl.gradient_check(probe, X_tr[sub], Y_tr[sub], n_samples=25)
+print(f"Sai số tương đối lớn nhất (chế độ multiclass): {max_err:.3e}")
+print("=> Softmax + Categorical Cross-Entropy: backward chính xác."
+      if max_err < 1e-5 else "=> LỖI!")
+RESULTS["gradcheck_max_err"] = float(max_err)
+
+# minh họa: softmax luôn cho tổng bằng 1
+z_demo = np.array([[2.0, 0.5, -1.0], [800.0, 799.0, 1.0]])
+p_demo = dl.softmax(z_demo)
+print("\nz =", z_demo[0], "-> p =", p_demo[0].round(4), "| tổng =", p_demo[0].sum())
+print("z =", z_demo[1], "-> p =", p_demo[1].round(4), "| tổng =", p_demo[1].sum())
+print("   (hàng thứ hai có z = 800; công thức ngây thơ e^800 đã tràn thành inf)")
+--- cell 13
+D_IN = X_tr.shape[1]
+ARCHS = [
+    ("Hẹp   (1 tầng ẩn)", [D_IN, 32, 3]),
+    ("Chuẩn (2 tầng ẩn)", [D_IN, 64, 32, 3]),
+    ("Rộng  (2 tầng ẩn)", [D_IN, 256, 64, 3]),
+    ("Sâu   (3 tầng ẩn)", [D_IN, 128, 64, 32, 3]),
+]
+LR, EPOCHS, BATCH = 0.15, 200, 256
+
+arch_rows, arch_models, arch_curves = [], {}, {}
+for name, sizes in ARCHS:
+    t0 = time.time()
+    m = dl.MLPScratch(sizes, "multiclass", lr=LR, epochs=EPOCHS,
+                      seed=SEED).fit(X_tr, Y_tr, batch_size=BATCH)
+    dt = time.time() - t0
+    mt = dl.multiclass_metrics(y_te, m.predict_proba(X_te), 3)
+    arch_rows.append({
+        "Kiến trúc": name, "Cấu hình": " → ".join(map(str, sizes)),
+        "Tham số": m.n_params, "Thời gian (s)": round(dt, 1),
+        "Loss cuối": round(m.loss_history[-1], 4),
+        "Accuracy": round(mt["accuracy"], 4),
+        "Macro F1": round(mt["macro_f1"], 4),
+        "Recall Tiêu cực": round(mt["per_class"][0]["recall"], 4),
+        "Recall Trung tính": round(mt["per_class"][1]["recall"], 4),
+    })
+    arch_models[name] = m
+    arch_curves[name] = [round(v, 6) for v in m.loss_history]
+    print(f"{name}  MacroF1={mt['macro_f1']:.4f}  Acc={mt['accuracy']:.4f}  ({dt:.1f}s)", flush=True)
+
+arch_df = pd.DataFrame(arch_rows)
+RESULTS["arch_survey"] = arch_rows; RESULTS["arch_curves"] = arch_curves
+RESULTS["epoch_step"] = 1
+arch_df
+--- cell 14
+fig, ax = plt.subplots(1, 2, figsize=(12, 3.8))
+cols = ["#2B6CB0", "#C4453C", "#2F855A", "#B7791F"]
+for (name, _), c in zip(ARCHS, cols):
+    ax[0].plot(arch_curves[name], lw=1.5, c=c, label=name.strip())
+ax[0].set_xlabel("Epoch"); ax[0].set_ylabel("Categorical Cross-Entropy Loss")
+ax[0].set_title(f"A. Hội tụ — mini-batch {BATCH}, {EPOCHS} epoch"); ax[0].legend(fontsize=8)
+
+x = np.arange(len(ARCHS)); w = 0.27
+ax[1].bar(x - w, arch_df["Accuracy"], w, label="Accuracy", color="#CBD5E0")
+ax[1].bar(x,     arch_df["Macro F1"], w, label="Macro F1", color="#2B6CB0")
+ax[1].bar(x + w, arch_df["Recall Tiêu cực"], w, label="Recall lớp Tiêu cực", color="#C4453C")
+ax[1].set_xticks(x); ax[1].set_xticklabels([n.split("(")[0].strip() for n, _ in ARCHS], fontsize=8)
+ax[1].set_ylim(0, 1.0); ax[1].legend(fontsize=7.5)
+ax[1].set_title("B. Accuracy che giấu điều gì?")
+plt.tight_layout(); plt.savefig(BASE + r"\figs\s3_arch.png", bbox_inches="tight"); plt.show()
+
+best_name = arch_df.loc[arch_df["Macro F1"].idxmax(), "Kiến trúc"]
+best_dl = arch_models[best_name]
+print("Kiến trúc thắng cuộc (theo Macro F1):", best_name.strip())
+RESULTS["best_arch"] = best_name.strip()

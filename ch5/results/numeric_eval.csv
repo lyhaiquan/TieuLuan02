@@ -1,0 +1,361 @@
+﻿q,metric,gold,scope,asset,A_pred,A_src,A_ok,B_pred,B_ok,B_kind,B_metric
+Lợi suất của vàng năm 2020 là bao nhiêu?,return,0.24309608106653813,năm,GOLD,0.243,stats:GOLD:2020,True,0.24309608106653813,True,numeric,return
+Biến động của vàng năm 2020 là bao nhiêu?,volatility,0.2172090854994993,năm,GOLD,0.217,stats:GOLD:2020,True,0.2172090854994993,True,numeric,volatility
+Mức sụt sâu nhất của vàng năm 2020 là bao nhiêu?,drawdown,-0.14192517881113165,năm,GOLD,-0.142,stats:GOLD:2020,True,-0.14192517881113165,True,numeric,drawdown
+Lợi suất của vàng quý 1/2020 là bao nhiêu?,return,0.03863563424995897,quý,GOLD,0.243,stats:GOLD:2020,False,0.03863563424995897,True,numeric,return
+Biến động của vàng quý 1/2020 là bao nhiêu?,volatility,0.2833051942351249,quý,GOLD,0.217,stats:GOLD:2020,False,0.2833051942351249,True,numeric,volatility
+Lợi suất của vàng quý 2/2020 là bao nhiêu?,return,0.14085670745526158,quý,GOLD,0.243,stats:GOLD:2020,False,0.14085670745526158,True,numeric,return
+Biến động của vàng quý 2/2020 là bao nhiêu?,volatility,0.201975919001126,quý,GOLD,0.217,stats:GOLD:2020,False,0.201975919001126,True,numeric,volatility
+Lợi suất của vàng quý 3/2020 là bao nhiêu?,return,0.06494745435154003,quý,GOLD,0.243,stats:GOLD:2020,False,0.06494745435154003,True,numeric,return
+Biến động của vàng quý 3/2020 là bao nhiêu?,volatility,0.19713986499329245,quý,GOLD,0.217,stats:GOLD:2020,False,0.19713986499329245,True,numeric,volatility
+Lợi suất của vàng quý 4/2020 là bao nhiêu?,return,-0.011063023901268565,quý,GOLD,0.243,stats:GOLD:2020,False,-0.011063023901268565,True,numeric,return
+Biến động của vàng quý 4/2020 là bao nhiêu?,volatility,0.18035707190497435,quý,GOLD,0.217,stats:GOLD:2020,False,0.18035707190497435,True,numeric,volatility
+Lợi suất của vàng năm 2021 là bao nhiêu?,return,-0.06061851509295402,năm,GOLD,-0.061,stats:GOLD:2021,True,-0.06061851509295402,True,numeric,return
+Biến động của vàng năm 2021 là bao nhiêu?,volatility,0.14829503682486025,năm,GOLD,0.14800000000000002,stats:GOLD:2021,True,0.14829503682486025,True,numeric,volatility
+Mức sụt sâu nhất của vàng năm 2021 là bao nhiêu?,drawdown,-0.14142448882588832,năm,GOLD,-0.141,stats:GOLD:2021,True,-0.14142448882588832,True,numeric,drawdown
+Lợi suất của vàng quý 1/2021 là bao nhiêu?,return,-0.11959310062548323,quý,GOLD,-0.061,stats:GOLD:2021,False,-0.11959310062548323,True,numeric,return
+Biến động của vàng quý 1/2021 là bao nhiêu?,volatility,0.1773171770762649,quý,GOLD,0.14800000000000002,stats:GOLD:2021,False,0.1773171770762649,True,numeric,volatility
+Lợi suất của vàng quý 2/2021 là bao nhiêu?,return,0.024994185698718585,quý,GOLD,-0.061,stats:GOLD:2021,False,0.024994185698718585,True,numeric,return
+Biến động của vàng quý 2/2021 là bao nhiêu?,volatility,0.14743564613563268,quý,GOLD,0.14800000000000002,stats:GOLD:2021,True,0.14743564613563268,True,numeric,volatility
+Lợi suất của vàng quý 3/2021 là bao nhiêu?,return,-0.0111436561706445,quý,GOLD,-0.061,stats:GOLD:2021,False,-0.0111436561706445,True,numeric,return
+Biến động của vàng quý 3/2021 là bao nhiêu?,volatility,0.13960756528592422,quý,GOLD,0.14800000000000002,stats:GOLD:2021,False,0.13960756528592422,True,numeric,volatility
+Lợi suất của vàng quý 4/2021 là bao nhiêu?,return,0.039922628638080715,quý,GOLD,-0.061,stats:GOLD:2021,False,0.039922628638080715,True,numeric,return
+Biến động của vàng quý 4/2021 là bao nhiêu?,volatility,0.12792780471076953,quý,GOLD,0.14800000000000002,stats:GOLD:2021,False,0.12792780471076953,True,numeric,volatility
+Lợi suất của vàng năm 2022 là bao nhiêu?,return,0.014499181123227345,năm,GOLD,0.013999999999999999,stats:GOLD:2022,True,0.014499181123227345,True,numeric,return
+Biến động của vàng năm 2022 là bao nhiêu?,volatility,0.15697783857865555,năm,GOLD,0.157,stats:GOLD:2022,True,0.15697783857865555,True,numeric,volatility
+Mức sụt sâu nhất của vàng năm 2022 là bao nhiêu?,drawdown,-0.2018303795620141,năm,GOLD,-0.20199999999999999,stats:GOLD:2022,True,-0.2018303795620141,True,numeric,drawdown
+Lợi suất của vàng quý 1/2022 là bao nhiêu?,return,0.08282871929788516,quý,GOLD,0.013999999999999999,stats:GOLD:2022,False,0.08282871929788516,True,numeric,return
+Biến động của vàng quý 1/2022 là bao nhiêu?,volatility,0.17147336366799826,quý,GOLD,0.157,stats:GOLD:2022,False,0.17147336366799826,True,numeric,volatility
+Lợi suất của vàng quý 2/2022 là bao nhiêu?,return,-0.060508346050974215,quý,GOLD,0.013999999999999999,stats:GOLD:2022,False,-0.060508346050974215,True,numeric,return
+Biến động của vàng quý 2/2022 là bao nhiêu?,volatility,0.1373226751959076,quý,GOLD,0.157,stats:GOLD:2022,False,0.1373226751959076,True,numeric,volatility
+Lợi suất của vàng quý 3/2022 là bao nhiêu?,return,-0.0718845406605606,quý,GOLD,0.013999999999999999,stats:GOLD:2022,False,-0.0718845406605606,True,numeric,return
+Biến động của vàng quý 3/2022 là bao nhiêu?,volatility,0.13841358738660248,quý,GOLD,0.157,stats:GOLD:2022,False,0.13841358738660248,True,numeric,volatility
+Lợi suất của vàng quý 4/2022 là bao nhiêu?,return,0.0729729442842979,quý,GOLD,0.013999999999999999,stats:GOLD:2022,False,0.0729729442842979,True,numeric,return
+Biến động của vàng quý 4/2022 là bao nhiêu?,volatility,0.1737694860649557,quý,GOLD,0.157,stats:GOLD:2022,False,0.1737694860649557,True,numeric,volatility
+Lợi suất của vàng năm 2023 là bao nhiêu?,return,0.12225777380802594,năm,GOLD,0.122,stats:GOLD:2023,True,0.12225777380802594,True,numeric,return
+Biến động của vàng năm 2023 là bao nhiêu?,volatility,0.13387395512049358,năm,GOLD,0.134,stats:GOLD:2023,True,0.13387395512049358,True,numeric,volatility
+Mức sụt sâu nhất của vàng năm 2023 là bao nhiêu?,drawdown,-0.10891662580237615,năm,GOLD,-0.109,stats:GOLD:2023,True,-0.10891662580237615,True,numeric,drawdown
+Lợi suất của vàng quý 1/2023 là bao nhiêu?,return,0.06657278914434483,quý,GOLD,0.122,stats:GOLD:2023,False,0.06657278914434483,True,numeric,return
+Biến động của vàng quý 1/2023 là bao nhiêu?,volatility,0.15794284871717001,quý,GOLD,0.134,stats:GOLD:2023,False,0.15794284871717001,True,numeric,volatility
+Lợi suất của vàng quý 2/2023 là bao nhiêu?,return,-0.03549290098653979,quý,GOLD,0.122,stats:GOLD:2023,False,-0.03549290098653979,True,numeric,return
+Biến động của vàng quý 2/2023 là bao nhiêu?,volatility,0.1310078244810977,quý,GOLD,0.134,stats:GOLD:2023,True,0.1310078244810977,True,numeric,volatility
+Lợi suất của vàng quý 3/2023 là bao nhiêu?,return,-0.032858266086583376,quý,GOLD,0.122,stats:GOLD:2023,False,-0.032858266086583376,True,numeric,return
+Biến động của vàng quý 3/2023 là bao nhiêu?,volatility,0.09205907168301783,quý,GOLD,0.134,stats:GOLD:2023,False,0.09205907168301783,True,numeric,volatility
+Lợi suất của vàng quý 4/2023 là bao nhiêu?,return,0.12158948873605291,quý,GOLD,0.122,stats:GOLD:2023,True,0.12158948873605291,True,numeric,return
+Biến động của vàng quý 4/2023 là bao nhiêu?,volatility,0.14276002107837885,quý,GOLD,0.134,stats:GOLD:2023,False,0.14276002107837885,True,numeric,volatility
+Lợi suất của vàng năm 2024 là bao nhiêu?,return,0.2737533155155649,năm,GOLD,0.27399999999999997,stats:GOLD:2024,True,0.2737533155155649,True,numeric,return
+Biến động của vàng năm 2024 là bao nhiêu?,volatility,0.15375022965559004,năm,GOLD,0.154,stats:GOLD:2024,True,0.15375022965559004,True,numeric,volatility
+Mức sụt sâu nhất của vàng năm 2024 là bao nhiêu?,drawdown,-0.08236930418092558,năm,GOLD,-0.08199999999999999,stats:GOLD:2024,True,-0.08236930418092558,True,numeric,drawdown
+Lợi suất của vàng quý 1/2024 là bao nhiêu?,return,0.06945114632118199,quý,GOLD,0.27399999999999997,stats:GOLD:2024,False,0.06945114632118199,True,numeric,return
+Biến động của vàng quý 1/2024 là bao nhiêu?,volatility,0.11623768787404222,quý,GOLD,0.154,stats:GOLD:2024,False,0.11623768787404222,True,numeric,volatility
+Lợi suất của vàng quý 2/2024 là bao nhiêu?,return,0.03655132534249028,quý,GOLD,0.27399999999999997,stats:GOLD:2024,False,0.03655132534249028,True,numeric,return
+Biến động của vàng quý 2/2024 là bao nhiêu?,volatility,0.17219630304551745,quý,GOLD,0.154,stats:GOLD:2024,False,0.17219630304551745,True,numeric,volatility
+Lợi suất của vàng quý 3/2024 là bao nhiêu?,return,0.13703023360633582,quý,GOLD,0.27399999999999997,stats:GOLD:2024,False,0.13703023360633582,True,numeric,return
+Biến động của vàng quý 3/2024 là bao nhiêu?,volatility,0.1501905116703989,quý,GOLD,0.154,stats:GOLD:2024,True,0.1501905116703989,True,numeric,volatility
+Lợi suất của vàng quý 4/2024 là bao nhiêu?,return,-0.018325111672803818,quý,GOLD,0.27399999999999997,stats:GOLD:2024,False,-0.018325111672803818,True,numeric,return
+Biến động của vàng quý 4/2024 là bao nhiêu?,volatility,0.1684653245994927,quý,GOLD,0.154,stats:GOLD:2024,False,0.1684653245994927,True,numeric,volatility
+Lợi suất của vàng năm 2025 là bao nhiêu?,return,0.6264893584324653,năm,GOLD,0.626,stats:GOLD:2025,True,0.6264893584324653,True,numeric,return
+Biến động của vàng năm 2025 là bao nhiêu?,volatility,0.2091796717516132,năm,GOLD,0.209,stats:GOLD:2025,True,0.2091796717516132,True,numeric,volatility
+Mức sụt sâu nhất của vàng năm 2025 là bao nhiêu?,drawdown,-0.09150339755003645,năm,GOLD,-0.092,stats:GOLD:2025,True,-0.09150339755003645,True,numeric,drawdown
+Lợi suất của vàng quý 1/2025 là bao nhiêu?,return,0.1700262453458692,quý,GOLD,0.626,stats:GOLD:2025,False,0.1700262453458692,True,numeric,return
+Biến động của vàng quý 1/2025 là bao nhiêu?,volatility,0.13631009676700945,quý,GOLD,0.209,stats:GOLD:2025,False,0.13631009676700945,True,numeric,volatility
+Lợi suất của vàng quý 2/2025 là bao nhiêu?,return,0.05139858587790047,quý,GOLD,0.626,stats:GOLD:2025,False,0.05139858587790047,True,numeric,return
+Biến động của vàng quý 2/2025 là bao nhiêu?,volatility,0.2685800073381556,quý,GOLD,0.209,stats:GOLD:2025,False,0.2685800073381556,True,numeric,volatility
+Lợi suất của vàng quý 3/2025 là bao nhiêu?,return,0.15624810278656875,quý,GOLD,0.626,stats:GOLD:2025,False,0.15624810278656875,True,numeric,return
+Biến động của vàng quý 3/2025 là bao nhiêu?,volatility,0.14545333117676282,quý,GOLD,0.209,stats:GOLD:2025,False,0.14545333117676282,True,numeric,volatility
+Lợi suất của vàng quý 4/2025 là bao nhiêu?,return,0.1138165741260424,quý,GOLD,0.626,stats:GOLD:2025,False,0.1138165741260424,True,numeric,return
+Biến động của vàng quý 4/2025 là bao nhiêu?,volatility,0.25753089823271397,quý,GOLD,0.209,stats:GOLD:2025,False,0.25753089823271397,True,numeric,volatility
+Lợi suất của bạc năm 2020 là bao nhiêu?,return,0.4656574259094941,năm,SILVER,0.466,stats:SILVER:2020,True,0.4656574259094941,True,numeric,return
+Biến động của bạc năm 2020 là bao nhiêu?,volatility,0.4649390841156943,năm,SILVER,0.465,stats:SILVER:2020,True,0.4649390841156943,True,numeric,volatility
+Mức sụt sâu nhất của bạc năm 2020 là bao nhiêu?,drawdown,-0.3780475070120435,năm,SILVER,-0.37799999999999995,stats:SILVER:2020,True,-0.3780475070120435,True,numeric,drawdown
+Lợi suất của bạc quý 1/2020 là bao nhiêu?,return,-0.2152955647295708,quý,SILVER,0.466,stats:SILVER:2020,False,-0.2152955647295708,True,numeric,return
+Biến động của bạc quý 1/2020 là bao nhiêu?,volatility,0.49940323694848104,quý,SILVER,0.465,stats:SILVER:2020,False,0.49940323694848104,True,numeric,volatility
+Lợi suất của bạc quý 2/2020 là bao nhiêu?,return,0.33139457443806264,quý,SILVER,0.466,stats:SILVER:2020,False,0.33139457443806264,True,numeric,return
+Biến động của bạc quý 2/2020 là bao nhiêu?,volatility,0.36405823848983615,quý,SILVER,0.465,stats:SILVER:2020,False,0.36405823848983615,True,numeric,volatility
+Lợi suất của bạc quý 3/2020 là bao nhiêu?,return,0.29228485710505003,quý,SILVER,0.466,stats:SILVER:2020,False,0.29228485710505003,True,numeric,return
+Biến động của bạc quý 3/2020 là bao nhiêu?,volatility,0.5846605225328346,quý,SILVER,0.465,stats:SILVER:2020,False,0.5846605225328346,True,numeric,volatility
+Lợi suất của bạc quý 4/2020 là bao nhiêu?,return,0.08841399862820376,quý,SILVER,0.466,stats:SILVER:2020,False,0.08841399862820376,True,numeric,return
+Biến động của bạc quý 4/2020 là bao nhiêu?,volatility,0.3783460042389894,quý,SILVER,0.465,stats:SILVER:2020,False,0.3783460042389894,True,numeric,volatility
+Lợi suất của bạc năm 2021 là bao nhiêu?,return,-0.14499344759621935,năm,SILVER,-0.145,stats:SILVER:2021,True,-0.14499344759621935,True,numeric,return
+Biến động của bạc năm 2021 là bao nhiêu?,volatility,0.30961026314366386,năm,SILVER,0.31,stats:SILVER:2021,True,0.30961026314366386,True,numeric,volatility
+Mức sụt sâu nhất của bạc năm 2021 là bao nhiêu?,drawdown,-0.27005241477999875,năm,SILVER,-0.27,stats:SILVER:2021,True,-0.27005241477999875,True,numeric,drawdown
+Lợi suất của bạc quý 1/2021 là bao nhiêu?,return,-0.10141475436630043,quý,SILVER,-0.145,stats:SILVER:2021,False,-0.10141475436630043,True,numeric,return
+Biến động của bạc quý 1/2021 là bao nhiêu?,volatility,0.44708900578283206,quý,SILVER,0.31,stats:SILVER:2021,False,0.44708900578283206,True,numeric,volatility
+Lợi suất của bạc quý 2/2021 là bao nhiêu?,return,0.049328312650054995,quý,SILVER,-0.145,stats:SILVER:2021,False,0.049328312650054995,True,numeric,return
+Biến động của bạc quý 2/2021 là bao nhiêu?,volatility,0.2569793947774669,quý,SILVER,0.31,stats:SILVER:2021,False,0.2569793947774669,True,numeric,volatility
+Lợi suất của bạc quý 3/2021 là bao nhiêu?,return,-0.15547462074302842,quý,SILVER,-0.145,stats:SILVER:2021,False,-0.15547462074302842,True,numeric,return
+Biến động của bạc quý 3/2021 là bao nhiêu?,volatility,0.27033359626370757,quý,SILVER,0.31,stats:SILVER:2021,False,0.27033359626370757,True,numeric,volatility
+Lợi suất của bạc quý 4/2021 là bao nhiêu?,return,0.036339354855218886,quý,SILVER,-0.145,stats:SILVER:2021,False,0.036339354855218886,True,numeric,return
+Biến động của bạc quý 4/2021 là bao nhiêu?,volatility,0.22941660959037719,quý,SILVER,0.31,stats:SILVER:2021,False,0.22941660959037719,True,numeric,volatility
+Lợi suất của bạc năm 2022 là bao nhiêu?,return,0.04703811115079981,năm,SILVER,0.047,stats:SILVER:2022,True,0.04703811115079981,True,numeric,return
+Biến động của bạc năm 2022 là bao nhiêu?,volatility,0.31786852166472335,năm,SILVER,0.318,stats:SILVER:2022,True,0.31786852166472335,True,numeric,volatility
+Mức sụt sâu nhất của bạc năm 2022 là bao nhiêu?,drawdown,-0.34725527088776553,năm,SILVER,-0.34700000000000003,stats:SILVER:2022,True,-0.34725527088776553,True,numeric,drawdown
+Lợi suất của bạc quý 1/2022 là bao nhiêu?,return,0.10228167094111362,quý,SILVER,0.047,stats:SILVER:2022,False,0.10228167094111362,True,numeric,return
+Biến động của bạc quý 1/2022 là bao nhiêu?,volatility,0.31942260804100225,quý,SILVER,0.318,stats:SILVER:2022,True,0.31942260804100225,True,numeric,volatility
+Lợi suất của bạc quý 2/2022 là bao nhiêu?,return,-0.17693371379166623,quý,SILVER,0.047,stats:SILVER:2022,False,-0.17693371379166623,True,numeric,return
+Biến động của bạc quý 2/2022 là bao nhiêu?,volatility,0.23729923685912704,quý,SILVER,0.318,stats:SILVER:2022,False,0.23729923685912704,True,numeric,volatility
+Lợi suất của bạc quý 3/2022 là bao nhiêu?,return,-0.03250502799559918,quý,SILVER,0.047,stats:SILVER:2022,False,-0.03250502799559918,True,numeric,return
+Biến động của bạc quý 3/2022 là bao nhiêu?,volatility,0.314225765126814,quý,SILVER,0.318,stats:SILVER:2022,True,0.314225765126814,True,numeric,volatility
+Lợi suất của bạc quý 4/2022 là bao nhiêu?,return,0.16292219692290244,quý,SILVER,0.047,stats:SILVER:2022,False,0.16292219692290244,True,numeric,return
+Biến động của bạc quý 4/2022 là bao nhiêu?,volatility,0.3455045697734385,quý,SILVER,0.318,stats:SILVER:2022,False,0.3455045697734385,True,numeric,volatility
+Lợi suất của bạc năm 2023 là bao nhiêu?,return,-0.008562258375618192,năm,SILVER,-0.009000000000000001,stats:SILVER:2023,True,-0.008562258375618192,True,numeric,return
+Biến động của bạc năm 2023 là bao nhiêu?,volatility,0.25889290429291323,năm,SILVER,0.259,stats:SILVER:2023,True,0.25889290429291323,True,numeric,volatility
+Mức sụt sâu nhất của bạc năm 2023 là bao nhiêu?,drawdown,-0.19923181505890408,năm,SILVER,-0.19899999999999998,stats:SILVER:2023,True,-0.19923181505890408,True,numeric,drawdown
+Lợi suất của bạc quý 1/2023 là bao nhiêu?,return,0.0007066045285952782,quý,SILVER,-0.009000000000000001,stats:SILVER:2023,False,0.0007066045285952782,True,numeric,return
+Biến động của bạc quý 1/2023 là bao nhiêu?,volatility,0.2774845442264549,quý,SILVER,0.259,stats:SILVER:2023,False,0.2774845442264549,True,numeric,volatility
+Lợi suất của bạc quý 2/2023 là bao nhiêu?,return,-0.04724115615553537,quý,SILVER,-0.009000000000000001,stats:SILVER:2023,False,-0.04724115615553537,True,numeric,return
+Biến động của bạc quý 2/2023 là bao nhiêu?,volatility,0.24303902413696102,quý,SILVER,0.259,stats:SILVER:2023,False,0.24303902413696102,True,numeric,volatility
+Lợi suất của bạc quý 3/2023 là bao nhiêu?,return,-0.028825989258001616,quý,SILVER,-0.009000000000000001,stats:SILVER:2023,False,-0.028825989258001616,True,numeric,return
+Biến động của bạc quý 3/2023 là bao nhiêu?,volatility,0.2359624108252779,quý,SILVER,0.259,stats:SILVER:2023,False,0.2359624108252779,True,numeric,volatility
+Lợi suất của bạc quý 4/2023 là bao nhiêu?,return,0.12418701940420207,quý,SILVER,-0.009000000000000001,stats:SILVER:2023,False,0.12418701940420207,True,numeric,return
+Biến động của bạc quý 4/2023 là bao nhiêu?,volatility,0.26943437608088666,quý,SILVER,0.259,stats:SILVER:2023,False,0.26943437608088666,True,numeric,volatility
+Lợi suất của bạc năm 2024 là bao nhiêu?,return,0.21939918155912985,năm,SILVER,0.21899999999999997,stats:SILVER:2024,True,0.21939918155912985,True,numeric,return
+Biến động của bạc năm 2024 là bao nhiêu?,volatility,0.31249334342364476,năm,SILVER,0.312,stats:SILVER:2024,True,0.31249334342364476,True,numeric,volatility
+Mức sụt sâu nhất của bạc năm 2024 là bao nhiêu?,drawdown,-0.16913096181272536,năm,SILVER,-0.16899999999999998,stats:SILVER:2024,True,-0.16913096181272536,True,numeric,drawdown
+Lợi suất của bạc quý 1/2024 là bao nhiêu?,return,0.04483213636148475,quý,SILVER,0.21899999999999997,stats:SILVER:2024,False,0.04483213636148475,True,numeric,return
+Biến động của bạc quý 1/2024 là bao nhiêu?,volatility,0.21624557871935915,quý,SILVER,0.312,stats:SILVER:2024,False,0.21624557871935915,True,numeric,volatility
+Lợi suất của bạc quý 2/2024 là bao nhiêu?,return,0.17163576811367776,quý,SILVER,0.21899999999999997,stats:SILVER:2024,False,0.17163576811367776,True,numeric,return
+Biến động của bạc quý 2/2024 là bao nhiêu?,volatility,0.38944903577522233,quý,SILVER,0.312,stats:SILVER:2024,False,0.38944903577522233,True,numeric,volatility
+Lợi suất của bạc quý 3/2024 là bao nhiêu?,return,0.06361776003314246,quý,SILVER,0.21899999999999997,stats:SILVER:2024,False,0.06361776003314246,True,numeric,return
+Biến động của bạc quý 3/2024 là bao nhiêu?,volatility,0.3236375853650354,quý,SILVER,0.312,stats:SILVER:2024,False,0.3236375853650354,True,numeric,volatility
+Lợi suất của bạc quý 4/2024 là bao nhiêu?,return,-0.07966287756647428,quý,SILVER,0.21899999999999997,stats:SILVER:2024,False,-0.07966287756647428,True,numeric,return
+Biến động của bạc quý 4/2024 là bao nhiêu?,volatility,0.30488871209849316,quý,SILVER,0.312,stats:SILVER:2024,False,0.30488871209849316,True,numeric,volatility
+Lợi suất của bạc năm 2025 là bao nhiêu?,return,1.3676322766764333,năm,SILVER,1.368,stats:SILVER:2025,True,1.3676322766764333,True,numeric,return
+Biến động của bạc năm 2025 là bao nhiêu?,volatility,0.37580583959180003,năm,SILVER,0.376,stats:SILVER:2025,True,0.37580583959180003,True,numeric,volatility
+Mức sụt sâu nhất của bạc năm 2025 là bao nhiêu?,drawdown,-0.16565894614135324,năm,SILVER,-0.166,stats:SILVER:2025,True,-0.16565894614135324,True,numeric,drawdown
+Lợi suất của bạc quý 1/2025 là bao nhiêu?,return,0.1632233149065332,quý,SILVER,1.368,stats:SILVER:2025,False,0.1632233149065332,True,numeric,return
+Biến động của bạc quý 1/2025 là bao nhiêu?,volatility,0.24092930083839348,quý,SILVER,0.376,stats:SILVER:2025,False,0.24092930083839348,True,numeric,volatility
+Lợi suất của bạc quý 2/2025 là bao nhiêu?,return,0.04959307328366269,quý,SILVER,1.368,stats:SILVER:2025,False,0.04959307328366269,True,numeric,return
+Biến động của bạc quý 2/2025 là bao nhiêu?,volatility,0.34445842105565805,quý,SILVER,0.376,stats:SILVER:2025,False,0.34445842105565805,True,numeric,volatility
+Lợi suất của bạc quý 3/2025 là bao nhiêu?,return,0.2818856330904522,quý,SILVER,1.368,stats:SILVER:2025,False,0.2818856330904522,True,numeric,return
+Biến động của bạc quý 3/2025 là bao nhiêu?,volatility,0.22213340794950254,quý,SILVER,0.376,stats:SILVER:2025,False,0.22213340794950254,True,numeric,volatility
+Lợi suất của bạc quý 4/2025 là bao nhiêu?,return,0.4830619862077199,quý,SILVER,1.368,stats:SILVER:2025,False,0.4830619862077199,True,numeric,return
+Biến động của bạc quý 4/2025 là bao nhiêu?,volatility,0.5858230834794005,quý,SILVER,0.376,stats:SILVER:2025,False,0.5858230834794005,True,numeric,volatility
+Lợi suất của dầu năm 2020 là bao nhiêu?,return,-0.20693036587548175,năm,OIL,-0.207,stats:OIL:2020,True,-0.20693036587548175,True,numeric,return
+Biến động của dầu năm 2020 là bao nhiêu?,volatility,1.1142230105426258,năm,OIL,1.114,stats:OIL:2020,True,1.1142230105426258,True,numeric,volatility
+Mức sụt sâu nhất của dầu năm 2020 là bao nhiêu?,drawdown,-1.5947526599630009,năm,OIL,-1.595,stats:OIL:2020,True,-1.5947526599630009,True,numeric,drawdown
+Lợi suất của dầu quý 1/2020 là bao nhiêu?,return,-0.665250090878085,quý,OIL,-0.207,stats:OIL:2020,False,-0.665250090878085,True,numeric,return
+Biến động của dầu quý 1/2020 là bao nhiêu?,volatility,1.0702105392628711,quý,OIL,1.114,stats:OIL:2020,False,1.0702105392628711,True,numeric,volatility
+Lợi suất của dầu quý 2/2020 là bao nhiêu?,return,0.9335303540315256,quý,OIL,-0.207,stats:OIL:2020,False,0.9335303540315256,True,numeric,return
+Biến động của dầu quý 2/2020 là bao nhiêu?,volatility,1.907002973134412,quý,OIL,1.114,stats:OIL:2020,False,1.907002973134412,True,numeric,volatility
+Lợi suất của dầu quý 3/2020 là bao nhiêu?,return,0.010045241811764694,quý,OIL,-0.207,stats:OIL:2020,False,0.010045241811764694,True,numeric,return
+Biến động của dầu quý 3/2020 là bao nhiêu?,volatility,0.32697481806183526,quý,OIL,1.114,stats:OIL:2020,False,0.32697481806183526,True,numeric,volatility
+Lợi suất của dầu quý 4/2020 là bao nhiêu?,return,0.2530991458703933,quý,OIL,-0.207,stats:OIL:2020,False,0.2530991458703933,True,numeric,return
+Biến động của dầu quý 4/2020 là bao nhiêu?,volatility,0.39144084773647336,quý,OIL,1.114,stats:OIL:2020,False,0.39144084773647336,True,numeric,volatility
+Lợi suất của dầu năm 2021 là bao nhiêu?,return,0.5793784286314745,năm,OIL,0.579,stats:OIL:2021,True,0.5793784286314745,True,numeric,return
+Biến động của dầu năm 2021 là bao nhiêu?,volatility,0.3554097827402302,năm,OIL,0.355,stats:OIL:2021,True,0.3554097827402302,True,numeric,volatility
+Mức sụt sâu nhất của dầu năm 2021 là bao nhiêu?,drawdown,-0.22539871809951018,năm,OIL,-0.225,stats:OIL:2021,True,-0.22539871809951018,True,numeric,drawdown
+Lợi suất của dầu quý 1/2021 là bao nhiêu?,return,0.24233517795819481,quý,OIL,0.579,stats:OIL:2021,False,0.24233517795819481,True,numeric,return
+Biến động của dầu quý 1/2021 là bao nhiêu?,volatility,0.37994335940661034,quý,OIL,0.355,stats:OIL:2021,False,0.37994335940661034,True,numeric,volatility
+Lợi suất của dầu quý 2/2021 là bao nhiêu?,return,0.19560618891013815,quý,OIL,0.579,stats:OIL:2021,False,0.19560618891013815,True,numeric,return
+Biến động của dầu quý 2/2021 là bao nhiêu?,volatility,0.25779753341517503,quý,OIL,0.355,stats:OIL:2021,False,0.25779753341517503,True,numeric,volatility
+Lợi suất của dầu quý 3/2021 là bao nhiêu?,return,-0.002658574620657439,quý,OIL,0.579,stats:OIL:2021,False,-0.002658574620657439,True,numeric,return
+Biến động của dầu quý 3/2021 là bao nhiêu?,volatility,0.3350079746163425,quý,OIL,0.355,stats:OIL:2021,False,0.3350079746163425,True,numeric,volatility
+Lợi suất của dầu quý 4/2021 là bao nhiêu?,return,-0.008829707343131599,quý,OIL,0.579,stats:OIL:2021,False,-0.008829707343131599,True,numeric,return
+Biến động của dầu quý 4/2021 là bao nhiêu?,volatility,0.4287050786929471,quý,OIL,0.355,stats:OIL:2021,False,0.4287050786929471,True,numeric,volatility
+Lợi suất của dầu năm 2022 là bao nhiêu?,return,0.054942168829832605,năm,OIL,0.055,stats:OIL:2022,True,0.054942168829832605,True,numeric,return
+Biến động của dầu năm 2022 là bao nhiêu?,volatility,0.48541492826307325,năm,OIL,0.485,stats:OIL:2022,True,0.48541492826307325,True,numeric,volatility
+Mức sụt sâu nhất của dầu năm 2022 là bao nhiêu?,drawdown,-0.4258690509686741,năm,OIL,-0.426,stats:OIL:2022,True,-0.4258690509686741,True,numeric,drawdown
+Lợi suất của dầu quý 1/2022 là bao nhiêu?,return,0.3180861772582677,quý,OIL,0.055,stats:OIL:2022,False,0.3180861772582677,True,numeric,return
+Biến động của dầu quý 1/2022 là bao nhiêu?,volatility,0.5885157601785345,quý,OIL,0.485,stats:OIL:2022,False,0.5885157601785345,True,numeric,volatility
+Lợi suất của dầu quý 2/2022 là bao nhiêu?,return,0.0653773115002656,quý,OIL,0.055,stats:OIL:2022,False,0.0653773115002656,True,numeric,return
+Biến động của dầu quý 2/2022 là bao nhiêu?,volatility,0.4653983236027132,quý,OIL,0.485,stats:OIL:2022,False,0.4653983236027132,True,numeric,volatility
+Lợi suất của dầu quý 3/2022 là bao nhiêu?,return,-0.26690032610859293,quý,OIL,0.055,stats:OIL:2022,False,-0.26690032610859293,True,numeric,return
+Biến động của dầu quý 3/2022 là bao nhiêu?,volatility,0.48465362445047167,quý,OIL,0.485,stats:OIL:2022,True,0.48465362445047167,True,numeric,volatility
+Lợi suất của dầu quý 4/2022 là bao nhiêu?,return,-0.04029648723980761,quý,OIL,0.055,stats:OIL:2022,False,-0.04029648723980761,True,numeric,return
+Biến động của dầu quý 4/2022 là bao nhiêu?,volatility,0.37934539397244105,quý,OIL,0.485,stats:OIL:2022,False,0.37934539397244105,True,numeric,volatility
+Lợi suất của dầu năm 2023 là bao nhiêu?,return,-0.0686338068159561,năm,OIL,-0.069,stats:OIL:2023,True,-0.0686338068159561,True,numeric,return
+Biến động của dầu năm 2023 là bao nhiêu?,volatility,0.33794278300352665,năm,OIL,0.33799999999999997,stats:OIL:2023,True,0.33794278300352665,True,numeric,volatility
+Mức sụt sâu nhất của dầu năm 2023 là bao nhiêu?,drawdown,-0.26761314702343264,năm,OIL,-0.268,stats:OIL:2023,True,-0.26761314702343264,True,numeric,drawdown
+Lợi suất của dầu quý 1/2023 là bao nhiêu?,return,-0.01637855363619045,quý,OIL,-0.069,stats:OIL:2023,False,-0.01637855363619045,True,numeric,return
+Biến động của dầu quý 1/2023 là bao nhiêu?,volatility,0.3394615222474698,quý,OIL,0.33799999999999997,stats:OIL:2023,True,0.3394615222474698,True,numeric,volatility
+Lợi suất của dầu quý 2/2023 là bao nhiêu?,return,-0.12161152700788647,quý,OIL,-0.069,stats:OIL:2023,False,-0.12161152700788647,True,numeric,return
+Biến động của dầu quý 2/2023 là bao nhiêu?,volatility,0.35715028694939405,quý,OIL,0.33799999999999997,stats:OIL:2023,False,0.35715028694939405,True,numeric,volatility
+Lợi suất của dầu quý 3/2023 là bao nhiêu?,return,0.300902704177036,quý,OIL,-0.069,stats:OIL:2023,False,0.300902704177036,True,numeric,return
+Biến động của dầu quý 3/2023 là bao nhiêu?,volatility,0.23117174787003128,quý,OIL,0.33799999999999997,stats:OIL:2023,False,0.23117174787003128,True,numeric,volatility
+Lợi suất của dầu quý 4/2023 là bao nhiêu?,return,-0.1933122970945682,quý,OIL,-0.069,stats:OIL:2023,False,-0.1933122970945682,True,numeric,return
+Biến động của dầu quý 4/2023 là bao nhiêu?,volatility,0.38130680151824914,quý,OIL,0.33799999999999997,stats:OIL:2023,False,0.38130680151824914,True,numeric,volatility
+Lợi suất của dầu năm 2024 là bao nhiêu?,return,0.019039556970430027,năm,OIL,0.019,stats:OIL:2024,True,0.019039556970430027,True,numeric,return
+Biến động của dầu năm 2024 là bao nhiêu?,volatility,0.2892176364061129,năm,OIL,0.289,stats:OIL:2024,True,0.2892176364061129,True,numeric,volatility
+Mức sụt sâu nhất của dầu năm 2024 là bao nhiêu?,drawdown,-0.24347028846501606,năm,OIL,-0.243,stats:OIL:2024,True,-0.24347028846501606,True,numeric,drawdown
+Lợi suất của dầu quý 1/2024 là bao nhiêu?,return,0.1817277836694744,quý,OIL,0.019,stats:OIL:2024,False,0.1817277836694744,True,numeric,return
+Biến động của dầu quý 1/2024 là bao nhiêu?,volatility,0.26058263192729336,quý,OIL,0.289,stats:OIL:2024,False,0.26058263192729336,True,numeric,volatility
+Lợi suất của dầu quý 2/2024 là bao nhiêu?,return,-0.025922807223490052,quý,OIL,0.019,stats:OIL:2024,False,-0.025922807223490052,True,numeric,return
+Biến động của dầu quý 2/2024 là bao nhiêu?,volatility,0.21512162681308708,quý,OIL,0.289,stats:OIL:2024,False,0.21512162681308708,True,numeric,volatility
+Lợi suất của dầu quý 3/2024 là bao nhiêu?,return,-0.18241784103499903,quý,OIL,0.019,stats:OIL:2024,False,-0.18241784103499903,True,numeric,return
+Biến động của dầu quý 3/2024 là bao nhiêu?,volatility,0.33163889859076984,quý,OIL,0.289,stats:OIL:2024,False,0.33163889859076984,True,numeric,volatility
+Lợi suất của dầu quý 4/2024 là bao nhiêu?,return,0.0270657216109067,quý,OIL,0.019,stats:OIL:2024,False,0.0270657216109067,True,numeric,return
+Biến động của dầu quý 4/2024 là bao nhiêu?,volatility,0.32865578043226884,quý,OIL,0.289,stats:OIL:2024,False,0.32865578043226884,True,numeric,volatility
+Lợi suất của dầu năm 2025 là bao nhiêu?,return,-0.2148229136401123,năm,OIL,-0.215,stats:OIL:2025,True,-0.2148229136401123,True,numeric,return
+Biến động của dầu năm 2025 là bao nhiêu?,volatility,0.315159124297203,năm,OIL,0.315,stats:OIL:2025,True,0.315159124297203,True,numeric,volatility
+Mức sụt sâu nhất của dầu năm 2025 là bao nhiêu?,drawdown,-0.30947026704691627,năm,OIL,-0.309,stats:OIL:2025,True,-0.30947026704691627,True,numeric,drawdown
+Lợi suất của dầu quý 1/2025 là bao nhiêu?,return,-0.022562477211186538,quý,OIL,-0.215,stats:OIL:2025,False,-0.022562477211186538,True,numeric,return
+Biến động của dầu quý 1/2025 là bao nhiêu?,volatility,0.2488764047172168,quý,OIL,0.315,stats:OIL:2025,False,0.2488764047172168,True,numeric,volatility
+Lợi suất của dầu quý 2/2025 là bao nhiêu?,return,-0.08553366009717189,quý,OIL,-0.215,stats:OIL:2025,False,-0.08553366009717189,True,numeric,return
+Biến động của dầu quý 2/2025 là bao nhiêu?,volatility,0.461852092706376,quý,OIL,0.315,stats:OIL:2025,False,0.461852092706376,True,numeric,volatility
+Lợi suất của dầu quý 3/2025 là bao nhiêu?,return,-0.04705879541588187,quý,OIL,-0.215,stats:OIL:2025,False,-0.04705879541588187,True,numeric,return
+Biến động của dầu quý 3/2025 là bao nhiêu?,volatility,0.2605933462202352,quý,OIL,0.315,stats:OIL:2025,False,0.2605933462202352,True,numeric,volatility
+Lợi suất của dầu quý 4/2025 là bao nhiêu?,return,-0.0705730122450674,quý,OIL,-0.215,stats:OIL:2025,False,-0.0705730122450674,True,numeric,return
+Biến động của dầu quý 4/2025 là bao nhiêu?,volatility,0.2558867505321047,quý,OIL,0.315,stats:OIL:2025,False,0.2558867505321047,True,numeric,volatility
+Lợi suất của S&P 500 năm 2020 là bao nhiêu?,return,0.15292906541696083,năm,SP500,0.153,stats:SP500:2020,True,0.15292906541696083,True,numeric,return
+Biến động của S&P 500 năm 2020 là bao nhiêu?,volatility,0.3474740924714572,năm,SP500,0.34700000000000003,stats:SP500:2020,True,0.3474740924714572,True,numeric,volatility
+Mức sụt sâu nhất của S&P 500 năm 2020 là bao nhiêu?,drawdown,-0.3392496000265327,năm,SP500,-0.33899999999999997,stats:SP500:2020,True,-0.3392496000265327,True,numeric,drawdown
+Lợi suất của S&P 500 quý 1/2020 là bao nhiêu?,return,-0.2066577618933355,quý,SP500,0.153,stats:SP500:2020,False,-0.2066577618933355,True,numeric,return
+Biến động của S&P 500 quý 1/2020 là bao nhiêu?,volatility,0.579101125806985,quý,SP500,0.34700000000000003,stats:SP500:2020,False,0.579101125806985,True,numeric,volatility
+Lợi suất của S&P 500 quý 2/2020 là bao nhiêu?,return,0.25492412024387767,quý,SP500,0.153,stats:SP500:2020,False,0.25492412024387767,True,numeric,return
+Biến động của S&P 500 quý 2/2020 là bao nhiêu?,volatility,0.30552135237934386,quý,SP500,0.34700000000000003,stats:SP500:2020,False,0.30552135237934386,True,numeric,volatility
+Lợi suất của S&P 500 quý 3/2020 là bao nhiêu?,return,0.07931674852457138,quý,SP500,0.153,stats:SP500:2020,False,0.07931674852457138,True,numeric,return
+Biến động của S&P 500 quý 3/2020 là bao nhiêu?,volatility,0.1709986608961679,quý,SP500,0.34700000000000003,stats:SP500:2020,False,0.1709986608961679,True,numeric,volatility
+Lợi suất của S&P 500 quý 4/2020 là bao nhiêu?,return,0.11100035911953099,quý,SP500,0.153,stats:SP500:2020,False,0.11100035911953099,True,numeric,return
+Biến động của S&P 500 quý 4/2020 là bao nhiêu?,volatility,0.1642007154363545,quý,SP500,0.34700000000000003,stats:SP500:2020,False,0.1642007154363545,True,numeric,volatility
+Lợi suất của S&P 500 năm 2021 là bao nhiêu?,return,0.2879305801834058,năm,SP500,0.28800000000000003,stats:SP500:2021,True,0.2879305801834058,True,numeric,return
+Biến động của S&P 500 năm 2021 là bao nhiêu?,volatility,0.13036332386772176,năm,SP500,0.13,stats:SP500:2021,True,0.13036332386772176,True,numeric,volatility
+Mức sụt sâu nhất của S&P 500 năm 2021 là bao nhiêu?,drawdown,-0.0521253759010486,năm,SP500,-0.052000000000000005,stats:SP500:2021,True,-0.0521253759010486,True,numeric,drawdown
+Lợi suất của S&P 500 quý 1/2021 là bao nhiêu?,return,0.07356545401983472,quý,SP500,0.28800000000000003,stats:SP500:2021,False,0.07356545401983472,True,numeric,return
+Biến động của S&P 500 quý 1/2021 là bao nhiêu?,volatility,0.15675042753981033,quý,SP500,0.13,stats:SP500:2021,False,0.15675042753981033,True,numeric,volatility
+Lợi suất của S&P 500 quý 2/2021 là bao nhiêu?,return,0.06906439131589237,quý,SP500,0.28800000000000003,stats:SP500:2021,False,0.06906439131589237,True,numeric,return
+Biến động của S&P 500 quý 2/2021 là bao nhiêu?,volatility,0.11037609927366854,quý,SP500,0.13,stats:SP500:2021,False,0.11037609927366854,True,numeric,volatility
+Lợi suất của S&P 500 quý 3/2021 là bao nhiêu?,return,-0.0028703876701844377,quý,SP500,0.28800000000000003,stats:SP500:2021,False,-0.0028703876701844377,True,numeric,return
+Biến động của S&P 500 quý 3/2021 là bao nhiêu?,volatility,0.11238167684410617,quý,SP500,0.13,stats:SP500:2021,False,0.11238167684410617,True,numeric,volatility
+Lợi suất của S&P 500 quý 4/2021 là bao nhiêu?,return,0.09390323087478092,quý,SP500,0.28800000000000003,stats:SP500:2021,False,0.09390323087478092,True,numeric,return
+Biến động của S&P 500 quý 4/2021 là bao nhiêu?,volatility,0.13859664704600333,quý,SP500,0.13,stats:SP500:2021,False,0.13859664704600333,True,numeric,volatility
+Lợi suất của S&P 500 năm 2022 là bao nhiêu?,return,-0.19953050663444416,năm,SP500,-0.2,stats:SP500:2022,True,-0.19953050663444416,True,numeric,return
+Biến động của S&P 500 năm 2022 là bao nhiêu?,volatility,0.24228808919998068,năm,SP500,0.242,stats:SP500:2022,True,0.24228808919998068,True,numeric,volatility
+Mức sụt sâu nhất của S&P 500 năm 2022 là bao nhiêu?,drawdown,-0.2542509661923039,năm,SP500,-0.254,stats:SP500:2022,True,-0.2542509661923039,True,numeric,drawdown
+Lợi suất của S&P 500 quý 1/2022 là bao nhiêu?,return,-0.05548766180189968,quý,SP500,-0.2,stats:SP500:2022,False,-0.05548766180189968,True,numeric,return
+Biến động của S&P 500 quý 1/2022 là bao nhiêu?,volatility,0.21615138118060934,quý,SP500,0.242,stats:SP500:2022,False,0.21615138118060934,True,numeric,volatility
+Lợi suất của S&P 500 quý 2/2022 là bao nhiêu?,return,-0.1672906784064011,quý,SP500,-0.2,stats:SP500:2022,False,-0.1672906784064011,True,numeric,return
+Biến động của S&P 500 quý 2/2022 là bao nhiêu?,volatility,0.28683974834588744,quý,SP500,0.242,stats:SP500:2022,False,0.28683974834588744,True,numeric,volatility
+Lợi suất của S&P 500 quý 3/2022 là bao nhiêu?,return,-0.06266386325934903,quý,SP500,-0.2,stats:SP500:2022,False,-0.06266386325934903,True,numeric,return
+Biến động của S&P 500 quý 3/2022 là bao nhiêu?,volatility,0.21499339121716587,quý,SP500,0.242,stats:SP500:2022,False,0.21499339121716587,True,numeric,volatility
+Lợi suất của S&P 500 quý 4/2022 là bao nhiêu?,return,0.04378772230344907,quý,SP500,-0.2,stats:SP500:2022,False,0.04378772230344907,True,numeric,return
+Biến động của S&P 500 quý 4/2022 là bao nhiêu?,volatility,0.2459517243944141,quý,SP500,0.242,stats:SP500:2022,True,0.2459517243944141,True,numeric,volatility
+Lợi suất của S&P 500 năm 2023 là bao nhiêu?,return,0.24729487207888678,năm,SP500,0.247,stats:SP500:2023,True,0.24729487207888678,True,numeric,return
+Biến động của S&P 500 năm 2023 là bao nhiêu?,volatility,0.13099615352722635,năm,SP500,0.131,stats:SP500:2023,True,0.13099615352722635,True,numeric,volatility
+Mức sụt sâu nhất của S&P 500 năm 2023 là bao nhiêu?,drawdown,-0.10276617093291363,năm,SP500,-0.10300000000000001,stats:SP500:2023,True,-0.10276617093291363,True,numeric,drawdown
+Lợi suất của S&P 500 quý 1/2023 là bao nhiêu?,return,0.0745710601667795,quý,SP500,0.247,stats:SP500:2023,False,0.0745710601667795,True,numeric,return
+Biến động của S&P 500 quý 1/2023 là bao nhiêu?,volatility,0.16899322328225416,quý,SP500,0.131,stats:SP500:2023,False,0.16899322328225416,True,numeric,volatility
+Lợi suất của S&P 500 quý 2/2023 là bao nhiêu?,return,0.07900820599417835,quý,SP500,0.247,stats:SP500:2023,False,0.07900820599417835,True,numeric,return
+Biến động của S&P 500 quý 2/2023 là bao nhiêu?,volatility,0.11916978390775128,quý,SP500,0.131,stats:SP500:2023,False,0.11916978390775128,True,numeric,volatility
+Lợi suất của S&P 500 quý 3/2023 là bao nhiêu?,return,-0.03760221316096091,quý,SP500,0.247,stats:SP500:2023,False,-0.03760221316096091,True,numeric,return
+Biến động của S&P 500 quý 3/2023 là bao nhiêu?,volatility,0.10911325297809063,quý,SP500,0.131,stats:SP500:2023,False,0.10911325297809063,True,numeric,volatility
+Lợi suất của S&P 500 quý 4/2023 là bao nhiêu?,return,0.1122658914085235,quý,SP500,0.247,stats:SP500:2023,False,0.1122658914085235,True,numeric,return
+Biến động của S&P 500 quý 4/2023 là bao nhiêu?,volatility,0.12228811947308006,quý,SP500,0.131,stats:SP500:2023,False,0.12228811947308006,True,numeric,volatility
+Lợi suất của S&P 500 năm 2024 là bao nhiêu?,return,0.24010976272160822,năm,SP500,0.24,stats:SP500:2024,True,0.24010976272160822,True,numeric,return
+Biến động của S&P 500 năm 2024 là bao nhiêu?,volatility,0.1267473211928746,năm,SP500,0.127,stats:SP500:2024,True,0.1267473211928746,True,numeric,volatility
+Mức sụt sâu nhất của S&P 500 năm 2024 là bao nhiêu?,drawdown,-0.08485144350207374,năm,SP500,-0.085,stats:SP500:2024,True,-0.08485144350207374,True,numeric,drawdown
+Lợi suất của S&P 500 quý 1/2024 là bao nhiêu?,return,0.1078512219719816,quý,SP500,0.24,stats:SP500:2024,False,0.1078512219719816,True,numeric,return
+Biến động của S&P 500 quý 1/2024 là bao nhiêu?,volatility,0.10923644589421905,quý,SP500,0.127,stats:SP500:2024,False,0.10923644589421905,True,numeric,volatility
+Lợi suất của S&P 500 quý 2/2024 là bao nhiêu?,return,0.041327129170487975,quý,SP500,0.24,stats:SP500:2024,False,0.041327129170487975,True,numeric,return
+Biến động của S&P 500 quý 2/2024 là bao nhiêu?,volatility,0.10583473675215904,quý,SP500,0.127,stats:SP500:2024,False,0.10583473675215904,True,numeric,volatility
+Lợi suất của S&P 500 quý 3/2024 là bao nhiêu?,return,0.05249048781305676,quý,SP500,0.24,stats:SP500:2024,False,0.05249048781305676,True,numeric,return
+Biến động của S&P 500 quý 3/2024 là bao nhiêu?,volatility,0.16099273591238503,quý,SP500,0.127,stats:SP500:2024,False,0.16099273591238503,True,numeric,volatility
+Lợi suất của S&P 500 quý 4/2024 là bao nhiêu?,return,0.030283316455003373,quý,SP500,0.24,stats:SP500:2024,False,0.030283316455003373,True,numeric,return
+Biến động của S&P 500 quý 4/2024 là bao nhiêu?,volatility,0.12564566276330097,quý,SP500,0.127,stats:SP500:2024,True,0.12564566276330097,True,numeric,volatility
+Lợi suất của S&P 500 năm 2025 là bao nhiêu?,return,0.16647216566725942,năm,SP500,0.166,stats:SP500:2025,True,0.16647216566725942,True,numeric,return
+Biến động của S&P 500 năm 2025 là bao nhiêu?,volatility,0.18682308050705881,năm,SP500,0.187,stats:SP500:2025,True,0.18682308050705881,True,numeric,volatility
+Mức sụt sâu nhất của S&P 500 năm 2025 là bao nhiêu?,drawdown,-0.1890220618428401,năm,SP500,-0.18899999999999997,stats:SP500:2025,True,-0.1890220618428401,True,numeric,drawdown
+Lợi suất của S&P 500 quý 1/2025 là bao nhiêu?,return,-0.043741591291635795,quý,SP500,0.166,stats:SP500:2025,False,-0.043741591291635795,True,numeric,return
+Biến động của S&P 500 quý 1/2025 là bao nhiêu?,volatility,0.16557122912660813,quý,SP500,0.187,stats:SP500:2025,False,0.16557122912660813,True,numeric,volatility
+Lợi suất của S&P 500 quý 2/2025 là bao nhiêu?,return,0.10152197450757927,quý,SP500,0.166,stats:SP500:2025,False,0.10152197450757927,True,numeric,return
+Biến động của S&P 500 quý 2/2025 là bao nhiêu?,volatility,0.30364438466152033,quý,SP500,0.187,stats:SP500:2025,False,0.30364438466152033,True,numeric,volatility
+Lợi suất của S&P 500 quý 3/2025 là bao nhiêu?,return,0.07913027146756102,quý,SP500,0.166,stats:SP500:2025,False,0.07913027146756102,True,numeric,return
+Biến động của S&P 500 quý 3/2025 là bao nhiêu?,volatility,0.08728699996344977,quý,SP500,0.187,stats:SP500:2025,False,0.08728699996344977,True,numeric,volatility
+Lợi suất của S&P 500 quý 4/2025 là bao nhiêu?,return,0.02001129466847118,quý,SP500,0.166,stats:SP500:2025,False,0.02001129466847118,True,numeric,return
+Biến động của S&P 500 quý 4/2025 là bao nhiêu?,volatility,0.12743023001541215,quý,SP500,0.187,stats:SP500:2025,False,0.12743023001541215,True,numeric,volatility
+Lợi suất của bitcoin năm 2020 là bao nhiêu?,return,3.02791924593297,năm,BTC,3.028,stats:BTC:2020,True,3.02791924593297,True,numeric,return
+Biến động của bitcoin năm 2020 là bao nhiêu?,volatility,0.6370023138623799,năm,BTC,0.637,stats:BTC:2020,True,0.6370023138623799,True,numeric,volatility
+Mức sụt sâu nhất của bitcoin năm 2020 là bao nhiêu?,drawdown,-0.5186169126186414,năm,BTC,-0.519,stats:BTC:2020,True,-0.5186169126186414,True,numeric,drawdown
+Lợi suất của bitcoin quý 1/2020 là bao nhiêu?,return,-0.10576546506951023,quý,BTC,3.028,stats:BTC:2020,False,-0.10576546506951023,True,numeric,return
+Biến động của bitcoin quý 1/2020 là bao nhiêu?,volatility,1.0001590844768689,quý,BTC,0.637,stats:BTC:2020,False,1.0001590844768689,True,numeric,volatility
+Lợi suất của bitcoin quý 2/2020 là bao nhiêu?,return,0.3831243341981829,quý,BTC,3.028,stats:BTC:2020,False,0.3831243341981829,True,numeric,return
+Biến động của bitcoin quý 2/2020 là bao nhiêu?,volatility,0.49860915525880856,quý,BTC,0.637,stats:BTC:2020,False,0.49860915525880856,True,numeric,volatility
+Lợi suất của bitcoin quý 3/2020 là bao nhiêu?,return,0.16862929975803742,quý,BTC,3.028,stats:BTC:2020,False,0.16862929975803742,True,numeric,return
+Biến động của bitcoin quý 3/2020 là bao nhiêu?,volatility,0.39436663813352263,quý,BTC,0.637,stats:BTC:2020,False,0.39436663813352263,True,numeric,volatility
+Lợi suất của bitcoin quý 4/2020 là bao nhiêu?,return,1.7309997067402567,quý,BTC,3.028,stats:BTC:2020,False,1.7309997067402567,True,numeric,return
+Biến động của bitcoin quý 4/2020 là bao nhiêu?,volatility,0.4766259724974012,quý,BTC,0.637,stats:BTC:2020,False,0.4766259724974012,True,numeric,volatility
+Lợi suất của bitcoin năm 2021 là bao nhiêu?,return,0.5764351178750771,năm,BTC,0.5760000000000001,stats:BTC:2021,True,0.5764351178750771,True,numeric,return
+Biến động của bitcoin năm 2021 là bao nhiêu?,volatility,0.6682564913158544,năm,BTC,0.6679999999999999,stats:BTC:2021,True,0.6682564913158544,True,numeric,volatility
+Mức sụt sâu nhất của bitcoin năm 2021 là bao nhiêu?,drawdown,-0.5306185040984174,năm,BTC,-0.531,stats:BTC:2021,True,-0.5306185040984174,True,numeric,drawdown
+Lợi suất của bitcoin quý 1/2021 là bao nhiêu?,return,1.0058053536917222,quý,BTC,0.5760000000000001,stats:BTC:2021,False,1.0058053536917222,True,numeric,return
+Biến động của bitcoin quý 1/2021 là bao nhiêu?,volatility,0.7631457123905708,quý,BTC,0.6679999999999999,stats:BTC:2021,False,0.7631457123905708,True,numeric,volatility
+Lợi suất của bitcoin quý 2/2021 là bao nhiêu?,return,-0.40705040219712074,quý,BTC,0.5760000000000001,stats:BTC:2021,False,-0.40705040219712074,True,numeric,return
+Biến động của bitcoin quý 2/2021 là bao nhiêu?,volatility,0.7918784521734298,quý,BTC,0.6679999999999999,stats:BTC:2021,False,0.7918784521734298,True,numeric,volatility
+Lợi suất của bitcoin quý 3/2021 là bao nhiêu?,return,0.30438286887532917,quý,BTC,0.5760000000000001,stats:BTC:2021,False,0.30438286887532917,True,numeric,return
+Biến động của bitcoin quý 3/2021 là bao nhiêu?,volatility,0.5465460937830604,quý,BTC,0.6679999999999999,stats:BTC:2021,False,0.5465460937830604,True,numeric,volatility
+Lợi suất của bitcoin quý 4/2021 là bao nhiêu?,return,-0.03762699874175357,quý,BTC,0.5760000000000001,stats:BTC:2021,False,-0.03762699874175357,True,numeric,return
+Biến động của bitcoin quý 4/2021 là bao nhiêu?,volatility,0.5084412931869856,quý,BTC,0.6679999999999999,stats:BTC:2021,False,0.5084412931869856,True,numeric,volatility
+Lợi suất của bitcoin năm 2022 là bao nhiêu?,return,-0.6529963898562102,năm,BTC,-0.653,stats:BTC:2022,True,-0.6529963898562102,True,numeric,return
+Biến động của bitcoin năm 2022 là bao nhiêu?,volatility,0.5336493891781006,năm,BTC,0.534,stats:BTC:2022,True,0.5336493891781006,True,numeric,volatility
+Mức sụt sâu nhất của bitcoin năm 2022 là bao nhiêu?,drawdown,-0.6689381539248928,năm,BTC,-0.669,stats:BTC:2022,True,-0.6689381539248928,True,numeric,drawdown
+Lợi suất của bitcoin quý 1/2022 là bao nhiêu?,return,-0.045046766729271326,quý,BTC,-0.653,stats:BTC:2022,False,-0.045046766729271326,True,numeric,return
+Biến động của bitcoin quý 1/2022 là bao nhiêu?,volatility,0.5574673727524486,quý,BTC,0.534,stats:BTC:2022,False,0.5574673727524486,True,numeric,volatility
+Lợi suất của bitcoin quý 2/2022 là bao nhiêu?,return,-0.5725146164773578,quý,BTC,-0.653,stats:BTC:2022,False,-0.5725146164773578,True,numeric,return
+Biến động của bitcoin quý 2/2022 là bao nhiêu?,volatility,0.6248956440758199,quý,BTC,0.534,stats:BTC:2022,False,0.6248956440758199,True,numeric,volatility
+Lợi suất của bitcoin quý 3/2022 là bao nhiêu?,return,0.008429019667307136,quý,BTC,-0.653,stats:BTC:2022,False,0.008429019667307136,True,numeric,return
+Biến động của bitcoin quý 3/2022 là bao nhiêu?,volatility,0.49311033681881244,quý,BTC,0.534,stats:BTC:2022,False,0.49311033681881244,True,numeric,volatility
+Lợi suất của bitcoin quý 4/2022 là bao nhiêu?,return,-0.1431537856830134,quý,BTC,-0.653,stats:BTC:2022,False,-0.1431537856830134,True,numeric,return
+Biến động của bitcoin quý 4/2022 là bao nhiêu?,volatility,0.44496746150317196,quý,BTC,0.534,stats:BTC:2022,False,0.44496746150317196,True,numeric,volatility
+Lợi suất của bitcoin năm 2023 là bao nhiêu?,return,1.5422546719406074,năm,BTC,1.5419999999999998,stats:BTC:2023,True,1.5422546719406074,True,numeric,return
+Biến động của bitcoin năm 2023 là bao nhiêu?,volatility,0.36010890174326876,năm,BTC,0.36,stats:BTC:2023,True,0.36010890174326876,True,numeric,volatility
+Mức sụt sâu nhất của bitcoin năm 2023 là bao nhiêu?,drawdown,-0.200577733429132,năm,BTC,-0.201,stats:BTC:2023,True,-0.200577733429132,True,numeric,drawdown
+Lợi suất của bitcoin quý 1/2023 là bao nhiêu?,return,0.7129832903765383,quý,BTC,1.5419999999999998,stats:BTC:2023,False,0.7129832903765383,True,numeric,return
+Biến động của bitcoin quý 1/2023 là bao nhiêu?,volatility,0.4576274948765342,quý,BTC,0.36,stats:BTC:2023,False,0.4576274948765342,True,numeric,volatility
+Lợi suất của bitcoin quý 2/2023 là bao nhiêu?,return,0.07272585407436183,quý,BTC,1.5419999999999998,stats:BTC:2023,False,0.07272585407436183,True,numeric,return
+Biến động của bitcoin quý 2/2023 là bao nhiêu?,volatility,0.3375697871640784,quý,BTC,0.36,stats:BTC:2023,False,0.3375697871640784,True,numeric,volatility
+Lợi suất của bitcoin quý 3/2023 là bao nhiêu?,return,-0.11840970443337173,quý,BTC,1.5419999999999998,stats:BTC:2023,False,-0.11840970443337173,True,numeric,return
+Biến động của bitcoin quý 3/2023 là bao nhiêu?,volatility,0.255573616883916,quý,BTC,0.36,stats:BTC:2023,False,0.255573616883916,True,numeric,volatility
+Lợi suất của bitcoin quý 4/2023 là bao nhiêu?,return,0.5103475231160941,quý,BTC,1.5419999999999998,stats:BTC:2023,False,0.5103475231160941,True,numeric,return
+Biến động của bitcoin quý 4/2023 là bao nhiêu?,volatility,0.3578953059124759,quý,BTC,0.36,stats:BTC:2023,True,0.3578953059124759,True,numeric,volatility
+Lợi suất của bitcoin năm 2024 là bao nhiêu?,return,1.1153463165693465,năm,BTC,1.115,stats:BTC:2024,True,1.1153463165693465,True,numeric,return
+Biến động của bitcoin năm 2024 là bao nhiêu?,volatility,0.4407303036620912,năm,BTC,0.441,stats:BTC:2024,True,0.4407303036620912,True,numeric,volatility
+Mức sụt sâu nhất của bitcoin năm 2024 là bao nhiêu?,drawdown,-0.261820330084766,năm,BTC,-0.262,stats:BTC:2024,True,-0.261820330084766,True,numeric,drawdown
+Lợi suất của bitcoin quý 1/2024 là bao nhiêu?,return,0.6150771431479909,quý,BTC,1.115,stats:BTC:2024,False,0.6150771431479909,True,numeric,return
+Biến động của bitcoin quý 1/2024 là bao nhiêu?,volatility,0.4989517455645852,quý,BTC,0.441,stats:BTC:2024,False,0.4989517455645852,True,numeric,volatility
+Lợi suất của bitcoin quý 2/2024 là bao nhiêu?,return,-0.10076956917688262,quý,BTC,1.115,stats:BTC:2024,False,-0.10076956917688262,True,numeric,return
+Biến động của bitcoin quý 2/2024 là bao nhiêu?,volatility,0.39881096287196605,quý,BTC,0.441,stats:BTC:2024,False,0.39881096287196605,True,numeric,volatility
+Lợi suất của bitcoin quý 3/2024 là bao nhiêu?,return,0.007597525609991385,quý,BTC,1.115,stats:BTC:2024,False,0.007597525609991385,True,numeric,return
+Biến động của bitcoin quý 3/2024 là bao nhiêu?,volatility,0.4518285391486332,quý,BTC,0.441,stats:BTC:2024,False,0.4518285391486332,True,numeric,volatility
+Lợi suất của bitcoin quý 4/2024 là bao nhiêu?,return,0.5357297553645197,quý,BTC,1.115,stats:BTC:2024,False,0.5357297553645197,True,numeric,return
+Biến động của bitcoin quý 4/2024 là bao nhiêu?,volatility,0.40384808337191547,quý,BTC,0.441,stats:BTC:2024,False,0.40384808337191547,True,numeric,volatility
+Lợi suất của bitcoin năm 2025 là bao nhiêu?,return,-0.07319368157270445,năm,BTC,-0.073,stats:BTC:2025,True,-0.07319368157270445,True,numeric,return
+Biến động của bitcoin năm 2025 là bao nhiêu?,volatility,0.3485302619586001,năm,BTC,0.349,stats:BTC:2025,True,0.3485302619586001,True,numeric,volatility
+Mức sụt sâu nhất của bitcoin năm 2025 là bao nhiêu?,drawdown,-0.3214698048461442,năm,BTC,-0.321,stats:BTC:2025,True,-0.3214698048461442,True,numeric,drawdown
+Lợi suất của bitcoin quý 1/2025 là bao nhiêu?,return,-0.1257241495320638,quý,BTC,-0.073,stats:BTC:2025,False,-0.1257241495320638,True,numeric,return
+Biến động của bitcoin quý 1/2025 là bao nhiêu?,volatility,0.4332272046338701,quý,BTC,0.349,stats:BTC:2025,False,0.4332272046338701,True,numeric,volatility
+Lợi suất của bitcoin quý 2/2025 là bao nhiêu?,return,0.2579121480098341,quý,BTC,-0.073,stats:BTC:2025,False,0.2579121480098341,True,numeric,return
+Biến động của bitcoin quý 2/2025 là bao nhiêu?,volatility,0.3440397115595618,quý,BTC,0.349,stats:BTC:2025,True,0.3440397115595618,True,numeric,volatility
+Lợi suất của bitcoin quý 3/2025 là bao nhiêu?,return,0.07907228564797508,quý,BTC,-0.073,stats:BTC:2025,False,0.07907228564797508,True,numeric,return
+Biến động của bitcoin quý 3/2025 là bao nhiêu?,volatility,0.2434883700760898,quý,BTC,0.349,stats:BTC:2025,False,0.2434883700760898,True,numeric,volatility
+Lợi suất của bitcoin quý 4/2025 là bao nhiêu?,return,-0.2624558151895465,quý,BTC,-0.073,stats:BTC:2025,False,-0.2624558151895465,True,numeric,return
+Biến động của bitcoin quý 4/2025 là bao nhiêu?,volatility,0.34248025862572845,quý,BTC,0.349,stats:BTC:2025,False,0.34248025862572845,True,numeric,volatility
+Tương quan giữa vàng và đồng đô năm 2020 là bao nhiêu?,correlation,-0.2900000682516793,năm,GOLD,,stats:USD:2020,False,-0.2900000682516793,True,numeric,correlation
+Tương quan giữa vàng và lợi suất trái phiếu năm 2020 là bao nhiêu?,correlation,-0.1815194560259401,năm,GOLD,,stats:GOLD:2020,False,-0.1815194560259401,True,numeric,correlation
+Tương quan giữa vàng và S&P 500 năm 2020 là bao nhiêu?,correlation,0.17672651381153343,năm,GOLD,,stats:GOLD:2020,False,0.17672651381153343,True,numeric,correlation
+Tương quan giữa bạc và vàng năm 2020 là bao nhiêu?,correlation,0.7849456578829155,năm,SILVER,,stats:GOLD:2020,False,0.7849456578829155,True,numeric,correlation
+Tương quan giữa dầu và S&P 500 năm 2020 là bao nhiêu?,correlation,0.29536124309475825,năm,OIL,,stats:SP500:2020,False,0.29536124309475825,True,numeric,correlation
+Tương quan giữa vàng và đồng đô năm 2021 là bao nhiêu?,correlation,-0.4371423361971887,năm,GOLD,,stats:USD:2021,False,-0.4371423361971887,True,numeric,correlation
+Tương quan giữa vàng và lợi suất trái phiếu năm 2021 là bao nhiêu?,correlation,-0.2974722485329269,năm,GOLD,,stats:US10Y:2021,False,-0.2974722485329269,True,numeric,correlation
+Tương quan giữa vàng và S&P 500 năm 2021 là bao nhiêu?,correlation,0.0817492297223156,năm,GOLD,,stats:SP500:2021,False,0.0817492297223156,True,numeric,correlation
+Tương quan giữa bạc và vàng năm 2021 là bao nhiêu?,correlation,0.767623579600488,năm,SILVER,,stats:GOLD:2021,False,0.767623579600488,True,numeric,correlation
+Tương quan giữa dầu và S&P 500 năm 2021 là bao nhiêu?,correlation,0.35332537947901776,năm,OIL,,stats:SP500:2021,False,0.35332537947901776,True,numeric,correlation
+Tương quan giữa vàng và đồng đô năm 2022 là bao nhiêu?,correlation,-0.46846731235976724,năm,GOLD,,stats:USD:2022,False,-0.46846731235976724,True,numeric,correlation
+Tương quan giữa vàng và lợi suất trái phiếu năm 2022 là bao nhiêu?,correlation,-0.3448964718077423,năm,GOLD,,stats:GOLD:2022,False,-0.3448964718077423,True,numeric,correlation
+Tương quan giữa vàng và S&P 500 năm 2022 là bao nhiêu?,correlation,0.11344305006417849,năm,GOLD,,stats:GOLD:2022,False,0.11344305006417849,True,numeric,correlation
+Tương quan giữa bạc và vàng năm 2022 là bao nhiêu?,correlation,0.8075806284493945,năm,SILVER,,stats:SILVER:2022,False,0.8075806284493945,True,numeric,correlation
+Tương quan giữa dầu và S&P 500 năm 2022 là bao nhiêu?,correlation,0.08265766939270917,năm,OIL,,stats:OIL:2022,False,0.08265766939270917,True,numeric,correlation
+Tương quan giữa vàng và đồng đô năm 2023 là bao nhiêu?,correlation,-0.5181610941529117,năm,GOLD,,stats:USD:2023,False,-0.5181610941529117,True,numeric,correlation
+Tương quan giữa vàng và lợi suất trái phiếu năm 2023 là bao nhiêu?,correlation,-0.5201793617751769,năm,GOLD,,stats:US10Y:2023,False,-0.5201793617751769,True,numeric,correlation
+Tương quan giữa vàng và S&P 500 năm 2023 là bao nhiêu?,correlation,0.00862246593642268,năm,GOLD,,stats:SP500:2023,False,0.00862246593642268,True,numeric,correlation
+Tương quan giữa bạc và vàng năm 2023 là bao nhiêu?,correlation,0.7341806312981722,năm,SILVER,,stats:SILVER:2023,False,0.7341806312981722,True,numeric,correlation
+Tương quan giữa dầu và S&P 500 năm 2023 là bao nhiêu?,correlation,0.10722826226505382,năm,OIL,,stats:OIL:2023,False,0.10722826226505382,True,numeric,correlation
+Tương quan giữa vàng và đồng đô năm 2024 là bao nhiêu?,correlation,-0.30874635640353054,năm,GOLD,,stats:USD:2024,False,-0.30874635640353054,True,numeric,correlation
+Tương quan giữa vàng và lợi suất trái phiếu năm 2024 là bao nhiêu?,correlation,-0.2542214599021734,năm,GOLD,,stats:US10Y:2024,False,-0.2542214599021734,True,numeric,correlation
+Tương quan giữa vàng và S&P 500 năm 2024 là bao nhiêu?,correlation,0.15851967501421355,năm,GOLD,,stats:SP500:2024,False,0.15851967501421355,True,numeric,correlation
+Tương quan giữa bạc và vàng năm 2024 là bao nhiêu?,correlation,0.7490595295160772,năm,SILVER,,stats:SILVER:2024,False,0.7490595295160772,True,numeric,correlation
+Tương quan giữa dầu và S&P 500 năm 2024 là bao nhiêu?,correlation,0.018032984783606366,năm,OIL,,stats:OIL:2024,False,0.018032984783606366,True,numeric,correlation
+Tương quan giữa vàng và đồng đô năm 2025 là bao nhiêu?,correlation,-0.4139201519380644,năm,GOLD,,stats:USD:2025,False,-0.4139201519380644,True,numeric,correlation
+Tương quan giữa vàng và lợi suất trái phiếu năm 2025 là bao nhiêu?,correlation,-0.06376802431721038,năm,GOLD,,stats:US10Y:2025,False,-0.06376802431721038,True,numeric,correlation
+Tương quan giữa vàng và S&P 500 năm 2025 là bao nhiêu?,correlation,0.01606149941272519,năm,GOLD,,stats:GOLD:2025,False,0.01606149941272519,True,numeric,correlation
+Tương quan giữa bạc và vàng năm 2025 là bao nhiêu?,correlation,0.6476470819286446,năm,SILVER,,stats:GOLD:2025,False,0.6476470819286446,True,numeric,correlation
+Tương quan giữa dầu và S&P 500 năm 2025 là bao nhiêu?,correlation,0.2613819669631268,năm,OIL,,stats:OIL:2025,False,0.2613819669631268,True,numeric,correlation

@@ -1,0 +1,26 @@
+{
+ "AND": {
+  "acc": 1.0,
+  "epochs": 9,
+  "converged": true
+ },
+ "OR": {
+  "acc": 1.0,
+  "epochs": 3,
+  "converged": true
+ },
+ "XOR": {
+  "acc": 0.5,
+  "epochs": 200,
+  "converged": false
+ },
+ "XOR_MLP": {
+  "acc": 1.0,
+  "pred": [
+   0.0,
+   0.999,
+   0.999,
+   0.001
+  ]
+ }
+}

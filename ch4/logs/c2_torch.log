@@ -1,0 +1,10 @@
+torch diabetes 42 {'accuracy': 0.9611, 'precision': 0.8853, 'recall': 0.6466, 'f1': 0.7474, 'roc_auc': 0.9623, 'fn': 599} 146.4s
+torch diabetes 43 {'accuracy': 0.9614, 'precision': 0.8859, 'recall': 0.6501, 'f1': 0.7499, 'roc_auc': 0.9634, 'fn': 593} 34.1s
+torch diabetes 44 {'accuracy': 0.9628, 'precision': 0.9055, 'recall': 0.6501, 'f1': 0.7569, 'roc_auc': 0.9623, 'fn': 593} 28.2s
+torch housing 42 {'r2_log': 0.649, 'r2_price': 0.5867, 'mae': 1.637, 'rmse': 3.9288, 'mape': 0.2987} 9.3s
+torch housing 43 {'r2_log': 0.6486, 'r2_price': 0.5527, 'mae': 1.6426, 'rmse': 4.0872, 'mape': 0.2803} 8.7s
+torch housing 44 {'r2_log': 0.6496, 'r2_price': 0.5741, 'mae': 1.6307, 'rmse': 3.9881, 'mape': 0.2964} 8.6s
+torch comments 42 {'accuracy': 0.717, 'macro_f1': 0.5966, 'f1_neg': 0.397, 'f1_neu': 0.5617, 'f1_pos': 0.831} 12.3s
+torch comments 43 {'accuracy': 0.7159, 'macro_f1': 0.5919, 'f1_neg': 0.3802, 'f1_neu': 0.5656, 'f1_pos': 0.8298} 18.9s
+torch comments 44 {'accuracy': 0.7164, 'macro_f1': 0.5973, 'f1_neg': 0.3827, 'f1_neu': 0.5775, 'f1_pos': 0.8316} 11.7s
+DONE torch

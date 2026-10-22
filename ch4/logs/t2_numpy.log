@@ -1,0 +1,4 @@
+numpy diabetes 42 {'accuracy': 0.962, 'precision': 0.8977, 'recall': 0.6472, 'f1': 0.7521, 'roc_auc': 0.9645, 'fn': 598} 242.5s
+numpy housing 42 {'r2_log': 0.6503, 'r2_price': 0.5634, 'mae': 1.6405, 'rmse': 4.0381, 'mape': 0.2912} 85.1s
+numpy comments 42 {'accuracy': 0.7184, 'macro_f1': 0.601, 'f1_neg': 0.4073, 'f1_neu': 0.5626, 'f1_pos': 0.8333} 73.2s
+DONE numpy

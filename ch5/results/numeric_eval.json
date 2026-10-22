@@ -1,0 +1,40 @@
+{
+  "so_cau_hoi": 360,
+  "tong": {
+    "n": 360,
+    "A_truy_hoi_cau_thong_ke": 0.2833,
+    "B_dinh_tuyen_sang_bo_tinh": 1.0
+  },
+  "theo_nam": {
+    "n": 120,
+    "A_truy_hoi_cau_thong_ke": 0.75,
+    "B_dinh_tuyen_sang_bo_tinh": 1.0
+  },
+  "theo_quy": {
+    "n": 240,
+    "A_truy_hoi_cau_thong_ke": 0.05,
+    "B_dinh_tuyen_sang_bo_tinh": 1.0
+  },
+  "theo_do_do": {
+    "correlation": {
+      "n": 30,
+      "A": 0.0,
+      "B": 1.0
+    },
+    "drawdown": {
+      "n": 30,
+      "A": 1.0,
+      "B": 1.0
+    },
+    "return": {
+      "n": 150,
+      "A": 0.2067,
+      "B": 1.0
+    },
+    "volatility": {
+      "n": 150,
+      "A": 0.2733,
+      "B": 1.0
+    }
+  }
+}

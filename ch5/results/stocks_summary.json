@@ -1,0 +1,61 @@
+{
+  "so_ma": 5,
+  "so_phien": 1771,
+  "tin_sau_khu_trung_lap": 574,
+  "canh_belongs_to": 15,
+  "canh_correlates_with": 270,
+  "so_lat_thoi_gian": 27,
+  "theo_cap": {
+    "VNM-FPT": {
+      "corr_toan_giai_doan": 0.374,
+      "corr_min": 0.049,
+      "corr_max": 0.732,
+      "bien_do": 0.683,
+      "so_lan_doi_dau": 0
+    },
+    "VNM-VCB": {
+      "corr_toan_giai_doan": 0.351,
+      "corr_min": -0.186,
+      "corr_max": 0.699,
+      "bien_do": 0.885,
+      "so_lan_doi_dau": 4
+    },
+    "FPT-VCB": {
+      "corr_toan_giai_doan": 0.358,
+      "corr_min": -0.099,
+      "corr_max": 0.721,
+      "bien_do": 0.82,
+      "so_lan_doi_dau": 3
+    },
+    "HPG-VIC": {
+      "corr_toan_giai_doan": 0.245,
+      "corr_min": -0.125,
+      "corr_max": 0.682,
+      "bien_do": 0.807,
+      "so_lan_doi_dau": 4
+    },
+    "VCB-VIC": {
+      "corr_toan_giai_doan": 0.203,
+      "corr_min": -0.191,
+      "corr_max": 0.647,
+      "bien_do": 0.838,
+      "so_lan_doi_dau": 3
+    }
+  },
+  "khang_dinh_trich_duoc": {
+    "tong": 2,
+    "theo_ma": {
+      "VNM": 0,
+      "FPT": 0,
+      "VCB": 1,
+      "HPG": 0,
+      "VIC": 1
+    }
+  },
+  "so_sanh_voi_mien_vang": {
+    "vang_tin": 627,
+    "vang_khang_dinh": 309,
+    "co_phieu_tin": 574,
+    "co_phieu_khang_dinh": 2
+  }
+}

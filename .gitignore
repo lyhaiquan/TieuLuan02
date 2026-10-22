@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv*/
+.ipynb_checkpoints/
+
+# Du lieu lon, tai lai duoc bang script trong tung chuong
+ch1/mnist.npz
+ch2/data/hanoi_housing.csv
+ch5/data/raw/
+
+# Anh xem truoc va tep trung gian cua khau dung bao cao
+build/dom/
+build/prev_*.png
+build/tieuluan.md
+build/_r.docx
+# Ban bao cao co ho ten va ma sinh vien; repo cong khai nen khong day len.
+# Dung 'python build/build.py' de dung lai tu chapters/*.md va results/*.json.
+tieuluan0*_05_02_quanlh.docx
+tieuluan0*_05_02_quanlh.pdf
+build/tieuluan0*_05_02_quanlh.docx
+build/tieuluan0*_05_02_quanlh.pdf
+
+# Dong tac gia co ma sinh vien, khong day len repo cong khai
+build/author.local.txt

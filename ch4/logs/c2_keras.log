@@ -1,0 +1,17 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791421252.957002   12720 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791421257.440384   12720 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+keras diabetes 42 {'accuracy': 0.9611, 'precision': 0.8929, 'recall': 0.6395, 'f1': 0.7453, 'roc_auc': 0.9634, 'fn': 611} 165.7s
+keras diabetes 43 {'accuracy': 0.9612, 'precision': 0.8861, 'recall': 0.6472, 'f1': 0.748, 'roc_auc': 0.963, 'fn': 598} 164.7s
+WARNING:tensorflow:5 out of the last 11 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000002024D247E20> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:5 out of the last 11 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000002024D247E20> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+keras diabetes 44 {'accuracy': 0.963, 'precision': 0.8966, 'recall': 0.6602, 'f1': 0.7604, 'roc_auc': 0.9643, 'fn': 576} 146.9s
+keras housing 42 {'r2_log': 0.6483, 'r2_price': 0.5546, 'mae': 1.6432, 'rmse': 4.0787, 'mape': 0.2828} 47.1s
+keras housing 43 {'r2_log': 0.65, 'r2_price': 0.5842, 'mae': 1.6288, 'rmse': 3.9409, 'mape': 0.2967} 47.7s
+keras housing 44 {'r2_log': 0.6466, 'r2_price': 0.5065, 'mae': 1.6519, 'rmse': 4.2932, 'mape': 0.2993} 42.6s
+keras comments 42 {'accuracy': 0.715, 'macro_f1': 0.5851, 'f1_neg': 0.3772, 'f1_neu': 0.5498, 'f1_pos': 0.8283} 35.6s
+keras comments 43 {'accuracy': 0.7181, 'macro_f1': 0.5899, 'f1_neg': 0.3826, 'f1_neu': 0.5537, 'f1_pos': 0.8334} 49.9s
+keras comments 44 {'accuracy': 0.7136, 'macro_f1': 0.6011, 'f1_neg': 0.4096, 'f1_neu': 0.5619, 'f1_pos': 0.8318} 65.9s
+DONE keras

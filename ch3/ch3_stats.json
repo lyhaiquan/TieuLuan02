@@ -1,0 +1,138 @@
+{
+ "diabetes": {
+  "n_train": 16000,
+  "n_test": 4000,
+  "n_feat": 8,
+  "pos_train": 0.085,
+  "pos_test": 0.085,
+  "raw_shape": [
+   100000,
+   9
+  ]
+ },
+ "housing": {
+  "n_train": 24178,
+  "n_test": 6045,
+  "n_feat": 19,
+  "feats": [
+   "Area",
+   "Frontage",
+   "Access Road",
+   "Floors",
+   "Bedrooms",
+   "Bathrooms",
+   "legal_ok",
+   "furn_full",
+   "furn_basic",
+   "has_direction",
+   "prov_hồ_chí_minh",
+   "prov_hà_nội",
+   "prov_bình_dương",
+   "prov_đà_nẵng",
+   "prov_đồng_nai",
+   "prov_hải_phòng",
+   "prov_khánh_hòa",
+   "prov_hưng_yên",
+   "prov_other"
+  ],
+  "price_mean": 5.876424849036313,
+  "price_median": 5.9,
+  "price_p95": 9.5,
+  "price_max": 11.500000000000002,
+  "raw_shape": [
+   30229,
+   12
+  ],
+  "columns": [
+   "Address",
+   "Area",
+   "Frontage",
+   "Access Road",
+   "House direction",
+   "Balcony direction",
+   "Floors",
+   "Bedrooms",
+   "Bathrooms",
+   "Legal status",
+   "Furniture state",
+   "Price"
+  ],
+  "head": [
+   {
+    "Address": "Dự án The Empire - Vinhomes Ocean Park 2, Xã Long Hưng, Văn Giang, Hưng Yên",
+    "Area": "84.0",
+    "Floors": "4.0",
+    "Bedrooms": NaN,
+    "Legal status": "Have certificate",
+    "Price": "8.6"
+   },
+   {
+    "Address": "Dự án The Crown - Vinhomes Ocean Park 3, Xã Nghĩa Trụ, Văn Giang, Hưng Yên",
+    "Area": "60.0",
+    "Floors": "5.0",
+    "Bedrooms": NaN,
+    "Legal status": NaN,
+    "Price": "7.5"
+   },
+   {
+    "Address": "Dự án The Crown - Vinhomes Ocean Park 3, Xã Nghĩa Trụ, Văn Giang, Hưng Yên",
+    "Area": "90.0",
+    "Floors": "5.0",
+    "Bedrooms": NaN,
+    "Legal status": "Sale contract",
+    "Price": "8.9"
+   },
+   {
+    "Address": "Đường Nguyễn Văn Khối, Phường 11, Gò Vấp, Hồ Chí Minh",
+    "Area": "54.0",
+    "Floors": "2.0",
+    "Bedrooms": "2.0",
+    "Legal status": "Have certificate",
+    "Price": "5.35"
+   }
+  ]
+ },
+ "comments": {
+  "n_train": 14692,
+  "n_test": 3672,
+  "vocab": 15000,
+  "max_len": 60,
+  "counts": [
+   2337,
+   4625,
+   11402
+  ],
+  "classes": [
+   "negative",
+   "neutral",
+   "positive"
+  ],
+  "samples": [
+   {
+    "Comment": "here in nz 50 of retailers don’t even have contactless credit card machines like paywave w",
+    "Sentiment": "negative"
+   },
+   {
+    "Comment": "whenever i go to a place that doesn’t take apple pay doesn’t happen too often it’s such a ",
+    "Sentiment": "negative"
+   },
+   {
+    "Comment": "lets not forget that apple pay in 2014 required a brand new iphone in order to use it a si",
+    "Sentiment": "neutral"
+   },
+   {
+    "Comment": "we’ve been hounding my bank to adopt apple pay i understand why they don’t want to do it w",
+    "Sentiment": "neutral"
+   },
+   {
+    "Comment": "i will forever acknowledge this channel with the help of your lessons and ideas explanatio",
+    "Sentiment": "positive"
+   },
+   {
+    "Comment": "apple pay is so convenient secure and easy to use i used it while at the korean and japane",
+    "Sentiment": "positive"
+   }
+  ],
+  "len_median": 21.0
+ }
+}

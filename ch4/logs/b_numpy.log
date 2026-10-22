@@ -1,0 +1,6 @@
+numpy churn RNN 0.421
+numpy churn LSTM 1.419
+numpy churn GRU 1.058
+numpy vol RNN 1.789
+numpy vol LSTM 6.319
+numpy vol GRU 4.657

@@ -1,0 +1,78 @@
+{
+ "churn_logreg": {
+  "roc_auc": 0.7752,
+  "pr_auc": 0.4808,
+  "threshold": 0.21,
+  "accuracy": 0.7165,
+  "precision": 0.391,
+  "recall": 0.7052,
+  "f1": 0.5031,
+  "accuracy_at_05": 0.81,
+  "confusion": [
+   [
+    1146,
+    447
+   ],
+   [
+    120,
+    287
+   ]
+  ]
+ },
+ "ret": {
+  "Naive (loi suat 0)": {
+   "rmse": 0.023758,
+   "mae": 0.017046,
+   "r2": -3.5e-05,
+   "corr": 0.0,
+   "r2_vs_zero": 0.0,
+   "dir_acc": NaN,
+   "price_rmse": 3.09818,
+   "price_mae": 2.250478,
+   "price_mape": 1.706156
+  },
+  "Trung binh train": {
+   "rmse": 0.023793,
+   "mae": 0.017055,
+   "r2": -0.002991,
+   "corr": 0.0,
+   "r2_vs_zero": -0.002956,
+   "dir_acc": 0.508152,
+   "price_rmse": 3.105527,
+   "price_mae": 2.253108,
+   "price_mape": 1.708994
+  },
+  "Ridge (cua so 60 ngay)": {
+   "rmse": 0.023867,
+   "mae": 0.017096,
+   "r2": -0.009299,
+   "corr": -0.001521,
+   "r2_vs_zero": -0.009264,
+   "dir_acc": 0.504076,
+   "price_rmse": 3.11911,
+   "price_mae": 2.260004,
+   "price_mape": 1.713535
+  }
+ },
+ "vol": {
+  "Bien dong 20 ngay qua": {
+   "rmse": 0.011476,
+   "mae": 0.008337,
+   "r2": -0.021874,
+   "corr": 0.375035
+  },
+  "Trung binh train": {
+   "rmse": 0.013966,
+   "mae": 0.012208,
+   "r2": -0.51349,
+   "corr": 0.0
+  },
+  "Ridge (cua so 60 ngay)": {
+   "rmse": 0.009678,
+   "mae": 0.006628,
+   "r2": 0.273165,
+   "corr": 0.529321
+  }
+ },
+ "up_share_test": 0.5081521739130435
+}
