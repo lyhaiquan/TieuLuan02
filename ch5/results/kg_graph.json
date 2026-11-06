@@ -1,0 +1,132 @@
+{
+  "duong_di_gian_tiep_co_phieu": {
+    "so_cap": 10,
+    "vi_du": [
+      {
+        "tu": "FPT",
+        "den": "HPG",
+        "so_buoc": 2,
+        "duong_di": "FPT -> Vietnam -> HPG"
+      },
+      {
+        "tu": "FPT",
+        "den": "VCB",
+        "so_buoc": 2,
+        "duong_di": "FPT -> Vietnam -> VCB"
+      },
+      {
+        "tu": "FPT",
+        "den": "VIC",
+        "so_buoc": 2,
+        "duong_di": "FPT -> Vietnam -> VIC"
+      }
+    ],
+    "do_dai_nho_nhat": 2
+  },
+  "do_thi_vang": {
+    "so_nut_co_chuoi_gia": 8,
+    "so_cap_nut": 28,
+    "so_cap_noi_truc_tiep": 28,
+    "so_cap_phai_bac_cau": 0,
+    "bac_trung_binh": 7.0
+  },
+  "nguyen_nhan_duoc_vien_nhieu_nhat": [
+    {
+      "nut": "INFLATION",
+      "so_tin": 83,
+      "co_chuoi_gia": false
+    },
+    {
+      "nut": "FED",
+      "so_tin": 77,
+      "co_chuoi_gia": false
+    },
+    {
+      "nut": "USD",
+      "so_tin": 58,
+      "co_chuoi_gia": true
+    },
+    {
+      "nut": "GEOPOLITICS",
+      "so_tin": 38,
+      "co_chuoi_gia": false
+    },
+    {
+      "nut": "OIL",
+      "so_tin": 24,
+      "co_chuoi_gia": true
+    },
+    {
+      "nut": "US10Y",
+      "so_tin": 19,
+      "co_chuoi_gia": true
+    },
+    {
+      "nut": "SILVER",
+      "so_tin": 4,
+      "co_chuoi_gia": true
+    },
+    {
+      "nut": "RECESSION",
+      "so_tin": 4,
+      "co_chuoi_gia": false
+    },
+    {
+      "nut": "SP500",
+      "so_tin": 1,
+      "co_chuoi_gia": true
+    },
+    {
+      "nut": "BTC",
+      "so_tin": 1,
+      "co_chuoi_gia": true
+    }
+  ],
+  "cap_co_canh_ca_am_lan_duong": {
+    "so_cap": 25,
+    "tong_so_cap": 28,
+    "vi_du": [
+      {
+        "src": "GOLD",
+        "dst": "BTC",
+        "so_lat": 27,
+        "am": 7,
+        "duong": 20
+      },
+      {
+        "src": "GOLD",
+        "dst": "OIL",
+        "so_lat": 27,
+        "am": 8,
+        "duong": 18
+      },
+      {
+        "src": "GOLD",
+        "dst": "SP500",
+        "so_lat": 27,
+        "am": 9,
+        "duong": 18
+      }
+    ]
+  },
+  "tong_quan": {
+    "so_nut": 28,
+    "so_canh": 1084,
+    "theo_loai_canh": {
+      "correlates_with": 1026,
+      "claims_cause": 43,
+      "belongs_to": 15
+    },
+    "theo_nhan_nut": {
+      "Asset": 5,
+      "MacroIndicator": 4,
+      "Institution": 1,
+      "Theme": 2,
+      "Stock": 5,
+      "Industry": 5,
+      "Sector": 5,
+      "Country": 1
+    },
+    "so_thanh_phan_lien_thong": 2
+  }
+}

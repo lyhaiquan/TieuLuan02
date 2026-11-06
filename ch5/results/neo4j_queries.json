@@ -1,0 +1,289 @@
+{
+  "so_nut": 28,
+  "so_canh": 1084,
+  "truy_van": [
+    {
+      "cau_hoi": "Hai mã cổ phiếu nào nối nhau qua một nút trung gian (đường đi 2 bước)?",
+      "cypher": "MATCH (a:Stock)-[:belongs_to]->(x)<-[:belongs_to]-(b:Stock) WHERE a.id < b.id RETURN a.id AS ma_1, labels(x)[1] AS qua_loai_nut, x.id AS qua_nut, b.id AS ma_2 ORDER BY qua_nut, ma_1, ma_2",
+      "ket_qua": [
+        {
+          "ma_1": "FPT",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "HPG"
+        },
+        {
+          "ma_1": "FPT",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VCB"
+        },
+        {
+          "ma_1": "FPT",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VIC"
+        },
+        {
+          "ma_1": "FPT",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VNM"
+        },
+        {
+          "ma_1": "HPG",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VCB"
+        },
+        {
+          "ma_1": "HPG",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VIC"
+        },
+        {
+          "ma_1": "HPG",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VNM"
+        },
+        {
+          "ma_1": "VCB",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VIC"
+        },
+        {
+          "ma_1": "VCB",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VNM"
+        },
+        {
+          "ma_1": "VIC",
+          "qua_loai_nut": "Country",
+          "qua_nut": "Vietnam",
+          "ma_2": "VNM"
+        }
+      ]
+    },
+    {
+      "cau_hoi": "Cạnh vàng - S&P 500 thay đổi thế nào qua từng quý?",
+      "cypher": "MATCH (:Entity {id: 'GOLD'})-[r:correlates_with]-(:Entity {id: 'SP500'}) RETURN r.period AS quy, r.corr AS he_so, r.n_days AS so_phien ORDER BY quy",
+      "ket_qua": [
+        {
+          "quy": "2020-03-31",
+          "he_so": 0.218,
+          "so_phien": 61
+        },
+        {
+          "quy": "2020-06-30",
+          "he_so": 0.108,
+          "so_phien": 62
+        },
+        {
+          "quy": "2020-09-30",
+          "he_so": 0.213,
+          "so_phien": 63
+        },
+        {
+          "quy": "2020-12-31",
+          "he_so": 0.131,
+          "so_phien": 63
+        },
+        {
+          "quy": "2021-03-31",
+          "he_so": 0.123,
+          "so_phien": 60
+        },
+        {
+          "quy": "2021-06-30",
+          "he_so": 0.281,
+          "so_phien": 62
+        },
+        {
+          "quy": "2021-09-30",
+          "he_so": 0.025,
+          "so_phien": 63
+        },
+        {
+          "quy": "2021-12-31",
+          "he_so": -0.127,
+          "so_phien": 63
+        },
+        {
+          "quy": "2022-03-31",
+          "he_so": -0.371,
+          "so_phien": 61
+        },
+        {
+          "quy": "2022-06-30",
+          "he_so": -0.025,
+          "so_phien": 61
+        },
+        {
+          "quy": "2022-09-30",
+          "he_so": 0.369,
+          "so_phien": 63
+        },
+        {
+          "quy": "2022-12-31",
+          "he_so": 0.429,
+          "so_phien": 62
+        },
+        {
+          "quy": "2023-03-31",
+          "he_so": -0.021,
+          "so_phien": 61
+        },
+        {
+          "quy": "2023-06-30",
+          "he_so": -0.168,
+          "so_phien": 61
+        },
+        {
+          "quy": "2023-09-30",
+          "he_so": 0.465,
+          "so_phien": 62
+        },
+        {
+          "quy": "2023-12-31",
+          "he_so": -0.1,
+          "so_phien": 62
+        },
+        {
+          "quy": "2024-03-31",
+          "he_so": 0.088,
+          "so_phien": 60
+        },
+        {
+          "quy": "2024-06-30",
+          "he_so": 0.225,
+          "so_phien": 62
+        },
+        {
+          "quy": "2024-09-30",
+          "he_so": 0.258,
+          "so_phien": 63
+        },
+        {
+          "quy": "2024-12-31",
+          "he_so": 0.077,
+          "so_phien": 63
+        },
+        {
+          "quy": "2025-03-31",
+          "he_so": -0.033,
+          "so_phien": 59
+        },
+        {
+          "quy": "2025-06-30",
+          "he_so": -0.026,
+          "so_phien": 61
+        },
+        {
+          "quy": "2025-09-30",
+          "he_so": -0.143,
+          "so_phien": 63
+        },
+        {
+          "quy": "2025-12-31",
+          "he_so": 0.226,
+          "so_phien": 63
+        },
+        {
+          "quy": "2026-03-31",
+          "he_so": 0.169,
+          "so_phien": 60
+        },
+        {
+          "quy": "2026-06-30",
+          "he_so": 0.579,
+          "so_phien": 61
+        },
+        {
+          "quy": "2026-09-30",
+          "he_so": 0.425,
+          "so_phien": 63
+        }
+      ]
+    },
+    {
+      "cau_hoi": "Tháng 6/2026 báo chí quy giá vàng cho ai, và nguyên nhân đó có cạnh tương quan cùng kỳ để đối chiếu không?",
+      "cypher": "MATCH (c:Entity)-[k:claims_cause {period: '2026-06'}]->(g:Entity {id: 'GOLD'}) OPTIONAL MATCH (g)-[r:correlates_with {period: '2026-06-30'}]-(c) RETURN c.id AS nguyen_nhan, k.n_claims AS so_tin, c.has_series AS co_chuoi_gia, r.corr AS tuong_quan_cung_quy ORDER BY so_tin DESC",
+      "ket_qua": [
+        {
+          "nguyen_nhan": "GEOPOLITICS",
+          "so_tin": 4,
+          "co_chuoi_gia": false,
+          "tuong_quan_cung_quy": null
+        },
+        {
+          "nguyen_nhan": "FED",
+          "so_tin": 3,
+          "co_chuoi_gia": false,
+          "tuong_quan_cung_quy": null
+        },
+        {
+          "nguyen_nhan": "USD",
+          "so_tin": 1,
+          "co_chuoi_gia": true,
+          "tuong_quan_cung_quy": -0.607
+        },
+        {
+          "nguyen_nhan": "INFLATION",
+          "so_tin": 1,
+          "co_chuoi_gia": false,
+          "tuong_quan_cung_quy": null
+        }
+      ]
+    },
+    {
+      "cau_hoi": "Trên toàn bộ năm 2026, bao nhiêu tin viện tới nguyên nhân không có chuỗi giá?",
+      "cypher": "MATCH (c:Entity)-[k:claims_cause]->(:Entity {id: 'GOLD'}) RETURN c.has_series AS co_chuoi_gia, sum(k.n_claims) AS so_tin, collect(DISTINCT c.id) AS cac_nut ORDER BY co_chuoi_gia",
+      "ket_qua": [
+        {
+          "co_chuoi_gia": false,
+          "so_tin": 202,
+          "cac_nut": [
+            "FED",
+            "INFLATION",
+            "GEOPOLITICS",
+            "RECESSION"
+          ]
+        },
+        {
+          "co_chuoi_gia": true,
+          "so_tin": 107,
+          "cac_nut": [
+            "USD",
+            "SILVER",
+            "US10Y",
+            "SP500",
+            "OIL",
+            "BTC"
+          ]
+        }
+      ]
+    },
+    {
+      "cau_hoi": "Đếm nút và cạnh theo loại trong cơ sở dữ liệu",
+      "cypher": "MATCH ()-[r]->() RETURN type(r) AS loai_canh, count(*) AS so_canh ORDER BY so_canh DESC",
+      "ket_qua": [
+        {
+          "loai_canh": "correlates_with",
+          "so_canh": 1026
+        },
+        {
+          "loai_canh": "claims_cause",
+          "so_canh": 43
+        },
+        {
+          "loai_canh": "belongs_to",
+          "so_canh": 15
+        }
+      ]
+    }
+  ]
+}

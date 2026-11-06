@@ -132,3 +132,38 @@ def t_c5_diabetes():
     return ("Đồ thị giúp được ở miền y văn nhưng không giúp ở miền vàng (context_recall)",
             ["Số tài liệu lấy về", "Tiểu đường: RAG", "Tiểu đường: GraphRAG",
              "Vàng: RAG", "Vàng: GraphRAG"], rows)
+
+
+def t_c5_neo4j():
+    """Kết quả các truy vấn Cypher chạy thật trên Neo4j (load_neo4j.py)."""
+    q = {i: t for i, t in enumerate(C5("neo4j_queries.json")["truy_van"])}
+
+    r1 = q[0]["ket_qua"]
+    loai = sorted({r["qua_loai_nut"] for r in r1})
+    nut = sorted({r["qua_nut"] for r in r1})
+
+    r2 = q[1]["ket_qua"]
+    hs = [r["he_so"] for r in r2]
+    am = sum(1 for h in hs if h < 0)
+
+    r3 = q[2]["ket_qua"]
+    thang6 = ", ".join("%s (%d%s)" % (r["nguyen_nhan"], r["so_tin"],
+                                      "" if r["tuong_quan_cung_quy"] is None
+                                      else "; corr %s" % f(r["tuong_quan_cung_quy"], 3))
+                       for r in r3)
+
+    r4 = {bool(r["co_chuoi_gia"]): r["so_tin"] for r in q[3]["ket_qua"]}
+    tong = r4[True] + r4[False]
+
+    return ("Truy vấn Cypher chạy trên Neo4j và kết quả",
+            ["Câu hỏi", "Kết quả"],
+            [["Hai mã cổ phiếu nào nối nhau qua một nút trung gian?",
+              "%d cặp, tất cả đi qua nút %s `%s`; không cặp nào chung ngành hay nhóm ngành"
+              % (len(r1), "/".join(loai), "/".join(nut))],
+             ["Cạnh vàng – S&P 500 qua từng quý",
+              "%d cạnh, hệ số từ %s đến %s; âm ở %d quý, dương ở %d quý"
+              % (len(hs), f(min(hs), 3), f(max(hs), 3), am, len(hs) - am)],
+             ["Tháng 6/2026 báo chí quy giá vàng cho ai, có cạnh tương quan cùng quý không?",
+              thang6 + "; chỉ nút có chuỗi giá mới có cạnh để đối chiếu"],
+             ["Năm 2026, bao nhiêu tin viện tới nguyên nhân không có chuỗi giá?",
+              "%s / %s tin (%s%%)" % (n(r4[False]), n(tong), f(100.0 * r4[False] / tong, 1))]])

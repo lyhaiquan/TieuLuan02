@@ -167,6 +167,44 @@ Số liệu cùng kỳ : lợi suất vàng quý 2/2026 = -16,09%
 
 Hệ còn được đóng gói thành một trang demo tĩnh chạy hoàn toàn trong trình duyệt (`demo/ch5_finance.html`). Bảng giá 2.480 phiên được nhúng thẳng vào trang nên bộ định tuyến và bộ tính chạy tại chỗ bằng JavaScript, không phải đáp án nấu sẵn: gõ "lợi suất của vàng quý 2/2026" thì cách B tính ra −16,09% trên 91 phiên, trong khi cách A truy hồi trúng câu thống kê của cả năm 2026 và trả lời −3,50%. Bản cách A trong demo là bản JavaScript rút gọn, xếp hạng theo độ trùng token thay vì TF-IDF như bản Python; trên câu hỏi này hai bản cho cùng kết quả, nhưng con số tổng hợp ở mục 5.5.1 là của bản Python. Người đọc nhìn thấy ngay chỗ hỏng của cách cũ thay vì chỉ đọc bảng số.
 
+### 5.4.6. Lưu đồ thị trong Neo4j và truy vấn bằng Cypher
+
+**Nguyên lý.** Các mục trên tạo ra cạnh đồ thị, nhưng chừng nào cạnh còn nằm trong tệp CSV thì đó mới là một bảng quan hệ: không duyệt được, không hỏi được câu nào cần đi qua nhiều bước. Mục 5.2.1 nói giá trị riêng của đồ thị tri thức là đường đi gián tiếp; muốn khẳng định đó có nghĩa thì đồ thị phải nằm trong một hệ quản trị cơ sở dữ liệu đồ thị và chạy được truy vấn duyệt thật. Hệ này dùng Neo4j 5, cơ sở dữ liệu đồ thị theo mô hình property graph phổ biến nhất, với ngôn ngữ truy vấn Cypher.
+
+Quy trình gồm hai script. `build_kg.py` gom bốn tệp cạnh thành một `networkx.MultiDiGraph` rồi xuất ra script Cypher; `load_neo4j.py` nạp script đó vào Neo4j đang chạy trong Docker và chạy các truy vấn minh hoạ, ghi kết quả ra `neo4j_queries.json` để báo cáo đọc lại.
+
+{{CODE ch5/build_kg.py | to_cypher}}
+
+**Giải thích.** Mỗi nút mang hai nhãn: `Entity` chung cho mọi nút, và một nhãn riêng theo loại (`Asset`, `MacroIndicator`, `Institution`, `Theme`, `Stock`, `Sector`, `Industry`, `Country`). Nhãn chung cho phép đặt một ràng buộc duy nhất trên `id` cho cả đồ thị; nhãn riêng cho phép truy vấn chỉ một loại nút, ví dụ `MATCH (a:Stock)`. Kiểu cạnh giữ nguyên ba tên đã dùng trong cả chương là `belongs_to`, `correlates_with`, `claims_cause`, để code, bảng và cơ sở dữ liệu nói cùng một thứ tiếng. Mọi thuộc tính của cạnh (quý, hệ số, số phiên, số tin nhất quán) đi theo cạnh vào Neo4j. Dùng `MERGE` thay vì `CREATE` nên chạy lại script nhiều lần không sinh nút trùng.
+
+Một chi tiết cài đặt quan trọng nằm ở hàm duyệt:
+
+{{CODE ch5/build_kg.py | simple_view}}
+
+**Giải thích.** Cặp GOLD–USD có {{V n(C5('kg_summary.json')['theo_cap']['GOLD-USD']['so_lat'])}} cạnh tương quan, mỗi quý một cạnh. Khi hỏi "từ nút này đi tới nút kia được không" thì cả chừng ấy cạnh chỉ là **một bước**; không gộp lại thì mọi phép đếm bậc và đường đi đều sai. Hàm này lấy đúng một loại cạnh, tuỳ chọn lọc theo miền và theo khoảng thời gian, rồi trả về một đồ thị vô hướng đơn để duyệt.
+
+Đồ thị sau khi nạp có {{V n(C5('neo4j_queries.json')['so_nut'])}} nút và {{V n(C5('neo4j_queries.json')['so_canh'])}} cạnh. Bốn truy vấn dưới đây chạy thật trên Neo4j; bảng là kết quả trả về.
+
+```
+MATCH (a:Stock)-[:belongs_to]->(x)<-[:belongs_to]-(b:Stock)
+WHERE a.id < b.id
+RETURN a.id, labels(x)[1], x.id, b.id
+
+MATCH (c:Entity)-[k:claims_cause {period: '2026-06'}]->(g:Entity {id: 'GOLD'})
+OPTIONAL MATCH (g)-[r:correlates_with {period: '2026-06-30'}]-(c)
+RETURN c.id, k.n_claims, c.has_series, r.corr
+```
+
+{{TABL t_c5_neo4j}}
+
+**Đọc kết quả.** Truy vấn thứ nhất là truy vấn đa bước đúng nghĩa: hai mã không có cạnh trực tiếp, Cypher tìm chúng qua một nút trung gian. Kết quả có một điểm đáng chú ý mà không nhìn vào đồ thị thì khó thấy: **mọi** đường đi đều qua nút quốc gia, không cặp nào chung ngành hay nhóm ngành, vì năm mã được chọn thuộc năm ngành khác nhau. Nói cách khác, ở miền chứng khoán đồ thị `belongs_to` chỉ nói được rằng năm mã cùng niêm yết ở Việt Nam, một thông tin gần như không có giá trị phân biệt.
+
+Truy vấn thứ ba là bộ kiểm chứng của mục 5.4.4 viết lại bằng Cypher: lấy các cạnh `claims_cause` của tháng 6/2026, rồi `OPTIONAL MATCH` tìm cạnh `correlates_with` cùng kỳ giữa đúng hai nút đó. Nguyên nhân nào không có chuỗi giá thì vế `OPTIONAL MATCH` trả về rỗng, và đó chính là dấu hiệu "không kiểm chứng được". Hệ số với USD ở đây là {{V f([r for r in C5('neo4j_queries.json')['truy_van'][2]['ket_qua'] if r['nguyen_nhan'] == 'USD'][0]['tuong_quan_cung_quy'],3)}}, khác con số −0,554 ở mục 5.4.5 vì cạnh đồ thị tính trên cả quý, còn `verify_claim` tính trên 45 ngày trước ngày đăng tin; cả hai cùng dấu nên kết luận "nhất quán" không đổi. Truy vấn thứ tư cho lại đúng con số 65,4% ở mục 5.5.3, lần này đếm trực tiếp trên cơ sở dữ liệu thay vì trong pandas, tức hai cách cài đặt độc lập cho cùng kết quả.
+
+Duyệt đồ thị cũng trả lời được một câu hỏi cấu trúc mà các mục sau cần. Trong miền vàng, {{V n(C5('kg_graph.json')['do_thi_vang']['so_nut_co_chuoi_gia'])}} nút có chuỗi giá tạo thành {{V n(C5('kg_graph.json')['do_thi_vang']['so_cap_nut'])}} cặp, và cả {{V n(C5('kg_graph.json')['do_thi_vang']['so_cap_noi_truc_tiep'])}} cặp đều đã có cạnh `correlates_with` trực tiếp, vì tương quan được tính cho mọi cặp. Đồ thị tương quan là đồ thị **đầy đủ**: bậc mỗi nút bằng {{V f(C5('kg_graph.json')['do_thi_vang']['bac_trung_binh'],0)}}, số cặp cần bắc cầu bằng {{V n(C5('kg_graph.json')['do_thi_vang']['so_cap_phai_bac_cau'])}}. Không có đường đi gián tiếp nào để khai thác, và đây là lời giải thích định lượng cho việc đồ thị không giúp truy hồi ở miền vàng (mục 5.5.6).
+
+Neo4j Browser (`http://localhost:7474`) hiển thị trực tiếp các truy vấn trên dưới dạng đồ thị tương tác. Script `start_neo4j.py` bật một container `neo4j:5` bằng Docker, nên người clone repo dựng lại được đúng cơ sở dữ liệu này bằng ba lệnh ghi trong README.
+
 ## 5.5. Kết quả
 
 ### 5.5.1. Câu hỏi số
@@ -229,7 +267,7 @@ Bộ trích khẳng định chạy rất tốt trên tin vàng nhưng gần như
 
 {{TAB t_c5_diabetes}}
 
-Con số đáng chú ý là mức chênh giữa hai miền. Ở bộ tiểu đường, mở rộng truy hồi bằng đồ thị kéo `context_recall` từ 0,417 lên 0,750 tại k = 2; ở bộ vàng, đồ thị không cải thiện được gì tại k = 2 và k = 4, còn tại k = 6 thì kém hơn truy hồi thường (0,900 so với 1,000), tức việc cộng điểm cho tài liệu nhắc tới thực thể lân cận đã đẩy một tài liệu đúng ra khỏi top-k. Giải thích nằm ở quy mô đồ thị: đồ thị y văn có 319 nút vì thực thể là thuốc, biến chứng, chỉ số xét nghiệm, nên câu hỏi thường phải bắc cầu qua nhiều thực thể mới tới được tài liệu đúng. Đồ thị vàng chỉ có 18 nút, và với một câu hỏi về vàng thì truy hồi theo văn bản thường đã đủ, không còn gì cho đồ thị bổ sung.
+Con số đáng chú ý là mức chênh giữa hai miền. Ở bộ tiểu đường, mở rộng truy hồi bằng đồ thị kéo `context_recall` từ 0,417 lên 0,750 tại k = 2; ở bộ vàng, đồ thị không cải thiện được gì tại k = 2 và k = 4, còn tại k = 6 thì kém hơn truy hồi thường (0,900 so với 1,000), tức việc cộng điểm cho tài liệu nhắc tới thực thể lân cận đã đẩy một tài liệu đúng ra khỏi top-k. Giải thích nằm ở quy mô đồ thị: đồ thị y văn có 319 nút vì thực thể là thuốc, biến chứng, chỉ số xét nghiệm, nên câu hỏi thường phải bắc cầu qua nhiều thực thể mới tới được tài liệu đúng. Đồ thị vàng chỉ có 18 nút, và với một câu hỏi về vàng thì truy hồi theo văn bản thường đã đủ, không còn gì cho đồ thị bổ sung. Đồ thị của chương này cho lời giải thích chặt hơn: như mục 5.4.6 đo bằng Neo4j, đồ thị tương quan của miền vàng là đồ thị đầy đủ, mọi cặp nút đã nối trực tiếp, nên không còn đường đi gián tiếp nào cho truy hồi đa bước khai thác.
 
 Điều này củng cố nhận xét ở mục 5.5.4 từ một hướng khác: giá trị của đồ thị tri thức không đến từ việc có đồ thị, mà đến từ việc đồ thị có đủ phong phú để bắc cầu hay không. Với miền tài chính, đóng góp của đồ thị nằm ở chiều kiểm chứng chứ không ở chiều mở rộng truy hồi.
 

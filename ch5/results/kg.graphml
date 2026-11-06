@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d12" for="edge" attr.name="chi_tiet" attr.type="string"/>
+<key id="d11" for="edge" attr.name="khong_kiem_chung" attr.type="string"/>
+<key id="d10" for="edge" attr.name="mau_thuan" attr.type="string"/>
+<key id="d9" for="edge" attr.name="nhat_quan" attr.type="string"/>
+<key id="d8" for="edge" attr.name="n_claims" attr.type="string"/>
+<key id="d7" for="edge" attr.name="domain" attr.type="string"/>
+<key id="d6" for="edge" attr.name="n_days" attr.type="string"/>
+<key id="d5" for="edge" attr.name="corr" attr.type="string"/>
+<key id="d4" for="edge" attr.name="period" attr.type="string"/>
+<key id="d3" for="edge" attr.name="rel" attr.type="string"/>
+<key id="d2" for="node" attr.name="domain" attr.type="string"/>
+<key id="d1" for="node" attr.name="has_series" attr.type="boolean"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="GOLD">
+  <data key="d0">Asset</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="SILVER">
+  <data key="d0">Asset</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="OIL">
+  <data key="d0">Asset</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="SP500">
+  <data key="d0">Asset</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="BTC">
+  <data key="d0">Asset</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="USD">
+  <data key="d0">MacroIndicator</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="US10Y">
+  <data key="d0">MacroIndicator</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="VIX">
+  <data key="d0">MacroIndicator</data>
+  <data key="d1">True</data>
+  <data key="d2">gold</data>
+</node>
+<node id="FED">
+  <data key="d0">Institution</data>
+  <data key="d1">False</data>
+  <data key="d2">gold</data>
+</node>
+<node id="INFLATION">
+  <data key="d0">MacroIndicator</data>
+  <data key="d1">False</data>
+  <data key="d2">gold</data>
+</node>
+<node id="GEOPOLITICS">
+  <data key="d0">Theme</data>
+  <data key="d1">False</data>
+  <data key="d2">gold</data>
+</node>
+<node id="RECESSION">
+  <data key="d0">Theme</data>
+  <data key="d1">False</data>
+  <data key="d2">gold</data>
+</node>
+<node id="VNM">
+  <data key="d0">Stock</data>
+  <data key="d1">True</data>
+  <data key="d2">stock</data>
+</node>
+<node id="FPT">
+  <data key="d0">Stock</data>
+  <data key="d1">True</data>
+  <data key="d2">stock</data>
+</node>
+<node id="VCB">
+  <data key="d0">Stock</data>
+  <data key="d1">True</data>
+  <data key="d2">stock</data>
+</node>
+<node id="HPG">
+  <data key="d0">Stock</data>
+  <data key="d1">True</data>
+  <data key="d2">stock</data>
+</node>
+<node id="VIC">
+  <data key="d0">Stock</data>
+  <data key="d1">True</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Packaged Foods">
+  <data key="d0">Industry</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Consumer Defensive">
+  <data key="d0">Sector</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Vietnam">
+  <data key="d0">Country</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Information Technology Services">
+  <data key="d0">Industry</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Technology">
+  <data key="d0">Sector</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Banks - Regional">
+  <data key="d0">Industry</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Financial Services">
+  <data key="d0">Sector</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Steel">
+  <data key="d0">Industry</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Basic Materials">
+  <data key="d0">Sector</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Real Estate Services">
+  <data key="d0">Industry</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<node id="Real Estate">
+  <data key="d0">Sector</data>
+  <data key="d1">False</data>
+  <data key="d2">stock</data>
+</node>
+<edge source="GOLD" target="SILVER">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.751</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GOLD" target="USD">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.259</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GOLD" target="US10Y">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.167</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GOLD" target="OIL">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.227</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GOLD" target="SP500">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.218</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GOLD" target="VIX">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.013</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GOLD" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.315</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="USD">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.207</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="US10Y">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.087</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="OIL">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.404</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="SP500">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.253</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="VIX">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.105</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.26</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SILVER" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2025-09</data>
+  <data key="d8">1</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">1</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="OIL" target="SP500">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.439</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="OIL" target="VIX">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.314</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="OIL" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.271</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="OIL" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-03</data>
+  <data key="d8">1</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">0</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SP500" target="VIX">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.746</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SP500" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.493</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="SP500" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2025-09</data>
+  <data key="d8">1</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">1</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="BTC" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-10</data>
+  <data key="d8">1</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">1</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="USD" target="US10Y">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.564</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="USD" target="OIL">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.199</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="USD" target="SP500">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.186</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="USD" target="VIX">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.327</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="USD" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.038</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="USD" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-03</data>
+  <data key="d8">2</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">1</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="US10Y" target="OIL">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.067</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="US10Y" target="SP500">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.425</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="US10Y" target="VIX">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.365</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="US10Y" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.027</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="US10Y" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-08</data>
+  <data key="d8">1</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">1</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="VIX" target="BTC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">-0.456</data>
+  <data key="d6">61</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="FED" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-03</data>
+  <data key="d8">2</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">2</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="INFLATION" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-03</data>
+  <data key="d8">1</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">1</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="GEOPOLITICS" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-03</data>
+  <data key="d8">9</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">9</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="RECESSION" target="GOLD">
+  <data key="d3">claims_cause</data>
+  <data key="d4">2026-08</data>
+  <data key="d8">2</data>
+  <data key="d9">0</data>
+  <data key="d10">0</data>
+  <data key="d11">2</data>
+  <data key="d7">gold</data>
+</edge>
+<edge source="VNM" target="FPT">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.557</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VNM" target="VCB">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.583</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VNM" target="HPG">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.547</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VNM" target="VIC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.397</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VNM" target="Packaged Foods">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc ngành</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VNM" target="Consumer Defensive">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc nhóm</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VNM" target="Vietnam">
+  <data key="d3">belongs_to</data>
+  <data key="d12">ở nước</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="FPT" target="VCB">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.56</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="FPT" target="HPG">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.653</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="FPT" target="VIC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.325</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="FPT" target="Information Technology Services">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc ngành</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="FPT" target="Technology">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc nhóm</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="FPT" target="Vietnam">
+  <data key="d3">belongs_to</data>
+  <data key="d12">ở nước</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VCB" target="HPG">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.567</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VCB" target="VIC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.621</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VCB" target="Banks - Regional">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc ngành</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VCB" target="Financial Services">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc nhóm</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VCB" target="Vietnam">
+  <data key="d3">belongs_to</data>
+  <data key="d12">ở nước</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="HPG" target="VIC">
+  <data key="d3">correlates_with</data>
+  <data key="d4">2020-03-31</data>
+  <data key="d5">0.347</data>
+  <data key="d6">63</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="HPG" target="Steel">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc ngành</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="HPG" target="Basic Materials">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc nhóm</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="HPG" target="Vietnam">
+  <data key="d3">belongs_to</data>
+  <data key="d12">ở nước</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VIC" target="Real Estate Services">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc ngành</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VIC" target="Real Estate">
+  <data key="d3">belongs_to</data>
+  <data key="d12">thuộc nhóm</data>
+  <data key="d7">stock</data>
+</edge>
+<edge source="VIC" target="Vietnam">
+  <data key="d3">belongs_to</data>
+  <data key="d12">ở nước</data>
+  <data key="d7">stock</data>
+</edge>
+</graph></graphml>

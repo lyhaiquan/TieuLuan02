@@ -23,3 +23,6 @@ build/tieuluan0*_05_02_quanlh.pdf
 
 # Dong tac gia co ma sinh vien, khong day len repo cong khai
 build/author.local.txt
+
+# Mat khau Neo4j cuc bo, khong day len repo
+ch5/neo4j.local.json

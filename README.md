@@ -2,7 +2,7 @@
 
 Lý Hải Quân. Nhóm lớp 05, nhóm tiểu luận 02.
 
-Bản nộp: `tieuluan02_05_02_quanlh.docx` và `.pdf` (70 trang). **Phần in màu đỏ đánh dấu những chỗ đã sửa hoặc bổ sung trong bốn chương cũ
+Bản nộp: `tieuluan02_05_02_quanlh.docx` và `.pdf` (72 trang). **Phần in màu đỏ đánh dấu những chỗ đã sửa hoặc bổ sung trong bốn chương cũ
 so với Tiểu luận 01; Chương 5 là chương hoàn toàn mới nên in màu đen.**
 
 Repo: <https://github.com/lyhaiquan/TieuLuan02>
@@ -56,6 +56,21 @@ python run_stocks.py          # miền chứng khoán
 python make_figs.py           # bốn hình của chương
 python export_demo.py         # dữ liệu cho demo trong trình duyệt
 ```
+
+### Đồ thị trong Neo4j
+
+Cạnh đồ thị được nạp vào Neo4j 5 chạy trong Docker và truy vấn bằng Cypher:
+
+```bash
+cd ch5
+python build_kg.py      # dựng đồ thị NetworkX, xuất results/kg.cypher và kg.graphml
+python start_neo4j.py   # bật container neo4j:5, mật khẩu ngẫu nhiên lưu ở ch5/neo4j.local.json
+python load_neo4j.py    # nạp đồ thị, chạy 5 truy vấn Cypher, ghi results/neo4j_queries.json
+```
+
+Sau đó mở http://localhost:7474 (Neo4j Browser), đăng nhập `neo4j` với mật khẩu trong
+`ch5/neo4j.local.json`. Tệp đó đã gitignore. Không dùng Docker thì có thể nạp `results/kg.cypher`
+vào Neo4j Desktop bằng `cypher-shell`.
 
 Kết quả ghi ra `ch5/results/*.json`; báo cáo đọc trực tiếp các tệp đó nên không có con số nào
 nhập tay.
